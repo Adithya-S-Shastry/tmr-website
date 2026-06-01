@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Team Manipal Racing Electric | BAJA Motorsport</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&family=Syncopate:wght@700&family=Space+Grotesk:wght@400;700&family=Inter:wght@400;500&display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#121414",
+                        "on-secondary": "#023641",
+                        "secondary": "#a3cddb",
+                        "background": "#000000",
+                        "on-background": "#e3e2e2",
+                        "surface-container": "#111111",
+                        "outline": "#8e9192"
+                    },
+                    "fontFamily": {
+                        "space": ["Space Grotesk", "sans-serif"],
+                        "racing": ["Syncopate", "sans-serif"],
+                        "cyber": ["Orbitron", "sans-serif"],
+                        "inter": ["Inter", "sans-serif"]
+
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Electric text entry animation (slides in from below after 2s) */
+        @keyframes slideInUp {
+            0% {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .animate-electric {
+            opacity: 0;
+            animation: slideInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            animation-delay: 2s;
+        }
+
+        /* Left-to-right infinite horizontal scroll */
+        @keyframes scrollRight {
+            0% {
+                transform: translateX(-50%);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        .scroll-track-subsystems {
+            display: flex;
+            width: max-content;
+            animation: scrollRight 45s linear infinite;
+        }
+
+        .scroll-track-sponsors {
+            display: flex;
+            width: max-content;
+            animation: scrollRight 55s linear infinite;
+        }
+
+        .scroll-track-subsystems:hover,
+        .scroll-track-sponsors:hover {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+
+<body class="bg-black text-on-background antialiased min-h-screen flex flex-col font-inter">
+
+    <!-- Persistent Navigation Bar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-md border-b border-white/10 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <!-- Left: Logo -->
+            <a href="#" class="h-10 flex items-center logo-btn">
+                <img src="logo.png" alt="Team Manipal Racing Logo" class="h-full object-contain" />
+            </a>
+
+            <!-- Center: Links (Desktop) -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#"
+                    class="font-space uppercase tracking-widest text-sm font-semibold text-white hover:text-sky-400 transition-colors">Home</a>
+                <a href="#about"
+                    class="font-space uppercase tracking-widest text-sm font-semibold text-white/60 hover:text-sky-400 transition-colors">About</a>
+                <a href="../velocity_performance/code.html"
+                    class="font-space uppercase tracking-widest text-sm font-semibold text-white/60 hover:text-sky-400 transition-colors">Subsystems</a>
+                <a href="../achievements_electric_baja_racing/code.html"
+                    class="font-space uppercase tracking-widest text-sm font-semibold text-white/60 hover:text-sky-400 transition-colors">Achievements</a>
+                <a href="#sponsors"
+                    class="font-space uppercase tracking-widest text-sm font-semibold text-white/60 hover:text-sky-400 transition-colors">Sponsors</a>
+                <a href="../journey_of_ev_slider_desktop/code.html"
+                    class="font-space uppercase tracking-widest text-sm font-semibold text-white/60 hover:text-sky-400 transition-colors">Journey</a>
+            </div>
+
+            <!-- Right: Join Button (Desktop) -->
+            <div class="hidden md:block">
+                <a href="https://www.instagram.com/teammanipalracing/" target="_blank"
+                    class="px-6 py-2 border border-sky-400 text-sky-400 hover:bg-sky-400/10 font-space font-bold rounded uppercase tracking-widest text-xs transition-all">Join
+                    Team</a>
+            </div>
+
+            <!-- Hamburger (Mobile) -->
+            <button class="md:hidden text-white hover:text-sky-400 transition-colors" id="menu-toggle">
+                <span class="material-symbols-outlined text-3xl">menu</span>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Links -->
+        <div class="hidden flex-col space-y-4 pt-4 pb-2 border-t border-white/10 mt-3" id="mobile-menu">
+            <a href="#"
+                class="block font-space uppercase tracking-widest text-sm font-semibold text-white hover:text-sky-400 transition-colors">Home</a>
+            <a href="#about"
+                class="block font-space uppercase tracking-widest text-sm font-semibold text-white/60 hover:text-sky-400 transition-colors mobile-nav-link">About</a>
+            <a href="../velocity_performance/code.html"
+                class="block font-space uppercase tracking-widest text-sm font-semibold text-white/60 hover:text-sky-400 transition-colors mobile-nav-link">Subsystems</a>
+            <a href="../achievements_electric_baja_racing/code.html"
+                class="block font-space uppercase tracking-widest text-sm font-semibold text-white/60 hover:text-sky-400 transition-colors">Achievements</a>
+            <a href="#sponsors"
+                class="block font-space uppercase tracking-widest text-sm font-semibold text-white/60 hover:text-sky-400 transition-colors mobile-nav-link">Sponsors</a>
+            <a href="../journey_of_ev_slider_desktop/code.html"
+                class="block font-space uppercase tracking-widest text-sm font-semibold text-white/60 hover:text-sky-400 transition-colors">Journey</a>
+            <a href="https://www.instagram.com/teammanipalracing/" target="_blank"
+                class="block text-center py-2 bg-sky-400/10 border border-sky-400 text-sky-400 font-space font-bold rounded uppercase tracking-widest text-xs">Join
+                Team</a>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT CANVAS -->
+    <main class="flex-grow w-full">
+        <!-- 1. Hero Section (A1) -->
+        <section class="relative w-full h-screen overflow-hidden bg-black flex items-center justify-center">
+            <!-- Autoplay, looping, muted inline background video -->
+            <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover z-0">
+                <source src="Home_vid.mp4" type="video/mp4" />
+            </video>
+            <!-- Dark Overlay -->
+            <div class="absolute inset-0 bg-black/45 z-10"></div>
+            <!-- Centered Text Overlay -->
+            <div class="relative z-20 text-center px-6 max-w-5xl flex flex-col items-center gap-2">
+                <h1
+                    class="font-racing text-3xl md:text-6xl font-bold text-white uppercase tracking-widest leading-none">
+                    TEAM
+                    MANIPAL RACING</h1>
+                <h2
+                    class="font-cyber text-5xl md:text-8xl font-black text-[#ADD8E6] uppercase tracking-widest animate-electric drop-shadow-[0_0_20px_rgba(173,216,230,0.5)] mt-2">
+                    ELECTRIC</h2>
+
+            </div>
+        </section>
+
+        <!-- Container for Content Sections -->
+        <div class="max-w-7xl mx-auto px-6 md:px-12 pb-24">
+            <!-- 2. About Us Section (A2) -->
+            <section id="about"
+                class="pt-24 border-t border-white/10 grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+                <!-- Left column -->
+                <div class="md:col-span-6 relative rounded-xl overflow-hidden border border-white/10 group">
+                    <img src="About us.png" alt="Team Manipal Racing Team Photo"
+                        class="w-full h-full object-cover aspect-video grayscale opacity-80 hover:opacity-100 hover:grayscale-0 transition-all duration-500" />
+                </div>
+                <!-- Right column -->
+                <div class="md:col-span-6 flex flex-col justify-center">
+                    <h2 class="font-space text-4xl font-bold text-white mb-6 uppercase tracking-tight">About Us</h2>
+                    <p
+                        class="font-inter text-md md:text-lg text-on-surface-variant leading-relaxed text-justify font-medium">
+                        WE ARE DRIVEN BY A PASSION FOR DESIGNING, BUILDING, AND TESTING ALL-TERRAIN ELECTRIC VEHICLES
+                        FOR NATIONAL-LEVEL COMPETITIONS. OUR CONSISTENT SUCCESS IN WINNING PRESTIGIOUS AWARDS AND CASH
+                        PRIZES REFLECTS OUR UNWAVERING COMMITMENT TO EXCELLENCE, INNOVATION, AND THE FUTURE OF ELECTRIC
+                        MOBILITY. OUR TEAM SPECIALIZES IN ENGINEERING AND OPTIMIZING CRITICAL VEHICLE COMPONENTS AND
+                        ELECTRICAL SYSTEMS, CULMINATING IN A HIGH-PERFORMANCE, 9 KW SINGLE-SEATER DESIGNED TO RIVAL THE
+                        CAPABILITIES OF ITS COMBUSTION-ENGINE COUNTERPARTS.
+                    </p>
+                </div>
+            </section>
+
+            <!-- 3. Subsystems Section (A3) -->
+            <section id="subsystems" class="pt-24 border-t border-white/10 overflow-hidden">
+                <div class="mb-12">
+                    <h2 class="font-space text-4xl font-bold text-white uppercase tracking-tight">Subsystems</h2>
+                </div>
+
+                <!-- Infinite Left-to-Right Carousel -->
+                <div class="relative w-full overflow-hidden py-6">
+                    <!-- Linear Gradient Mask for beautiful fade edges -->
+                    <div
+                        class="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none">
+                    </div>
+                    <div
+                        class="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none">
+                    </div>
+
+                    <div class="scroll-track-subsystems gap-6">
+                        <!-- ORIGINAL 7 CARDS -->
+                        <!-- Card 1: Structures -->
+                        <div
+                            class="bg-surface-container border border-white/10 rounded-xl p-6 w-[320px] transition-all duration-300 hover:scale-115 hover:border-secondary hover:shadow-[0_0_15px_rgba(163,205,219,0.3)] shrink-0 flex flex-col gap-4">
+                            <div
+                                class="flex items-center justify-center w-14 h-14 bg-black/50 border border-white/10 rounded-lg">
+                                <svg class="w-8 h-8 text-[#ADD8E6]" fill="none" stroke="currentColor" stroke-width="1.5"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M4 4h16v16H4V4zm0 8h16M12 4v16M4 4l16 16M20 4L4 20" />
+                                </svg>
+                            </div>
+                            <h3 class="font-space text-xl font-bold text-white">Structures</h3>
+                            <p class="font-inter text-sm text-on-surface-variant leading-relaxed">The structures
+                                subsystem designs, analyzes, and fabricates the tubular chassis for durability, while
+                                also crafting basalt fiber and Kevlar bodywork to enhance strength and aesthetics.</p>
+                        </div>
+                        <!-- Card 2: Transmission -->
+                        <div
+                            class="bg-surface-container border border-white/10 rounded-xl p-6 w-[320px] transition-all duration-300 hover:scale-115 hover:border-secondary hover:shadow-[0_0_15px_rgba(163,205,219,0.3)] shrink-0 flex flex-col gap-4">
+                            <div
+                                class="flex items-center justify-center w-14 h-14 bg-black/50 border border-white/10 rounded-lg">
+                                <svg class="w-8 h-8 text-[#ADD8E6]" fill="none" stroke="currentColor" stroke-width="1.5"
+                                    viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="3" />
+                                    <path
+                                        d="M12 2v2m0 16v2M2 12h2m16 0h2M5.6 5.6l1.4 1.4m10 10l1.4 1.4M18.4 5.6l-1.4 1.4M5.6 18.4l1.4-1.4" />
+                                    <circle cx="12" cy="12" r="7" stroke-dasharray="3 3" />
+                                </svg>
+                            </div>
+                            <h3 class="font-space text-xl font-bold text-white">Transmission</h3>
+                            <p class="font-inter text-sm text-on-surface-variant leading-relaxed">Our 4WD transmission
+                                delivers 700 Nm of torque, towing a 2-ton tractor in 15 seconds and accelerating 150
+                                feet in 4.5 seconds. Optimized gear ratios and advanced materials ensure superior
+                                traction, stability, and efficiency.</p>
+                        </div>
+                        <!-- Card 3: Vehicle Dynamics -->
+                        <div
+                            class="bg-surface-container border border-white/10 rounded-xl p-6 w-[320px] transition-all duration-300 hover:scale-115 hover:border-secondary hover:shadow-[0_0_15px_rgba(163,205,219,0.3)] shrink-0 flex flex-col gap-4">
+                            <div
+                                class="flex items-center justify-center w-14 h-14 bg-black/50 border border-white/10 rounded-lg">
+                                <svg class="w-8 h-8 text-[#ADD8E6]" fill="none" stroke="currentColor" stroke-width="1.5"
+                                    viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="6" />
+                                    <path d="M12 2v4m-6 6h4m8 0h2M12 18v4M9 9l6 6m0-6l-6 6" />
+                                </svg>
+                            </div>
+                            <h3 class="font-space text-xl font-bold text-white">Vehicle Dynamics</h3>
+                            <p class="font-inter text-sm text-on-surface-variant leading-relaxed">We design suspension,
+                                braking, and steering systems to optimize off-road handling, ensuring precise steering,
+                                driver comfort, and stability in demanding terrain. Our approach enhances responsiveness
+                                and durability for superior performance.</p>
+                        </div>
+                        <!-- Card 4: Electronics -->
+                        <div
+                            class="bg-surface-container border border-white/10 rounded-xl p-6 w-[320px] transition-all duration-300 hover:scale-115 hover:border-secondary hover:shadow-[0_0_15px_rgba(163,205,219,0.3)] shrink-0 flex flex-col gap-4">
+                            <div
+                                class="flex items-center justify-center w-14 h-14 bg-black/50 border border-white/10 rounded-lg">
+                                <svg class="w-8 h-8 text-[#ADD8E6]" fill="none" stroke="currentColor" stroke-width="1.5"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                </svg>
+                            </div>
+                            <h3 class="font-space text-xl font-bold text-white">Electronics</h3>
+                            <p class="font-inter text-sm text-on-surface-variant leading-relaxed">This subsystem focuses
+                                on designing EV batteries, developing control systems, and refining powertrain
+                                components. It also involves building custom wiring harnesses that integrate various
+                                electronic modules, ensuring efficient energy management and vehicle performance.</p>
+                        </div>
+                        <!-- Card 5: Data Acquisition -->
+                        <div
+                            class="bg-surface-container border border-white/10 rounded-xl p-6 w-[320px] transition-all duration-300 hover:scale-115 hover:border-secondary hover:shadow-[0_0_15px_rgba(163,205,219,0.3)] shrink-0 flex flex-col gap-4">
+                            <div
+                                class="flex items-center justify-center w-14 h-14 bg-black/50 border border-white/10 rounded-lg">
+                                <svg class="w-8 h-8 text-[#ADD8E6]" fill="none" stroke="currentColor" stroke-width="1.5"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 002 2h2a2 2 0 002-2z" />
+                                </svg>
+                            </div>
+                            <h3 class="font-space text-xl font-bold text-white">Data Acquisition</h3>
+                            <p class="font-inter text-sm text-on-surface-variant leading-relaxed">This part involves
+                                collecting and analyzing real-time vehicle data to optimize efficiency, tuning, and
+                                overall performance. It supports decision-making by monitoring parameters like battery
+                                status, motor behavior, and environmental conditions, enabling precise diagnostics and
+                                system refinement.</p>
+                        </div>
+                        <!-- Card 6: Research & Development -->
+                        <div
+                            class="bg-surface-container border border-white/10 rounded-xl p-6 w-[320px] transition-all duration-300 hover:scale-115 hover:border-secondary hover:shadow-[0_0_15px_rgba(163,205,219,0.3)] shrink-0 flex flex-col gap-4">
+                            <div
+                                class="flex items-center justify-center w-14 h-14 bg-black/50 border border-white/10 rounded-lg">
+                                <svg class="w-8 h-8 text-[#ADD8E6]" fill="none" stroke="currentColor" stroke-width="1.5"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                                </svg>
+                            </div>
+                            <h3 class="font-space text-xl font-bold text-white">Research & Development</h3>
+                            <p class="font-inter text-sm text-on-surface-variant leading-relaxed">The research team
+                                focuses on filing patents and writing research papers. Working with other subsystems,
+                                they innovate new components and optimize existing components.</p>
+                        </div>
+
+                        <!-- DUPLICATE CARDS FOR SEAMLESS LOOP -->
+                        <div
+                            class="bg-surface-container border border-white/10 rounded-xl p-6 w-[320px] transition-all duration-300 hover:scale-115 hover:border-secondary hover:shadow-[0_0_15px_rgba(163,205,219,0.3)] shrink-0 flex flex-col gap-4">
+                            <div
+                                class="flex items-center justify-center w-14 h-14 bg-black/50 border border-white/10 rounded-lg">
+                                <svg class="w-8 h-8 text-[#ADD8E6]" fill="none" stroke="currentColor" stroke-width="1.5"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M4 4h16v16H4V4zm0 8h16M12 4v16M4 4l16 16M20 4L4 20" />
+                                </svg>
+                            </div>
+                            <h3 class="font-space text-xl font-bold text-white">Structures</h3>
+                            <p class="font-inter text-sm text-on-surface-variant leading-relaxed">The structures
+                                subsystem designs, analyzes, and fabricates the tubular chassis for durability, while
+                                also crafting basalt fiber and Kevlar bodywork to enhance strength and aesthetics.</p>
+                        </div>
+                        <div
+                            class="bg-surface-container border border-white/10 rounded-xl p-6 w-[320px] transition-all duration-300 hover:scale-115 hover:border-secondary hover:shadow-[0_0_15px_rgba(163,205,219,0.3)] shrink-0 flex flex-col gap-4">
+                            <div
+                                class="flex items-center justify-center w-14 h-14 bg-black/50 border border-white/10 rounded-lg">
+                                <svg class="w-8 h-8 text-[#ADD8E6]" fill="none" stroke="currentColor" stroke-width="1.5"
+                                    viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="3" />
+                                    <path
+                                        d="M12 2v2m0 16v2M2 12h2m16 0h2M5.6 5.6l1.4 1.4m10 10l1.4 1.4M18.4 5.6l-1.4 1.4M5.6 18.4l1.4-1.4" />
+                                    <circle cx="12" cy="12" r="7" stroke-dasharray="3 3" />
+                                </svg>
+                            </div>
+                            <h3 class="font-space text-xl font-bold text-white">Transmission</h3>
+                            <p class="font-inter text-sm text-on-surface-variant leading-relaxed">Our 4WD transmission
+                                delivers 700 Nm of torque, towing a 2-ton tractor in 15 seconds and accelerating 150
+                                feet in 4.5 seconds. Optimized gear ratios and advanced materials ensure superior
+                                traction, stability, and efficiency.</p>
+                        </div>
+                        <div
+                            class="bg-surface-container border border-white/10 rounded-xl p-6 w-[320px] transition-all duration-300 hover:scale-115 hover:border-secondary hover:shadow-[0_0_15px_rgba(163,205,219,0.3)] shrink-0 flex flex-col gap-4">
+                            <div
+                                class="flex items-center justify-center w-14 h-14 bg-black/50 border border-white/10 rounded-lg">
+                                <svg class="w-8 h-8 text-[#ADD8E6]" fill="none" stroke="currentColor" stroke-width="1.5"
+                                    viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="6" />
+                                    <path d="M12 2v4m-6 6h4m8 0h2M12 18v4M9 9l6 6m0-6l-6 6" />
+                                </svg>
+                            </div>
+                            <h3 class="font-space text-xl font-bold text-white">Vehicle Dynamics</h3>
+                            <p class="font-inter text-sm text-on-surface-variant leading-relaxed">We design suspension,
+                                braking, and steering systems to optimize off-road handling, ensuring precise steering,
+                                driver comfort, and stability in demanding terrain. Our approach enhances responsiveness
+                                and durability for superior performance.</p>
+                        </div>
+                        <div
+                            class="bg-surface-container border border-white/10 rounded-xl p-6 w-[320px] transition-all duration-300 hover:scale-115 hover:border-secondary hover:shadow-[0_0_15px_rgba(163,205,219,0.3)] shrink-0 flex flex-col gap-4">
+                            <div
+                                class="flex items-center justify-center w-14 h-14 bg-black/50 border border-white/10 rounded-lg">
+                                <svg class="w-8 h-8 text-[#ADD8E6]" fill="none" stroke="currentColor" stroke-width="1.5"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                </svg>
+                            </div>
+                            <h3 class="font-space text-xl font-bold text-white">Electronics</h3>
+                            <p class="font-inter text-sm text-on-surface-variant leading-relaxed">This subsystem focuses
+                                on designing EV batteries, developing control systems, and refining powertrain
+                                components. It also involves building custom wiring harnesses that integrate various
+                                electronic modules, ensuring efficient energy management and vehicle performance.</p>
+                        </div>
+                        <div
+                            class="bg-surface-container border border-white/10 rounded-xl p-6 w-[320px] transition-all duration-300 hover:scale-115 hover:border-secondary hover:shadow-[0_0_15px_rgba(163,205,219,0.3)] shrink-0 flex flex-col gap-4">
+                            <div
+                                class="flex items-center justify-center w-14 h-14 bg-black/50 border border-white/10 rounded-lg">
+                                <svg class="w-8 h-8 text-[#ADD8E6]" fill="none" stroke="currentColor" stroke-width="1.5"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 002 2h2a2 2 0 002-2z" />
+                                </svg>
+                            </div>
+                            <h3 class="font-space text-xl font-bold text-white">Data Acquisition</h3>
+                            <p class="font-inter text-sm text-on-surface-variant leading-relaxed">This part involves
+                                collecting and analyzing real-time vehicle data to optimize efficiency, tuning, and
+                                overall performance. It supports decision-making by monitoring parameters like battery
+                                status, motor behavior, and environmental conditions, enabling precise diagnostics and
+                                system refinement.</p>
+                        </div>
+                        <div
+                            class="bg-surface-container border border-white/10 rounded-xl p-6 w-[320px] transition-all duration-300 hover:scale-115 hover:border-secondary hover:shadow-[0_0_15px_rgba(163,205,219,0.3)] shrink-0 flex flex-col gap-4">
+                            <div
+                                class="flex items-center justify-center w-14 h-14 bg-black/50 border border-white/10 rounded-lg">
+                                <svg class="w-8 h-8 text-[#ADD8E6]" fill="none" stroke="currentColor" stroke-width="1.5"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                                </svg>
+                            </div>
+                            <h3 class="font-space text-xl font-bold text-white">Research & Development</h3>
+                            <p class="font-inter text-sm text-on-surface-variant leading-relaxed">The research team
+                                focuses on filing patents and writing research papers. Working with other subsystems,
+                                they innovate new components and optimize existing components.</p>
+                        </div>
+                        <div
+                            class="bg-surface-container border border-white/10 rounded-xl p-6 w-[320px] transition-all duration-300 hover:scale-115 hover:border-secondary hover:shadow-[0_0_15px_rgba(163,205,219,0.3)] shrink-0 flex flex-col gap-4">
+                            <div
+                                class="flex items-center justify-center w-14 h-14 bg-black/50 border border-white/10 rounded-lg">
+                                <svg class="w-8 h-8 text-[#ADD8E6]" fill="none" stroke="currentColor" stroke-width="1.5"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M3 10h10M3 14h18M3 6h7m8 0h3M12 10h5m-2 4h4" />
+                                </svg>
+                            </div>
+                            <h3 class="font-space text-xl font-bold text-white">Aerodynamics</h3>
+                            <p class="font-inter text-sm text-on-surface-variant leading-relaxed">The aerodynamics
+                                subsystem focuses on analyzing fluid dynamics to achieve optimal drag reduction and
+                                downforce. By designing custom aerodynamic body panels and ducts, the subsystem enhances
+                                energy efficiency and stability during high-speed off-road maneuvers.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. Sponsors Section (A5) -->
+            <section id="sponsors" class="pt-24 border-t border-white/10 overflow-hidden text-center">
+                <div class="mb-12">
+                    <span class="font-space uppercase tracking-widest text-sky-400 font-bold block mb-2">Strategic
+                        Partners</span>
+                    <h2 class="font-space text-4xl font-bold text-white uppercase tracking-tight">Sponsors</h2>
+                </div>
+
+                <!-- Infinite Left-to-Right Carousel -->
+                <div class="relative w-full overflow-hidden py-6">
+                    <!-- Linear Gradient Mask -->
+                    <div
+                        class="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none">
+                    </div>
+                    <div
+                        class="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none">
+                    </div>
+
+                    <div class="scroll-track-sponsors gap-8">
+                        <!-- ORIGINAL 19 SPONSORS -->
+                        <!-- Sponsor 1 -->
+                        <a href="https://altair.com/" target="_blank"
+                            class="bg-surface-container border border-white/10 hover:border-sky-400 hover:scale-120 transition-all duration-300 rounded-xl p-4 w-[200px] shrink-0 flex flex-col justify-center items-center gap-3">
+                            <img src="altair.png" alt="Altair Logo"
+                                class="h-[60px] max-w-full object-contain filter brightness-100 hover:brightness-110 transition-all" />
+                            <span class="font-space text-xs text-white/70 font-semibold text-center">Altair</span>
+                        </a>
+                        <!-- Sponsor 2 -->
+                        <a href="https://www.altium.com/in" target="_blank"
+                            class="bg-surface-container border border-white/10 hover:border-sky-400 hover:scale-120 transition-all duration-300 rounded-xl p-4 w-[200px] shrink-0 flex flex-col justify-center items-center gap-3">
+                            <img src="altium.png" alt="Altium Logo"
+                                class="h-[60px] max-w-full object-contain filter brightness-100 hover:brightness-110 transition-all" />
+                            <span class="font-space text-xs text-white/70 font-semibold text-center">Altium</span>
+                        </a>
+                        <!-- Sponsor 3 -->
+                        <a href="https://www.ansys.com/en-in" target="_blank"
+                            class="bg-surface-container border border-white/10 hover:border-sky-400 hover:scale-120 transition-all duration-300 rounded-xl p-4 w-[200px] shrink-0 flex flex-col justify-center items-center gap-3">
+                            <img src="ansys-logo.jpg" alt="Ansys Logo"
+                                class="h-[60px] max-w-full object-contain filter brightness-100 hover:brightness-110 transition-all" />
+                            <span class="font-space text-xs text-white/70 font-semibold text-center">Ansys</span>
+                        </a>
+                        <!-- Sponsor 4 -->
+                        <a href="https://asaphardwaresolutions.com/?srsltid=AfmBOorpPHMX_hofWfhgc-6HfzJ6suDjUEtdNbpgMAWySb834GxSevmX"
+                            target="_blank"
+                            class="bg-surface-container border border-white/10 hover:border-sky-400 hover:scale-120 transition-all duration-300 rounded-xl p-4 w-[200px] shrink-0 flex flex-col justify-center items-center gap-3">
+                            <img src="Asap.jpg" alt="ASAP Hardware Solutions Logo"
+                                class="h-[60px] max-w-full object-contain filter brightness-100 hover:brightness-110 transition-all" />
+                            <span class="font-space text-xs text-white/70 font-semibold text-center">ASAP
+                                Hardware</span>
+                        </a>
+                        <!-- Sponsor 5 -->
+                        <a href="https://in.linkedin.com/company/beico-industries-pvt-ltd" target="_blank"
+                            class="bg-surface-container border border-white/10 hover:border-sky-400 hover:scale-120 transition-all duration-300 rounded-xl p-4 w-[200px] shrink-0 flex flex-col justify-center items-center gap-3">
+                            <img src="Beico.png" alt="Beico Industries Logo"
+                                class="h-[60px] max-w-full object-contain filter brightness-100 hover:brightness-110 transition-all" />
+                            <span class="font-space text-xs text-white/70 font-semibold text-center">Beico
+                                Industries</span>
+                        </a>
+                        <!-- Sponsor 6 -->
+                        <a href="https://bhor.com/" target="_blank"
+                            class="bg-surface-container border border-white/10 hover:border-sky-400 hover:scale-120 transition-all duration-300 rounded-xl p-4 w-[200px] shrink-0 flex flex-col justify-center items-center gap-3">
+                            <img src="BHOR.png" alt="BHOR Logo"
+                                class="h-[60px] max-w-full object-contain filter brightness-100 hover:brightness-110 transition-all" />
+                            <span class="font-space text-xs text-white/70 font-semibold text-center">BHOR</span>
+                        </a>
+                        <!-- Sponsor 7 -->
+                        <a href="https://in.linkedin.com/company/c2mengineering" target="_blank"
+                            class="bg-surface-container border border-white/10 hover:border-sky-400 hover:scale-120 transition-all duration-300 rounded-xl p-4 w-[200px] shrink-0 flex flex-col justify-center items-center gap-3">
+                            <img src="C2M.png" alt="C2M Engineering Logo"
+                                class="h-[60px] max-w-full object-contain filter brightness-100 hover:brightness-110 transition-all" />
+                            <span class="font-space text-xs text-white/70 font-semibold text-center">C2M
+                                Engineering</span>
+                        </a>
+                        <!-- Sponsor 8 -->
+                        <a href="https://www.cadandcart.com/" target="_blank"
+                            class="bg-surface-container border border-white/10 hover:border-sky-400 hover:scale-120 transition-all duration-300 rounded-xl p-4 w-[200px] shrink-0 flex flex-col justify-center items-center gap-3">
+                            <img src="Cad_n_cart.png" alt="Cad and Cart Logo"
+                                class="h-[60px] max-w-full object-contain filter brightness-100 hover:brightness-110 transition-all" />
+                            <span class="font-space text-xs text-white/70 font-semibold text-center">Cad and Cart</span>
+                        </a>
+                        <!-- Sponsor 9 -->
+                        <a href="https://www.eplan.com/de-en/" target="_blank"
+                            class="bg-surface-container border border-white/10 hover:border-sky-400 hover:scale-120 transition-all duration-300 rounded-xl p-4 w-[200px] shrink-0 flex flex-col justify-center items-center gap-3">
+                            <img src="eplan.png" alt="eplan Logo"
+                                class="h-[60px] max-w-full object-contain filter brightness-100 hover:brightness-110 transition-all" />
+                            <span class="font-space text-xs text-white/70 font-semibold text-center">eplan</span>
+                        </a>
+                        <!-- Sponsor 10 -->
+                        <a href="https://fracktal.in/" target="_blank"
+                            class="bg-surface-container border border-white/10 hover:border-sky-400 hover:scale-120 transition-all duration-300 rounded-xl p-4 w-[200px] shrink-0 flex flex-col justify-center items-center gap-3">
+                            <img src="Fracktal.png" alt="FRACKTAL WORKS Logo"
+                                class="h-[60px] max-w-full object-contain filter brightness-100 hover:brightness-110 transition-all" />
+                            <span class="font-space text-xs text-white/70 font-semibold text-center">FRACKTAL
+                                WORKS</span>
+                        </a>
+                        <!-- Sponsor 11 -->
+                        <a href="https://hexagon.com/" target="_blank"
+                            class="bg-surface-container border border-white/10 hover:border-sky-400 hover:scale-120 transition-all duration-300 rounded-xl p-4 w-[200px] shrink-0 flex flex-col justify-center items-center gap-3">
+                            <img src="Hexagon.png" alt="HEXAGON Logo"
+                                class="h-[60px] max-w-full object-contain filter brightness-100 hover:brightness-110 transition-all" />
+                            <span class="font-space text-xs text-white/70 font-semibold text-center">HEXAGON</span>
+                        </a>
+                        <!-- Sponsor 12 -->
+                        <a href="https://www.junofast.com/" target="_blank"
+                            class="bg-surface-container border border-white/10 hover:border-sky-400 hover:scale-120 transition-all duration-300 rounded-xl p-4 w-[200px] shrink-0 flex flex-col justify-center items-center gap-3">
+                            <img src="junofast.png" alt="JUNOFAST Logo"
+                                class="h-[60px] max-w-full object-contain filter brightness-100 hover:brightness-110 transition-all" />
+                            <span class="font-space text-xs text-white/70 font-semibold text-center">JUNOFAST</span>
+                        </a>
+                        <!-- Sponsor 13 -->
+                        <a href="https://in.mathworks.com/products/matlab.html" target="_blank"
+                            class="bg-surface-container border border-white/10 hover:border-sky-400 hover:scale-120 transition-all duration-300 rounded-xl p-4 w-[200px] shrink-0 flex flex-col justify-center items-center gap-3">
+                            <img src="Matlab.png" alt="MATLAB Logo"
+                                class="h-[60px] max-w-full object-contain filter brightness-100 hover:brightness-110 transition-all" />
+                            <span class="font-space text-xs text-white/70 font-semibold text-center">MATLAB</span>
+                        </a>
+                        <!-- Sponsor 14 -->
+                        <a href="https://metamorphtech.com/" target="_blank"
+                            class="bg-surface-container border border-white/10 hover:border-sky-400 hover:scale-120 transition-all duration-300 rounded-xl p-4 w-[200px] shrink-0 flex flex-col justify-center items-center gap-3">
+                            <img src="metamorphosys.png" alt="MetaMorphoSys Logo"
+                                class="h-[60px] max-w-full object-contain filter brightness-100 hover:brightness-110 transition-all" />
+                            <span
+                                class="font-space text-xs text-white/70 font-semibold text-center">MetaMorphoSys</span>
+                        </a>
+                        <!-- Sponsor 15 -->
+                        <a href="https://mosil.com/" target="_blank"
+                            class="bg-surface-container border border-white/10 hover:border-sky-400 hover:scale-120 transition-all duration-300 rounded-xl p-4 w-[200px] shrink-0 flex flex-col justify-center items-center gap-3">
+                            <img src="mosil.jpg" alt="Mosil Lubricants Logo"
+                                class="h-[60px] max-w-full object-contain filter brightness-100 hover:brightness-110 transition-all" />
+                            <span class="font-space text-xs text-white/70 font-semibold text-center">Mosil
+                                Lubricants</span>
+                        </a>
+                        <!-- Sponsor 16 -->
+                        <a href="https://www.orscheln.com/companies/" target="_blank"
+                            class="bg-surface-container border border-white/10 hover:border-sky-400 hover:scale-120 transition-all duration-300 rounded-xl p-4 w-[200px] shrink-0 flex flex-col justify-center items-center gap-3">
+                            <img src="Orschlen.png" alt="ORSCHELN Logo"
+                                class="h-[60px] max-w-full object-contain filter brightness-100 hover:brightness-110 transition-all" />
+                            <span class="font-space text-xs text-white/70 font-semibold text-center">ORSCHELN</span>
+                        </a>
+                        <!-- Sponsor 17 -->
+                        <a href="https://in.linkedin.com/company/pankaj-potentiometers---india" target="_blank"
+                            class="bg-surface-container border border-white/10 hover:border-sky-400 hover:scale-120 transition-all duration-300 rounded-xl p-4 w-[200px] shrink-0 flex flex-col justify-center items-center gap-3">
+                            <img src="pankaj.jpg" alt="Pankaj Potentiometers Logo"
+                                class="h-[60px] max-w-full object-contain filter brightness-100 hover:brightness-110 transition-all" />
+                            <span class="font-space text-xs text-white/70 font-semibold text-center">Pankaj
+                                Potentiometers</span>
+                        </a>
+                        <!-- Sponsor 18 -->
+                        <a href="https://www.scolarian.com/?srsltid=AfmBOoreU61ptOB3KSsn1ESYu3iHcM7wn4z4XNkB0cvSs6X5L69tK7P4"
+                            target="_blank"
+                            class="bg-surface-container border border-white/10 hover:border-sky-400 hover:scale-120 transition-all duration-300 rounded-xl p-4 w-[200px] shrink-0 flex flex-col justify-center items-center gap-3">
+                            <img src="Scolarian.png" alt="SCOLARIAN Logo"
+                                class="h-[60px] max-w-full object-contain filter brightness-100 hover:brightness-110 transition-all" />
+                            <span class="font-space text-xs text-white/70 font-semibold text-center">SCOLARIAN</span>
+                        </a>
+                        <!-- Sponsor 19 -->
+                        <a href="https://virya-ev.com/" target="_blank"
+                            class="bg-surface-container border border-white/10 hover:border-sky-400 hover:scale-120 transition-all duration-300 rounded-xl p-4 w-[200px] shrink-0 flex flex-col justify-center items-center gap-3">
+                            <img src="Virya.jpeg" alt="VIRYA Electric Powertrains Logo"
+                                class="h-[60px] max-w-full object-contain filter brightness-100 hover:brightness-110 transition-all" />
+                            <span class="font-space text-xs text-white/70 font-semibold text-center">VIRYA
+                                Electric</span>
+                        </a>
+
+                        <!-- DUPLICATE 19 SPONSORS FOR SEAMLESS LOOP -->
+                        <a href="https://altair.com/" target="_blank"
+                            class="bg-surface-container border border-white/10 hover:border-sky-400 hover:scale-120 transition-all duration-300 rounded-xl p-4 w-[200px] shrink-0 flex flex-col justify-center items-center gap-3">
+                            <img src="altair.png" alt="Altair Logo"
+                                class="h-[60px] max-w-full object-contain filter brightness-100 hover:brightness-110 transition-all" />
+                            <span class="font-space text-xs text-white/70 font-semibold text-center">Altair</span>
+                        </a>
+                        <a href="https://www.altium.com/in" target="_blank"
+                            class="bg-surface-container border border-white/10 hover:border-sky-400 hover:scale-120 transition-all duration-300 rounded-xl p-4 w-[200px] shrink-0 flex flex-col justify-center items-center gap-3">
+                            <img src="altium.png" alt="Altium Logo"
+                                class="h-[60px] max-w-full object-contain filter brightness-100 hover:brightness-110 transition-all" />
+                            <span class="font-space text-xs text-white/70 font-semibold text-center">Altium</span>
+                        </a>
+                        <a href="https://www.ansys.com/en-in" target="_blank"
+                            class="bg-surface-container border border-white/10 hover:border-sky-400 hover:scale-120 transition-all duration-300 rounded-xl p-4 w-[200px] shrink-0 flex flex-col justify-center items-center gap-3">
+                            <img src="ansys-logo.jpg" alt="Ansys Logo"
+                                class="h-[60px] max-w-full object-contain filter brightness-100 hover:brightness-110 transition-all" />
+                            <span class="font-space text-xs text-white/70 font-semibold text-center">Ansys</span>
+                        </a>
+                        <a href="https://asaphardwaresolutions.com/?srsltid=AfmBOorpPHMX_hofWfhgc-6HfzJ6suDjUEtdNbpgMAWySb834GxSevmX"
+                            target="_blank"
+                            class="bg-surface-container border border-white/10 hover:border-sky-400 hover:scale-120 transition-all duration-300 rounded-xl p-4 w-[200px] shrink-0 flex flex-col justify-center items-center gap-3">
+                            <img src="Asap.jpg" alt="ASAP Hardware Solutions Logo"
+                                class="h-[60px] max-w-full object-contain filter brightness-100 hover:brightness-110 transition-all" />
+                            <span class="font-space text-xs text-white/70 font-semibold text-center">ASAP
+                                Hardware</span>
+                        </a>
+                        <a href="https://in.linkedin.com/company/beico-industries-pvt-ltd" target="_blank"
+                            class="bg-surface-container border border-white/10 hover:border-sky-400 hover:scale-120 transition-all duration-300 rounded-xl p-4 w-[200px] shrink-0 flex flex-col justify-center items-center gap-3">
+                            <img src="Beico.png" alt="Beico Industries Logo"
+                                class="h-[60px] max-w-full object-contain filter brightness-100 hover:brightness-110 transition-all" />
+                            <span class="font-space text-xs text-white/70 font-semibold text-center">Beico
+                                Industries</span>
+                        </a>
+                        <a href="https://bhor.com/" target="_blank"
+                            class="bg-surface-container border border-white/10 hover:border-sky-400 hover:scale-120 transition-all duration-300 rounded-xl p-4 w-[200px] shrink-0 flex flex-col justify-center items-center gap-3">
+                            <img src="BHOR.png" alt="BHOR Logo"
+                                class="h-[60px] max-w-full object-contain filter brightness-100 hover:brightness-110 transition-all" />
+                            <span class="font-space text-xs text-white/70 font-semibold text-center">BHOR</span>
+                        </a>
+                        <a href="https://in.linkedin.com/company/c2mengineering" target="_blank"
+                            class="bg-surface-container border border-white/10 hover:border-sky-400 hover:scale-120 transition-all duration-300 rounded-xl p-4 w-[200px] shrink-0 flex flex-col justify-center items-center gap-3">
+                            <img src="C2M.png" alt="C2M Engineering Logo"
+                                class="h-[60px] max-w-full object-contain filter brightness-100 hover:brightness-110 transition-all" />
+                            <span class="font-space text-xs text-white/70 font-semibold text-center">C2M
+                                Engineering</span>
+                        </a>
+                        <a href="https://www.cadandcart.com/" target="_blank"
+                            class="bg-surface-container border border-white/10 hover:border-sky-400 hover:scale-120 transition-all duration-300 rounded-xl p-4 w-[200px] shrink-0 flex flex-col justify-center items-center gap-3">
+                            <img src="Cad_n_cart.png" alt="Cad and Cart Logo"
+                                class="h-[60px] max-w-full object-contain filter brightness-100 hover:brightness-110 transition-all" />
+                            <span class="font-space text-xs text-white/70 font-semibold text-center">Cad and Cart</span>
+                        </a>
+                        <a href="https://www.eplan.com/de-en/" target="_blank"
+                            class="bg-surface-container border border-white/10 hover:border-sky-400 hover:scale-120 transition-all duration-300 rounded-xl p-4 w-[200px] shrink-0 flex flex-col justify-center items-center gap-3">
+                            <img src="eplan.png" alt="eplan Logo"
+                                class="h-[60px] max-w-full object-contain filter brightness-100 hover:brightness-110 transition-all" />
+                            <span class="font-space text-xs text-white/70 font-semibold text-center">eplan</span>
+                        </a>
+                        <a href="https://fracktal.in/" target="_blank"
+                            class="bg-surface-container border border-white/10 hover:border-sky-400 hover:scale-120 transition-all duration-300 rounded-xl p-4 w-[200px] shrink-0 flex flex-col justify-center items-center gap-3">
+                            <img src="Fracktal.png" alt="FRACKTAL WORKS Logo"
+                                class="h-[60px] max-w-full object-contain filter brightness-100 hover:brightness-110 transition-all" />
+                            <span class="font-space text-xs text-white/70 font-semibold text-center">FRACKTAL
+                                WORKS</span>
+                        </a>
+                        <a href="https://hexagon.com/" target="_blank"
+                            class="bg-surface-container border border-white/10 hover:border-sky-400 hover:scale-120 transition-all duration-300 rounded-xl p-4 w-[200px] shrink-0 flex flex-col justify-center items-center gap-3">
+                            <img src="Hexagon.png" alt="HEXAGON Logo"
+                                class="h-[60px] max-w-full object-contain filter brightness-100 hover:brightness-110 transition-all" />
+                            <span class="font-space text-xs text-white/70 font-semibold text-center">HEXAGON</span>
+                        </a>
+                        <a href="https://www.junofast.com/" target="_blank"
+                            class="bg-surface-container border border-white/10 hover:border-sky-400 hover:scale-120 transition-all duration-300 rounded-xl p-4 w-[200px] shrink-0 flex flex-col justify-center items-center gap-3">
+                            <img src="junofast.png" alt="JUNOFAST Logo"
+                                class="h-[60px] max-w-full object-contain filter brightness-100 hover:brightness-110 transition-all" />
+                            <span class="font-space text-xs text-white/70 font-semibold text-center">JUNOFAST</span>
+                        </a>
+                        <a href="https://in.mathworks.com/products/matlab.html" target="_blank"
+                            class="bg-surface-container border border-white/10 hover:border-sky-400 hover:scale-120 transition-all duration-300 rounded-xl p-4 w-[200px] shrink-0 flex flex-col justify-center items-center gap-3">
+                            <img src="Matlab.png" alt="MATLAB Logo"
+                                class="h-[60px] max-w-full object-contain filter brightness-100 hover:brightness-110 transition-all" />
+                            <span class="font-space text-xs text-white/70 font-semibold text-center">MATLAB</span>
+                        </a>
+                        <a href="https://metamorphtech.com/" target="_blank"
+                            class="bg-surface-container border border-white/10 hover:border-sky-400 hover:scale-120 transition-all duration-300 rounded-xl p-4 w-[200px] shrink-0 flex flex-col justify-center items-center gap-3">
+                            <img src="metamorphosys.png" alt="MetaMorphoSys Logo"
+                                class="h-[60px] max-w-full object-contain filter brightness-100 hover:brightness-110 transition-all" />
+                            <span
+                                class="font-space text-xs text-white/70 font-semibold text-center">MetaMorphoSys</span>
+                        </a>
+                        <a href="https://mosil.com/" target="_blank"
+                            class="bg-surface-container border border-white/10 hover:border-sky-400 hover:scale-120 transition-all duration-300 rounded-xl p-4 w-[200px] shrink-0 flex flex-col justify-center items-center gap-3">
+                            <img src="mosil.jpg" alt="Mosil Lubricants Logo"
+                                class="h-[60px] max-w-full object-contain filter brightness-100 hover:brightness-110 transition-all" />
+                            <span class="font-space text-xs text-white/70 font-semibold text-center">Mosil
+                                Lubricants</span>
+                        </a>
+                        <a href="https://www.orscheln.com/companies/" target="_blank"
+                            class="bg-surface-container border border-white/10 hover:border-sky-400 hover:scale-120 transition-all duration-300 rounded-xl p-4 w-[200px] shrink-0 flex flex-col justify-center items-center gap-3">
+                            <img src="Orschlen.png" alt="ORSCHELN Logo"
+                                class="h-[60px] max-w-full object-contain filter brightness-100 hover:brightness-110 transition-all" />
+                            <span class="font-space text-xs text-white/70 font-semibold text-center">ORSCHELN</span>
+                        </a>
+                        <a href="https://in.linkedin.com/company/pankaj-potentiometers---india" target="_blank"
+                            class="bg-surface-container border border-white/10 hover:border-sky-400 hover:scale-120 transition-all duration-300 rounded-xl p-4 w-[200px] shrink-0 flex flex-col justify-center items-center gap-3">
+                            <img src="pankaj.jpg" alt="Pankaj Potentiometers Logo"
+                                class="h-[60px] max-w-full object-contain filter brightness-100 hover:brightness-110 transition-all" />
+                            <span class="font-space text-xs text-white/70 font-semibold text-center">Pankaj
+                                Potentiometers</span>
+                        </a>
+                        <a href="https://www.scolarian.com/?srsltid=AfmBOoreU61ptOB3KSsn1ESYu3iHcM7wn4z4XNkB0cvSs6X5L69tK7P4"
+                            target="_blank"
+                            class="bg-surface-container border border-white/10 hover:border-sky-400 hover:scale-120 transition-all duration-300 rounded-xl p-4 w-[200px] shrink-0 flex flex-col justify-center items-center gap-3">
+                            <img src="Scolarian.png" alt="SCOLARIAN Logo"
+                                class="h-[60px] max-w-full object-contain filter brightness-100 hover:brightness-110 transition-all" />
+                            <span class="font-space text-xs text-white/70 font-semibold text-center">SCOLARIAN</span>
+                        </a>
+                        <a href="https://virya-ev.com/" target="_blank"
+                            class="bg-surface-container border border-white/10 hover:border-sky-400 hover:scale-120 transition-all duration-300 rounded-xl p-4 w-[200px] shrink-0 flex flex-col justify-center items-center gap-3">
+                            <img src="Virya.jpeg" alt="VIRYA Electric Powertrains Logo"
+                                class="h-[60px] max-w-full object-contain filter brightness-100 hover:brightness-110 transition-all" />
+                            <span class="font-space text-xs text-white/70 font-semibold text-center">VIRYA
+                                Electric</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. Social Follow Section (A6) -->
+            <section id="social" class="pt-24 border-t border-white/10 text-center">
+                <h2 class="font-space text-3xl font-bold text-white uppercase tracking-wider mb-8">Follow Our Journey
+                </h2>
+                <div class="flex justify-center items-center gap-8">
+                    <!-- Instagram -->
+                    <a href="https://www.instagram.com/teammanipalracing/" target="_blank"
+                        class="w-16 h-16 rounded-full border border-white/10 hover:border-sky-400 hover:text-sky-400 text-white flex items-center justify-center transition-all bg-surface-container">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                        </svg>
+                    </a>
+                    <!-- Facebook -->
+                    <a href="https://www.facebook.com/Team.Manipal.Racing/" target="_blank"
+                        class="w-16 h-16 rounded-full border border-white/10 hover:border-sky-400 hover:text-sky-400 text-white flex items-center justify-center transition-all bg-surface-container">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
+                        </svg>
+                    </a>
+                    <!-- LinkedIn -->
+                    <a href="https://in.linkedin.com/company/teammanipalracing" target="_blank"
+                        class="w-16 h-16 rounded-full border border-white/10 hover:border-sky-400 hover:text-sky-400 text-white flex items-center justify-center transition-all bg-surface-container">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" />
+                        </svg>
+                    </a>
+                    <!-- YouTube -->
+                    <a href="https://www.youtube.com/user/TMRBAJA" target="_blank"
+                        class="w-16 h-16 rounded-full border border-white/10 hover:border-sky-400 hover:text-sky-400 text-white flex items-center justify-center transition-all bg-surface-container">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M23.498 6.163c-.272-1.022-1.074-1.826-2.099-2.098C19.542 3.5 12 3.5 12 3.5s-7.542 0-9.4.565c-1.025.272-1.827 1.076-2.1 2.098C0 8.026 0 12 0 12s0 3.974.5 5.837c.273 1.022 1.075 1.826 2.1 2.098 1.858.565 9.4.565 9.4.565s7.542 0 9.4-.565c1.025-.272 1.827-1.076 2.1-2.098.5-1.863.5-5.837.5-5.837s0-3.974-.5-5.837zm-14.372 9.085V8.752l6.4 3.248-6.4 3.248z" />
+                        </svg>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer
+        class="bg-black border-t border-white/10 w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-4 mt-auto">
+        <div class="text-lg font-bold text-white font-space uppercase tracking-widest flex items-center gap-2">
+            <img src="logo.png" alt="Logo" class="h-6 object-contain inline-block" /> Team Manipal Racing
+        </div>
+        <div class="font-space text-xs tracking-tight text-white/40">
+            © 2026 TEAM MANIPAL RACING. ALL RIGHTS RESERVED.
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.getElementById('menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (menuToggle && mobileMenu) {
+                menuToggle.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                    mobileMenu.classList.toggle('flex');
+                });
+            }
+
+            // Close menu on link click
+            const mobileLinks = mobileMenu?.querySelectorAll('.mobile-nav-link');
+            mobileLinks?.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('flex');
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
