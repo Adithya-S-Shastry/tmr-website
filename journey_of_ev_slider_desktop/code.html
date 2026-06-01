@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Journey of EV | Team Manipal Racing</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700;900&amp;family=Inter:wght@400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#121414",
+                        "on-secondary": "#023641",
+                        "secondary": "#a3cddb",
+                        "background": "#000000",
+                        "on-background": "#e3e2e2",
+                        "surface-container": "#111111",
+                        "outline": "#8e9192"
+                    },
+                    "fontFamily": {
+                        "space": ["Space Grotesk", "sans-serif"],
+                        "inter": ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom glowing text utility */
+        .glow-text-secondary {
+            text-shadow: 0 0 12px rgba(163, 205, 219, 0.6);
+        }
+
+        /* Slide transitions */
+        .slide-transition {
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+    </style>
+</head>
+
+<body class="bg-black text-on-background antialiased min-h-screen flex flex-col font-inter">
+
+    <!-- Persistent Navigation Bar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-md border-b border-white/10 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="../baja_racing_engineering/code.html" class="h-10 flex items-center logo-btn">
+                <img src="logo.png" alt="Team Manipal Racing Logo" class="h-full object-contain" />
+            </a>
+
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="../baja_racing_engineering/code.html"
+                    class="font-space uppercase tracking-widest text-sm font-semibold text-white/60 hover:text-sky-400 transition-colors">Home</a>
+                <a href="../baja_racing_engineering/code.html#about"
+                    class="font-space uppercase tracking-widest text-sm font-semibold text-white/60 hover:text-sky-400 transition-colors">About</a>
+                <a href="../velocity_performance/code.html"
+                    class="font-space uppercase tracking-widest text-sm font-semibold text-white/60 hover:text-sky-400 transition-colors">Subsystems</a>
+                <a href="../achievements_electric_baja_racing/code.html"
+                    class="font-space uppercase tracking-widest text-sm font-semibold text-white/60 hover:text-sky-400 transition-colors">Achievements</a>
+                <a href="../baja_racing_engineering/code.html#sponsors"
+                    class="font-space uppercase tracking-widest text-sm font-semibold text-white/60 hover:text-sky-400 transition-colors">Sponsors</a>
+                <a href="../journey_of_ev_slider_desktop/code.html"
+                    class="font-space uppercase tracking-widest text-sm font-semibold text-white/60 hover:text-sky-400 transition-colors">Journey</a>
+            </div>
+
+            <div class="hidden md:block">
+                <a href="https://www.instagram.com/teammanipalracing/" target="_blank"
+                    class="px-6 py-2 border border-sky-400 text-sky-400 hover:bg-sky-400/10 font-space font-bold rounded uppercase tracking-widest text-xs transition-all">Join
+                    Team</a>
+            </div>
+
+            <button class="md:hidden text-white hover:text-sky-400 transition-colors" id="menu-toggle">
+                <span class="material-symbols-outlined text-3xl">menu</span>
+            </button>
+        </div>
+
+        <div class="hidden flex-col space-y-4 pt-4 pb-2 border-t border-white/10 mt-3" id="mobile-menu">
+            <a href="../baja_racing_engineering/code.html"
+                class="block font-space uppercase tracking-widest text-sm font-semibold text-white/60 hover:text-sky-400 transition-colors">Home</a>
+            <a href="../baja_racing_engineering/code.html#about"
+                class="block font-space uppercase tracking-widest text-sm font-semibold text-white/60 hover:text-sky-400 transition-colors mobile-nav-link">About</a>
+            <a href="../velocity_performance/code.html"
+                class="block font-space uppercase tracking-widest text-sm font-semibold text-white/60 hover:text-sky-400 transition-colors mobile-nav-link">Subsystems</a>
+            <a href="../achievements_electric_baja_racing/code.html"
+                class="block font-space uppercase tracking-widest text-sm font-semibold text-white/60 hover:text-sky-400 transition-colors">Achievements</a>
+            <a href="../baja_racing_engineering/code.html#sponsors"
+                class="block font-space uppercase tracking-widest text-sm font-semibold text-white/60 hover:text-sky-400 transition-colors mobile-nav-link">Sponsors</a>
+            <a href="../journey_of_ev_slider_desktop/code.html"
+                class="block font-space uppercase tracking-widest text-sm font-semibold text-white/60 hover:text-sky-400 transition-colors">Journey</a>
+            <a href="https://www.instagram.com/teammanipalracing/" target="_blank"
+                class="block text-center py-2 bg-sky-400/10 border border-sky-400 text-sky-400 font-space font-bold rounded uppercase tracking-widest text-xs">Join
+                Team</a>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="flex-grow pt-24 pb-16 flex flex-col justify-center items-center relative overflow-hidden px-6">
+        <!-- Ambient Background Telemetry Glow -->
+        <div class="absolute inset-0 pointer-events-none flex justify-center items-center z-0">
+            <div class="w-[800px] h-[800px] bg-sky-400/5 rounded-full blur-[120px]"></div>
+        </div>
+
+        <!-- Active Iteration Container -->
+        <div
+            class="relative w-full max-w-7xl mx-auto z-10 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12">
+            <!-- Left Nav Control (Desktop) -->
+            <button id="prev-btn"
+                class="hidden md:flex items-center justify-center w-14 h-14 border border-white/10 hover:border-sky-400 text-white/50 hover:text-sky-400 rounded-full bg-surface-container/50 backdrop-blur-md transition-all shrink-0 group">
+                <span
+                    class="material-symbols-outlined group-hover:-translate-x-1 transition-transform text-2xl">arrow_left_alt</span>
+            </button>
+
+            <!-- Slider Content -->
+            <div class="w-full flex flex-col items-center">
+                <!-- EV Prototype Display Area -->
+                <div
+                    class="w-full max-w-4xl aspect-[21/9] relative mb-12 group overflow-hidden rounded-xl border border-white/10">
+                    <img id="ev-image" alt="EV prototype in monochrome studio environment"
+                        class="w-full h-full object-cover filter grayscale hover:grayscale-0 opacity-85 hover:opacity-100 transition-all duration-700 ease-in-out"
+                        src="media__1780078035976.png" />
+                    <!-- Design details -->
+                    <div class="absolute inset-0 border border-sky-400/20 pointer-events-none rounded-xl"></div>
+                    <div
+                        class="absolute bottom-0 left-0 w-1/3 h-px bg-gradient-to-r from-transparent via-sky-400 to-transparent pointer-events-none">
+                    </div>
+                    <div class="absolute top-1/2 left-0 w-8 h-px bg-sky-400/50 pointer-events-none"></div>
+                    <div class="absolute top-1/2 right-0 w-8 h-px bg-sky-400/50 pointer-events-none"></div>
+                </div>
+
+                <!-- Bento-style Technical Specs Grid and Info Panel -->
+                <div class="w-full max-w-4xl bg-[#111111]/80 backdrop-blur-xl border border-white/10 rounded-xl p-8 relative overflow-hidden slide-transition"
+                    id="content-card">
+                    <div
+                        class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-sky-400/50 to-transparent">
+                    </div>
+                    <div class="flex flex-col lg:flex-row gap-8 items-start">
+                        <!-- Left: Title, Subtitle, Description -->
+                        <div class="flex-1 lg:border-r lg:border-white/10 lg:pr-8">
+                            <div class="flex items-center gap-3 mb-4">
+                                <span
+                                    class="w-3.5 h-3.5 rounded-full bg-sky-400 shadow-[0_0_12px_rgba(163,205,219,0.8)] animate-pulse"></span>
+                                <h2 id="ev-title"
+                                    class="font-space text-4xl font-black text-white uppercase tracking-tight">EV1</h2>
+                            </div>
+                            <h3 id="ev-subtitle"
+                                class="font-space text-xl font-bold text-sky-400 mb-4 uppercase tracking-wider">The
+                                Genesis Prototype</h3>
+                            <p id="ev-description"
+                                class="font-inter text-sm md:text-md text-white/70 leading-relaxed text-justify">
+                                The foundational prototype designed to prove the viability of all-electric drive in
+                                extreme off-road conditions. Set the baseline for custom battery packaging and low-speed
+                                high-torque operation.
+                            </p>
+                        </div>
+
+                        <!-- Right: Technical Specification Bento Grid -->
+                        <div class="w-full lg:w-[350px] grid grid-cols-1 sm:grid-cols-2 gap-4 shrink-0">
+                            <!-- Battery Capacity -->
+                            <div class="bg-black/40 border border-white/5 p-4 rounded-lg">
+                                <span
+                                    class="font-space text-xs font-bold text-sky-400 block mb-2 opacity-80 tracking-widest">Battery</span>
+                                <span id="ev-battery" class="font-space text-2xl font-black text-white block">48V
+                                    Air-Cooled Pack</span>
+                                <span class="font-inter text-xs text-white/50 block mt-1">Voltage Rating</span>
+                            </div>
+                            <!-- Drivetrain Configuration -->
+                            <div class="bg-black/40 border border-white/5 p-4 rounded-lg">
+                                <span
+                                    class="font-space text-xs font-bold text-sky-400 block mb-2 opacity-80 tracking-widest">Drivetrain</span>
+                                <span id="ev-drivetrain" class="font-space text-2xl font-black text-white block">RWD
+                                    Single Motor</span>
+                                <span class="font-inter text-xs text-white/50 block mt-1">Setup Type</span>
+                            </div>
+                            <!-- Key Technical Improvement (Full Width) -->
+                            <div class="bg-black/40 border border-white/5 p-4 rounded-lg sm:col-span-2">
+                                <span
+                                    class="font-space text-xs font-bold text-sky-400 block mb-2 opacity-80 tracking-widest">Key
+                                    Improvement</span>
+                                <div class="flex items-center justify-between">
+                                    <span id="ev-improvement-name"
+                                        class="font-inter text-sm text-white font-medium">Battery Packaging
+                                        Efficiency</span>
+                                    <div class="flex items-center gap-1.5 text-sky-400">
+                                        <span id="ev-improvement-value"
+                                            class="font-space text-xl font-bold">Baseline</span>
+                                        <span class="material-symbols-outlined text-sm">trending_up</span>
+                                    </div>
+                                </div>
+                                <div class="w-full h-1.5 bg-white/10 mt-3 rounded-full overflow-hidden">
+                                    <div id="ev-improvement-bar" class="h-full bg-sky-400 rounded-full"
+                                        style="width: 20%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Nav Control (Desktop) -->
+            <button id="next-btn"
+                class="hidden md:flex items-center justify-center w-14 h-14 border border-white/10 hover:border-sky-400 text-white/50 hover:text-sky-400 rounded-full bg-surface-container/50 backdrop-blur-md transition-all shrink-0 group">
+                <span
+                    class="material-symbols-outlined group-hover:translate-x-1 transition-transform text-2xl">arrow_right_alt</span>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Arrows -->
+        <div class="flex md:hidden justify-center gap-6 mt-8 z-10">
+            <button id="prev-btn-mobile"
+                class="flex items-center justify-center w-12 h-12 border border-white/10 text-white/50 rounded-full bg-surface-container">
+                <span class="material-symbols-outlined">arrow_left_alt</span>
+            </button>
+            <button id="next-btn-mobile"
+                class="flex items-center justify-center w-12 h-12 border border-white/10 text-white/50 rounded-full bg-surface-container">
+                <span class="material-symbols-outlined">arrow_right_alt</span>
+            </button>
+        </div>
+
+        <!-- Interactive Horizontal Timeline Indicator (Phase Nodes) -->
+        <div class="w-full max-w-4xl mx-auto mt-16 z-20">
+            <div class="flex items-center justify-between relative px-4">
+                <!-- Continuous track line -->
+                <div class="absolute left-0 top-1/2 w-full h-px bg-white/10 -z-10"></div>
+
+                <!-- Nodes dynamically updated via JS -->
+                <button class="timeline-node flex flex-col items-center gap-3 cursor-pointer group outline-none"
+                    data-index="0">
+                    <div
+                        class="node-circle w-4.5 h-4.5 rounded-full border-2 border-sky-400 bg-black relative flex items-center justify-center transition-all">
+                        <div
+                            class="node-inner w-1.5 h-1.5 bg-sky-400 rounded-full shadow-[0_0_8px_rgba(163,205,219,0.8)]">
+                        </div>
+                    </div>
+                    <span
+                        class="node-label font-space text-xs font-bold text-sky-400 tracking-widest transition-colors uppercase">EV1</span>
+                </button>
+
+                <button class="timeline-node flex flex-col items-center gap-3 cursor-pointer group outline-none"
+                    data-index="1">
+                    <div
+                        class="node-circle w-4.5 h-4.5 rounded-full border border-white/30 bg-black relative flex items-center justify-center transition-all">
+                        <div class="node-inner w-1.5 h-1.5 bg-transparent rounded-full"></div>
+                    </div>
+                    <span
+                        class="node-label font-space text-xs font-bold text-white/50 tracking-widest transition-colors uppercase">EV2</span>
+                </button>
+
+                <button class="timeline-node flex flex-col items-center gap-3 cursor-pointer group outline-none"
+                    data-index="2">
+                    <div
+                        class="node-circle w-4.5 h-4.5 rounded-full border border-white/30 bg-black relative flex items-center justify-center transition-all">
+                        <div class="node-inner w-1.5 h-1.5 bg-transparent rounded-full"></div>
+                    </div>
+                    <span
+                        class="node-label font-space text-xs font-bold text-white/50 tracking-widest transition-colors uppercase">EV3</span>
+                </button>
+
+                <button class="timeline-node flex flex-col items-center gap-3 cursor-pointer group outline-none"
+                    data-index="3">
+                    <div
+                        class="node-circle w-4.5 h-4.5 rounded-full border border-white/30 bg-black relative flex items-center justify-center transition-all">
+                        <div class="node-inner w-1.5 h-1.5 bg-transparent rounded-full"></div>
+                    </div>
+                    <span
+                        class="node-label font-space text-xs font-bold text-white/50 tracking-widest transition-colors uppercase">EV4</span>
+                </button>
+
+                <button class="timeline-node flex flex-col items-center gap-3 cursor-pointer group outline-none"
+                    data-index="4">
+                    <div
+                        class="node-circle w-4.5 h-4.5 rounded-full border border-white/30 bg-black relative flex items-center justify-center transition-all">
+                        <div class="node-inner w-1.5 h-1.5 bg-transparent rounded-full"></div>
+                    </div>
+                    <span
+                        class="node-label font-space text-xs font-bold text-white/50 tracking-widest transition-colors uppercase">EV5</span>
+                </button>
+
+                <button class="timeline-node flex flex-col items-center gap-3 cursor-pointer group outline-none"
+                    data-index="5">
+                    <div
+                        class="node-circle w-4.5 h-4.5 rounded-full border border-white/30 bg-black relative flex items-center justify-center transition-all">
+                        <div class="node-inner w-1.5 h-1.5 bg-transparent rounded-full"></div>
+                    </div>
+                    <span
+                        class="node-label font-space text-xs font-bold text-white/50 tracking-widest transition-colors uppercase">EV6</span>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer
+        class="bg-black border-t border-white/10 w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-4 mt-auto">
+        <div class="text-lg font-bold text-white font-space uppercase tracking-widest flex items-center gap-2">
+            <img src="logo.png" alt="Logo" class="h-6 object-contain inline-block" /> Team Manipal Racing
+        </div>
+
+        <div class="font-space text-xs tracking-tight text-white/40">
+            © 2026 TEAM MANIPAL RACING. ALL RIGHTS RESERVED.
+        </div>
+    </footer>
+
+    <script>
+        // 6 EV Iterations Data
+        const evModels = [
+            {
+                title: "EV1",
+                subtitle: "our first-ever EV",
+                description: "Debuted virtually during the pandemic.<br><br>• Cost Event - AIR 5<br>• Hill Climb Event - AIR 4<br>• Sales Event - AIR 9<br>• Overall - AIR 15",
+                image: "EV-1.png",
+                battery: "48V Air-Cooled Pack",
+                drivetrain: "RWD Single Motor",
+                metricName: "Battery Packaging Efficiency",
+                metricValue: "Baseline",
+                metricPercent: "20%"
+            },
+            {
+                title: "EV2",
+                subtitle: "AIR 5 - Overall",
+                description: "The transition from conceptual prototype to a track-ready chassis. The EV2 introduced significant weight reduction strategies and an overhauled thermal management system.<br><br>• AIR 2 - Prelims Quiz<br>• AIR 3 - Endurance Race<br>• AIR 2 - Innovation Event<br>• AIR 2 - Validation Event<br>• AIR 5 - Acceleration Event<br>• AIR 7 - CAE Event",
+                image: "EV-2.png",
+                battery: "600V Liquid Cooled Pack",
+                drivetrain: "AWD Dual Motor Setup",
+                metricName: "Chassis Rigidity",
+                metricValue: "+40%",
+                metricPercent: "40%"
+            },
+            {
+                title: "EV3",
+                subtitle: "Overall - AIR 7",
+                description: "Focused on maximizing efficiency. Introduced regenerative braking systems and custom planetary gearboxes, dramatically increasing low-end torque while lowering current draw.<br><br>• Design Event - AIR 4<br>• CAE Event - AIR 5<br>• Cost Event - AIR 8<br>• Suspension and Traction Event - AIR 4<br>• Maneuverability Event - AIR 8<br>• Endurance Race - AIR 8",
+                image: "EV-3.png",
+                battery: "72V High-Density Pack",
+                drivetrain: "RWD Dual In-Wheel Motors",
+                metricName: "Transmission Torque",
+                metricValue: "+25%",
+                metricPercent: "55%"
+            },
+            {
+                title: "EV4",
+                subtitle: "AIR 7 - Overall",
+                description: "Embedded with a high-bandwidth CAN bus network and real-time telemetry. Allowed pit crews to monitor thermals, cell voltages, and structural load points dynamically on the track.<br><br>• AIR 1 - Sled Pull Event<br>• AIR 2 - Overall Dynamics<br>• AIR 4 - Suspension and Traction Event<br>• AIR 5 - Maneuverability Event<br>• AIR 6 - CAE Event<br>• AIR 8 - Endurance Race",
+                image: "EV-4.png",
+                battery: "80V Intelligent Pack",
+                drivetrain: "AWD 4-Motor Vectoring",
+                metricName: "Telemetry Bandwidth",
+                metricValue: "+200%",
+                metricPercent: "75%"
+            },
+            {
+                title: "EV5",
+                subtitle: "Engineering Design Event - AIR 1",
+                description: "Major design overhaul utilizing topological optimization and generative design for the spaceframe. Reduced unsprung mass while drastically increasing torsional stiffness to withstand intense off-road impacts.<br><br>• Sled Pull - AIR 1<br>• Maneuverability - AIR 2<br>• Overall Dynamics - AIR 3<br>• CAE Event - AIR 4<br>• Acceleration - AIR 4<br>• Overall - AIR 9",
+                image: "EV-5.png",
+                battery: "96V Segmented Pack",
+                drivetrain: "AWD Active Torque Control",
+                metricName: "Frame Weight Reduction",
+                metricValue: "-15%",
+                metricPercent: "90%"
+            },
+            {
+                title: "EV6",
+                subtitle: "Engineering Design Event - AIR 3",
+                description: "Features a fully integrated 4G/GPS telemetry dashboard and synchronized CAN bus infrastructure. Implements real-time data logging for dynamic state estimation, maximizing track performance and diagnostic precision.<br><br>• Sled Pull - AIR 7<br>• Suspension and traction - AIR 13<br>• Innovation - AIR 5<br>• CAE Event - AIR 4<br>• Acceleration - AIR 4",
+                image: "EV-6.png",
+                battery: "120V Solid-State Pack",
+                drivetrain: "AWD Active Torque Vectoring",
+                metricName: "Energy Density",
+                metricValue: "+85%",
+                metricPercent: "100%"
+            }
+        ];
+
+        let currentIndex = 0;
+
+        // DOM Elements
+        const evImage = document.getElementById('ev-image');
+        const evTitle = document.getElementById('ev-title');
+        const evSubtitle = document.getElementById('ev-subtitle');
+        const evDescription = document.getElementById('ev-description');
+        const evBattery = document.getElementById('ev-battery');
+        const evDrivetrain = document.getElementById('ev-drivetrain');
+        const evImprovementName = document.getElementById('ev-improvement-name');
+        const evImprovementValue = document.getElementById('ev-improvement-value');
+        const evImprovementBar = document.getElementById('ev-improvement-bar');
+        const contentCard = document.getElementById('content-card');
+
+        const timelineNodes = document.querySelectorAll('.timeline-node');
+        updateSlider(0);
+
+        function updateSlider(index) {
+            currentIndex = index;
+            const currentEV = evModels[currentIndex];
+
+            // Trigger animation transition by fading out content
+            contentCard.style.opacity = '0';
+            contentCard.style.transform = 'scale(0.98)';
+            evImage.style.opacity = '0';
+            evImage.style.transform = 'scale(0.95)';
+
+            setTimeout(() => {
+                // Update Text Content
+                evImage.src = currentEV.image;
+                evTitle.textContent = currentEV.title;
+                evSubtitle.textContent = currentEV.subtitle;
+                evDescription.innerHTML = currentEV.description;
+                evBattery.textContent = currentEV.battery;
+                evDrivetrain.textContent = currentEV.drivetrain;
+                evImprovementName.textContent = currentEV.metricName;
+                evImprovementValue.textContent = currentEV.metricValue;
+                evImprovementBar.style.width = currentEV.metricPercent;
+
+                // Fade back in with smooth scaling
+                contentCard.style.opacity = '1';
+                contentCard.style.transform = 'scale(1)';
+                evImage.style.opacity = '0.85';
+                evImage.style.transform = 'scale(1)';
+
+                // Update Timeline nodes styling
+                timelineNodes.forEach((node, nodeIdx) => {
+                    const nodeCircle = node.querySelector('.node-circle');
+                    const nodeInner = node.querySelector('.node-inner');
+                    const nodeLabel = node.querySelector('.node-label');
+
+                    if (nodeIdx === currentIndex) {
+                        nodeCircle.className = "node-circle w-4.5 h-4.5 rounded-full border-2 border-sky-400 bg-black relative flex items-center justify-center transition-all scale-110";
+                        nodeInner.className = "node-inner w-1.5 h-1.5 bg-sky-400 rounded-full shadow-[0_0_8px_rgba(163,205,219,0.8)]";
+                        nodeLabel.className = "node-label font-space text-xs font-bold text-sky-400 tracking-widest transition-colors uppercase glow-text-secondary";
+                    } else {
+                        nodeCircle.className = "node-circle w-4.5 h-4.5 rounded-full border border-white/30 bg-black relative flex items-center justify-center transition-all scale-100";
+                        nodeInner.className = "node-inner w-1.5 h-1.5 bg-transparent rounded-full";
+                        nodeLabel.className = "node-label font-space text-xs font-bold text-white/50 tracking-widest transition-colors uppercase";
+                    }
+                });
+            }, 300);
+        }
+
+        // Next & Previous Controls
+        const prevBtns = [document.getElementById('prev-btn'), document.getElementById('prev-btn-mobile')];
+        const nextBtns = [document.getElementById('next-btn'), document.getElementById('next-btn-mobile')];
+
+        prevBtns.forEach(btn => {
+            if (btn) {
+                btn.addEventListener('click', () => {
+                    let prevIndex = currentIndex - 1;
+                    if (prevIndex < 0) prevIndex = evModels.length - 1;
+                    updateSlider(prevIndex);
+                });
+            }
+        });
+
+        nextBtns.forEach(btn => {
+            if (btn) {
+                btn.addEventListener('click', () => {
+                    let nextIndex = (currentIndex + 1) % evModels.length;
+                    updateSlider(nextIndex);
+                });
+            }
+        });
+
+        // Clickable Timeline Nodes
+        timelineNodes.forEach(node => {
+            node.addEventListener('click', () => {
+                const idx = parseInt(node.getAttribute('data-index'), 10);
+                updateSlider(idx);
+            });
+        });
+
+        // Mobile Hamburger Menu
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.getElementById('menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (menuToggle && mobileMenu) {
+                menuToggle.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                    mobileMenu.classList.toggle('flex');
+                });
+            }
+
+            const mobileLinks = mobileMenu?.querySelectorAll('.mobile-nav-link');
+            mobileLinks?.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('flex');
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

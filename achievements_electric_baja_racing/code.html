@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Achievements | Team Manipal Racing Electric</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-variant": "#343535",
+                        "on-surface-variant": "#c4c7c8",
+                        "primary": "#ffffff",
+                        "secondary": "#a3cddb",
+                        "surface": "#121414",
+                        "surface-container": "#1f2020",
+                        "surface-container-low": "#1b1c1c",
+                        "background": "#121414",
+                        "on-background": "#e3e2e2",
+                        "outline": "#8e9192"
+                    },
+                    fontFamily: {
+                        "space": ["Space Grotesk", "sans-serif"],
+                        "inter": ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-background text-on-background antialiased min-h-screen flex flex-col font-inter overflow-x-hidden">
+
+    <!-- Persistent Navigation Bar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-md border-b border-white/10 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="../baja_racing_engineering/code.html" class="h-10 flex items-center logo-btn">
+                <img src="logo.png" alt="Team Manipal Racing Logo" class="h-full object-contain" />
+            </a>
+
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="../baja_racing_engineering/code.html"
+                    class="font-space uppercase tracking-widest text-sm font-semibold text-white/60 hover:text-sky-400 transition-colors">Home</a>
+                <a href="../baja_racing_engineering/code.html#about"
+                    class="font-space uppercase tracking-widest text-sm font-semibold text-white/60 hover:text-sky-400 transition-colors">About</a>
+                <a href="../velocity_performance/code.html"
+                    class="font-space uppercase tracking-widest text-sm font-semibold text-white/60 hover:text-sky-400 transition-colors">Subsystems</a>
+                <a href="../achievements_electric_baja_racing/code.html"
+                    class="font-space uppercase tracking-widest text-sm font-semibold text-white/60 hover:text-sky-400 transition-colors">Achievements</a>
+                <a href="../baja_racing_engineering/code.html#sponsors"
+                    class="font-space uppercase tracking-widest text-sm font-semibold text-white/60 hover:text-sky-400 transition-colors">Sponsors</a>
+                <a href="../journey_of_ev_slider_desktop/code.html"
+                    class="font-space uppercase tracking-widest text-sm font-semibold text-white/60 hover:text-sky-400 transition-colors">Journey</a>
+            </div>
+
+            <div class="hidden md:block">
+                <a href="https://www.instagram.com/teammanipalracing/" target="_blank"
+                    class="px-6 py-2 border border-sky-400 text-sky-400 hover:bg-sky-400/10 font-space font-bold rounded uppercase tracking-widest text-xs transition-all">Join
+                    Team</a>
+            </div>
+
+            <button class="md:hidden text-white hover:text-sky-400 transition-colors" id="menu-toggle">
+                <span class="material-symbols-outlined text-3xl">menu</span>
+            </button>
+        </div>
+
+        <div class="hidden flex-col space-y-4 pt-4 pb-2 border-t border-white/10 mt-3" id="mobile-menu">
+            <a href="../baja_racing_engineering/code.html"
+                class="block font-space uppercase tracking-widest text-sm font-semibold text-white/60 hover:text-sky-400 transition-colors">Home</a>
+            <a href="../baja_racing_engineering/code.html#about"
+                class="block font-space uppercase tracking-widest text-sm font-semibold text-white/60 hover:text-sky-400 transition-colors mobile-nav-link">About</a>
+            <a href="../velocity_performance/code.html"
+                class="block font-space uppercase tracking-widest text-sm font-semibold text-white/60 hover:text-sky-400 transition-colors mobile-nav-link">Subsystems</a>
+            <a href="../achievements_electric_baja_racing/code.html"
+                class="block font-space uppercase tracking-widest text-sm font-semibold text-white/60 hover:text-sky-400 transition-colors">Achievements</a>
+            <a href="../baja_racing_engineering/code.html#sponsors"
+                class="block font-space uppercase tracking-widest text-sm font-semibold text-white/60 hover:text-sky-400 transition-colors mobile-nav-link">Sponsors</a>
+            <a href="../journey_of_ev_slider_desktop/code.html"
+                class="block font-space uppercase tracking-widest text-sm font-semibold text-white/60 hover:text-sky-400 transition-colors">Journey</a>
+            <a href="https://www.instagram.com/teammanipalracing/" target="_blank"
+                class="block text-center py-2 bg-sky-400/10 border border-sky-400 text-sky-400 font-space font-bold rounded uppercase tracking-widest text-xs">Join
+                Team</a>
+        </div>
+    </nav>
+
+    <main class="flex-grow pt-16">
+        <!-- Hero Section — no "Performance Log" badge, no "Achievements" badge -->
+        <section class="relative min-h-[480px] flex items-center overflow-hidden border-b border-surface-variant">
+            <div class="absolute inset-0 z-0 bg-[#0d0d0d]">
+                <!-- Colorful Landscape Background Image -->
+                <img alt="Race car on track, colorful" class="w-full h-full object-cover object-center"
+                    src="Ach_baja.jpeg" />
+
+                <!-- Subtle Bottom Fade (Blends the banner smoothly into the next website section) -->
+                <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#0d0d0d] to-transparent z-10"></div>
+            </div>
+            <div class="relative z-10 w-full max-w-7xl mx-auto px-8 md:px-16 py-20">
+                <div class="max-w-3xl">
+                    <h1 class="font-space text-5xl md:text-7xl font-black text-white mb-4 uppercase tracking-tighter">
+                        ENGINEERED <br /><span class="text-secondary">TO WIN</span>
+                    </h1>
+                    <!-- New subtitle — exact text as specified -->
+                    <p class="font-inter text-lg text-on-surface-variant max-w-xl leading-relaxed">
+                        Relentless pursuit of innovation, proven in e-BAJA Motorsport
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Highlight Section — 3 boxes with updated data -->
+        <section class="w-full max-w-7xl mx-auto px-8 md:px-16 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Box 1: TOP 10 / e-BAJA '25 Overall -->
+                <div
+                    class="bg-surface-container-low border border-surface-variant p-6 rounded-lg relative overflow-hidden group hover:border-secondary/50 transition-colors">
+                    <div
+                        class="absolute top-0 left-0 w-full h-1 bg-secondary/20 group-hover:bg-secondary transition-colors">
+                    </div>
+                    <div
+                        class="absolute -right-10 -top-10 w-32 h-32 bg-secondary/5 rounded-full blur-2xl group-hover:bg-secondary/10 transition-all">
+                    </div>
+                    <p class="font-space text-xs font-bold tracking-widest text-on-surface-variant uppercase mb-2">
+                        e-BAJA '25 Overall</p>
+                    <p class="font-space text-5xl font-black text-primary mb-4">TOP 10</p>
+                    <div class="flex items-center gap-2">
+                        <div class="h-1 flex-grow bg-surface-variant rounded-full overflow-hidden">
+                            <div class="h-full w-[90%] bg-secondary"></div>
+                        </div>
+                        <span class="font-space text-xs font-bold text-secondary">2025</span>
+                    </div>
+                </div>
+
+                <!-- Box 2: TOP 4 / e-BAJA '26 Acceleration -->
+                <div
+                    class="bg-surface-container-low border border-surface-variant p-6 rounded-lg relative overflow-hidden group hover:border-secondary/50 transition-colors">
+                    <div
+                        class="absolute top-0 left-0 w-full h-1 bg-secondary/20 group-hover:bg-secondary transition-colors">
+                    </div>
+                    <div
+                        class="absolute -right-10 -top-10 w-32 h-32 bg-secondary/5 rounded-full blur-2xl group-hover:bg-secondary/10 transition-all">
+                    </div>
+                    <p class="font-space text-xs font-bold tracking-widest text-on-surface-variant uppercase mb-2">
+                        e-BAJA '26 Acceleration</p>
+                    <p class="font-space text-5xl font-black text-primary mb-4">TOP 4</p>
+                    <div class="flex items-center gap-2">
+                        <div class="h-1 flex-grow bg-surface-variant rounded-full overflow-hidden">
+                            <div class="h-full w-[96%] bg-secondary"></div>
+                        </div>
+                        <span class="font-space text-xs font-bold text-secondary">2026</span>
+                    </div>
+                </div>
+
+                <!-- Box 3: 1ST PLACE / Sled Pull -->
+                <div
+                    class="bg-surface-container-low border border-surface-variant p-6 rounded-lg relative overflow-hidden group hover:border-secondary/50 transition-colors">
+                    <div
+                        class="absolute top-0 left-0 w-full h-1 bg-secondary/20 group-hover:bg-secondary transition-colors">
+                    </div>
+                    <div
+                        class="absolute -right-10 -top-10 w-32 h-32 bg-secondary/5 rounded-full blur-2xl group-hover:bg-secondary/10 transition-all">
+                    </div>
+                    <p class="font-space text-xs font-bold tracking-widest text-on-surface-variant uppercase mb-2">Sled
+                        Pull</p>
+                    <p class="font-space text-5xl font-black text-primary mb-4">1ST PLACE</p>
+                    <div class="flex items-center gap-2">
+                        <div class="h-1 flex-grow bg-surface-variant rounded-full overflow-hidden">
+                            <div class="h-full w-full bg-secondary"></div>
+                        </div>
+                        <span class="font-space text-xs font-bold text-secondary">GOLD</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Competition Log Section -->
+        <section class="w-full max-w-7xl mx-auto px-8 md:px-16 py-16 border-t border-surface-variant">
+            <div class="flex justify-between items-end mb-12">
+                <div>
+                    <h3 class="font-space text-4xl font-bold text-primary uppercase tracking-tight">COMPETITION LOG</h3>
+                    <p class="font-inter text-sm text-on-surface-variant mt-2">Verified telemetry and event results.</p>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- Card 1: 1st — Engineering Design Event (e-BAJA 2025) -->
+                <div
+                    class="bg-[#111111] border border-surface-variant rounded-lg p-6 group hover:-translate-y-1 hover:border-secondary/30 transition-all duration-300">
+                    <div
+                        class="w-full h-1 bg-surface-variant mb-6 group-hover:bg-secondary/50 transition-colors rounded-full overflow-hidden">
+                        <div class="h-full bg-secondary w-full"></div>
+                    </div>
+                    <div class="flex justify-between items-start mb-4">
+                        <span
+                            class="font-space text-xs font-bold tracking-widest text-secondary bg-[#1A1A1A] px-2 py-1 rounded uppercase">e-BAJA
+                            2025</span>
+                        <span class="material-symbols-outlined text-secondary/70">emoji_events</span>
+                    </div>
+                    <h4 class="font-space text-xl font-bold text-primary mb-2">1st Place</h4>
+                    <p class="font-inter text-sm text-on-surface-variant">Engineering Design Event</p>
+                </div>
+
+                <!-- Card 2: 1st — Sled Pull (e-BAJA 2025) -->
+                <div
+                    class="bg-[#111111] border border-surface-variant rounded-lg p-6 group hover:-translate-y-1 hover:border-secondary/30 transition-all duration-300">
+                    <div
+                        class="w-full h-1 bg-surface-variant mb-6 group-hover:bg-secondary/50 transition-colors rounded-full overflow-hidden">
+                        <div class="h-full bg-secondary w-full"></div>
+                    </div>
+                    <div class="flex justify-between items-start mb-4">
+                        <span
+                            class="font-space text-xs font-bold tracking-widest text-secondary bg-[#1A1A1A] px-2 py-1 rounded uppercase">e-BAJA
+                            2025</span>
+                        <span class="material-symbols-outlined text-secondary/70">trophy</span>
+                    </div>
+                    <h4 class="font-space text-xl font-bold text-primary mb-2">1st Place</h4>
+                    <p class="font-inter text-sm text-on-surface-variant">Sled Pull</p>
+                </div>
+
+                <!-- Card 3: 2nd — Maneuverability (e-BAJA 2025) -->
+                <div
+                    class="bg-[#111111] border border-surface-variant rounded-lg p-6 group hover:-translate-y-1 hover:border-secondary/30 transition-all duration-300">
+                    <div
+                        class="w-full h-1 bg-surface-variant mb-6 group-hover:bg-secondary/50 transition-colors rounded-full overflow-hidden">
+                        <div class="h-full bg-secondary w-3/4"></div>
+                    </div>
+                    <div class="flex justify-between items-start mb-4">
+                        <span
+                            class="font-space text-xs font-bold tracking-widest text-secondary bg-[#1A1A1A] px-2 py-1 rounded uppercase">e-BAJA
+                            2025</span>
+                        <span class="material-symbols-outlined text-secondary/70">directions_car</span>
+                    </div>
+                    <h4 class="font-space text-xl font-bold text-primary mb-2">2nd Place</h4>
+                    <p class="font-inter text-sm text-on-surface-variant">Maneuverability</p>
+                </div>
+
+                <!-- Card 4: 3rd — Overall Dynamics (e-BAJA 2025) -->
+                <div
+                    class="bg-[#111111] border border-surface-variant rounded-lg p-6 group hover:-translate-y-1 hover:border-secondary/30 transition-all duration-300">
+                    <div
+                        class="w-full h-1 bg-surface-variant mb-6 group-hover:bg-secondary/50 transition-colors rounded-full overflow-hidden">
+                        <div class="h-full bg-secondary w-2/3"></div>
+                    </div>
+                    <div class="flex justify-between items-start mb-4">
+                        <span
+                            class="font-space text-xs font-bold tracking-widest text-secondary bg-[#1A1A1A] px-2 py-1 rounded uppercase">e-BAJA
+                            2025</span>
+                        <span class="material-symbols-outlined text-secondary/70">speed</span>
+                    </div>
+                    <h4 class="font-space text-xl font-bold text-primary mb-2">3rd Place</h4>
+                    <p class="font-inter text-sm text-on-surface-variant">Overall Dynamics</p>
+                </div>
+
+                <!-- Card 5: 3rd — Engineering Design Event (e-BAJA 2026) -->
+                <div
+                    class="bg-[#111111] border border-surface-variant rounded-lg p-6 group hover:-translate-y-1 hover:border-secondary/30 transition-all duration-300">
+                    <div
+                        class="w-full h-1 bg-surface-variant mb-6 group-hover:bg-secondary/50 transition-colors rounded-full overflow-hidden">
+                        <div class="h-full bg-secondary w-2/3"></div>
+                    </div>
+                    <div class="flex justify-between items-start mb-4">
+                        <span
+                            class="font-space text-xs font-bold tracking-widest text-secondary bg-[#1A1A1A] px-2 py-1 rounded uppercase">e-BAJA
+                            2026</span>
+                        <span class="material-symbols-outlined text-secondary/70">architecture</span>
+                    </div>
+                    <h4 class="font-space text-xl font-bold text-primary mb-2">3rd Place</h4>
+                    <p class="font-inter text-sm text-on-surface-variant">Engineering Design Event</p>
+                </div>
+
+                <!-- Card 6: 4th — Acceleration (e-BAJA 2026) -->
+                <div
+                    class="bg-[#111111] border border-surface-variant rounded-lg p-6 group hover:-translate-y-1 hover:border-secondary/30 transition-all duration-300">
+                    <div
+                        class="w-full h-1 bg-surface-variant mb-6 group-hover:bg-secondary/50 transition-colors rounded-full overflow-hidden">
+                        <div class="h-full bg-secondary w-1/2"></div>
+                    </div>
+                    <div class="flex justify-between items-start mb-4">
+                        <span
+                            class="font-space text-xs font-bold tracking-widest text-secondary bg-[#1A1A1A] px-2 py-1 rounded uppercase">e-BAJA
+                            2026</span>
+                        <span class="material-symbols-outlined text-secondary/70">bolt</span>
+                    </div>
+                    <h4 class="font-space text-xl font-bold text-primary mb-2">4th Place</h4>
+                    <p class="font-inter text-sm text-on-surface-variant">Acceleration</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Historic Milestones — 2 entries only (2025 & 2026) -->
+        <section class="w-full max-w-7xl mx-auto px-8 md:px-16 py-16 border-t border-surface-variant">
+            <h3 class="font-space text-4xl font-bold text-primary uppercase mb-16 text-center tracking-tight">HISTORIC
+                MILESTONES</h3>
+            <div class="relative max-w-4xl mx-auto">
+                <!-- Glowing vertical line -->
+                <div
+                    class="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-surface-variant transform md:-translate-x-1/2">
+                    <div
+                        class="absolute top-0 w-full h-full bg-gradient-to-b from-secondary to-transparent shadow-[0_0_10px_rgba(163,205,219,0.5)]">
+                    </div>
+                </div>
+
+                <div class="space-y-16">
+                    <!-- Milestone 1 — 2025 -->
+                    <div class="relative flex flex-col md:flex-row items-start md:items-center w-full group">
+                        <div
+                            class="absolute left-[-5px] md:left-1/2 md:-ml-[5px] w-[10px] h-[10px] rounded-full bg-background border-2 border-secondary z-10 group-hover:bg-secondary transition-colors shadow-[0_0_10px_rgba(163,205,219,0.8)]">
+                        </div>
+                        <div class="md:w-1/2 pl-8 md:pl-0 md:pr-12 md:text-right mb-4 md:mb-0">
+                            <span
+                                class="font-space text-5xl font-black text-secondary/30 group-hover:text-secondary transition-colors block mb-2">2025</span>
+                            <h4 class="font-space text-2xl font-bold text-primary">e-BAJA 2025 Championship</h4>
+                        </div>
+                        <div class="md:w-1/2 pl-8 md:pl-12">
+                            <div
+                                class="bg-[#111111] border border-surface-variant p-4 rounded-lg group-hover:border-secondary/40 transition-colors">
+                                <p class="font-inter text-sm text-on-surface-variant leading-relaxed">1st in Engineering
+                                    Design, 1st in Sled Pull, 2nd in Maneuverability, 9th Overall</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 2 — 2026 -->
+                    <div class="relative flex flex-col md:flex-row-reverse items-start md:items-center w-full group">
+                        <div
+                            class="absolute left-[-5px] md:left-1/2 md:-ml-[5px] w-[10px] h-[10px] rounded-full bg-background border-2 border-secondary z-10 group-hover:bg-secondary transition-colors">
+                        </div>
+                        <div class="md:w-1/2 pl-8 md:pl-12 mb-4 md:mb-0">
+                            <span
+                                class="font-space text-5xl font-black text-secondary/30 group-hover:text-secondary transition-colors block mb-2">2026</span>
+                            <h4 class="font-space text-2xl font-bold text-primary">e-BAJA 2026 Campaign</h4>
+                        </div>
+                        <div class="md:w-1/2 pl-8 md:pl-0 md:pr-12">
+                            <div
+                                class="bg-[#111111] border border-surface-variant p-4 rounded-lg md:text-right group-hover:border-secondary/40 transition-colors">
+                                <p class="font-inter text-sm text-on-surface-variant leading-relaxed">3rd in Engineering
+                                    Design, 4th in Acceleration, 4th in CAE Event, competing among 100+ teams</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Page ends cleanly here — no Road Ahead section, no footer -->
+    </main>
+    <!-- Low-Profile Footer Matching image_f1d2e8.png -->
+    <footer class="w-full bg-[#0a0a0a] border-t border-white/5 py-8 px-8 md:px-16 mt-auto">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+
+            <!-- Left Side: Logo & Team Name -->
+            <div class="flex items-center gap-3">
+                <img src="logo.png" alt="TMR-E Logo" class="h-8 object-contain" />
+                <span class="font-space font-bold tracking-wider text-white text-base md:text-lg uppercase">
+                    Team Manipal Racing
+                </span>
+            </div>
+
+            <!-- Right Side: Copyright -->
+            <div class="font-space text-xs tracking-widest text-white/40 uppercase text-center sm:text-right">
+                &copy; 2026 Team Manipal Racing. All Rights Reserved.
+            </div>
+
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.getElementById('menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (menuToggle && mobileMenu) {
+                menuToggle.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                    mobileMenu.classList.toggle('flex');
+                });
+            }
+            const mobileLinks = mobileMenu?.querySelectorAll('.mobile-nav-link');
+            mobileLinks?.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('flex');
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
