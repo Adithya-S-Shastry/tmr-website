@@ -179,244 +179,195 @@
             </section>
 
             <!-- 3. Subsystems Section (A3) -->
-            <section id="subsystems" class="pt-24 border-t border-white/10 overflow-hidden">
-                <div class="mb-12">
-                    <h2 class="font-space text-4xl font-bold text-white uppercase tracking-tight">Subsystems</h2>
+           <section id="subsystems" class="pt-24 border-t border-white/10 overflow-hidden">
+    <div class="mb-12">
+        <h2 class="font-space text-4xl font-bold text-white uppercase tracking-tight">Subsystems</h2>
+    </div>
+
+    <div class="relative w-full overflow-hidden py-6" id="carousel-container">
+        <div class="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none"></div>
+        <div class="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none"></div>
+
+        <div id="subsystem-track" class="scroll-track-subsystems gap-6 flex whitespace-nowrap will-change-transform">
+            <a href="subsystem.html#structures" class="bg-surface-container border border-white/10 rounded-xl p-6 w-[320px] transition-all duration-300 hover:scale-105 hover:border-secondary hover:shadow-[0_0_15px_rgba(163,205,219,0.3)] shrink-0 flex flex-col gap-4 decoration-none block cursor-pointer">
+                <div class="flex items-center justify-center w-14 h-14 bg-black/50 border border-white/10 rounded-lg">
+                    <svg class="w-8 h-8 text-[#ADD8E6]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 4h16v16H4V4zm0 8h16M12 4v16M4 4l16 16M20 4L4 20" />
+                    </svg>
                 </div>
+                <h3 class="font-space text-xl font-bold text-white whitespace-normal">Structures</h3>
+                <p class="font-inter text-sm text-on-surface-variant leading-relaxed whitespace-normal">The structures subsystem designs, analyzes, and fabricates the tubular chassis for durability, while also crafting basalt fiber and Kevlar bodywork to enhance strength and aesthetics.</p>
+            </a>
 
-                <!-- Infinite Left-to-Right Carousel -->
-                <div class="relative w-full overflow-hidden py-6">
-                    <!-- Linear Gradient Mask for beautiful fade edges -->
-                    <div
-                        class="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none">
-                    </div>
-                    <div
-                        class="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none">
-                    </div>
-
-                    <div class="scroll-track-subsystems gap-6">
-                        <!-- ORIGINAL 7 CARDS -->
-                        <!-- Card 1: Structures -->
-                        <div
-                            class="bg-surface-container border border-white/10 rounded-xl p-6 w-[320px] transition-all duration-300 hover:scale-115 hover:border-secondary hover:shadow-[0_0_15px_rgba(163,205,219,0.3)] shrink-0 flex flex-col gap-4">
-                            <div
-                                class="flex items-center justify-center w-14 h-14 bg-black/50 border border-white/10 rounded-lg">
-                                <svg class="w-8 h-8 text-[#ADD8E6]" fill="none" stroke="currentColor" stroke-width="1.5"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M4 4h16v16H4V4zm0 8h16M12 4v16M4 4l16 16M20 4L4 20" />
-                                </svg>
-                            </div>
-                            <h3 class="font-space text-xl font-bold text-white">Structures</h3>
-                            <p class="font-inter text-sm text-on-surface-variant leading-relaxed">The structures
-                                subsystem designs, analyzes, and fabricates the tubular chassis for durability, while
-                                also crafting basalt fiber and Kevlar bodywork to enhance strength and aesthetics.</p>
-                        </div>
-                        <!-- Card 2: Transmission -->
-                        <div
-                            class="bg-surface-container border border-white/10 rounded-xl p-6 w-[320px] transition-all duration-300 hover:scale-115 hover:border-secondary hover:shadow-[0_0_15px_rgba(163,205,219,0.3)] shrink-0 flex flex-col gap-4">
-                            <div
-                                class="flex items-center justify-center w-14 h-14 bg-black/50 border border-white/10 rounded-lg">
-                                <svg class="w-8 h-8 text-[#ADD8E6]" fill="none" stroke="currentColor" stroke-width="1.5"
-                                    viewBox="0 0 24 24">
-                                    <circle cx="12" cy="12" r="3" />
-                                    <path
-                                        d="M12 2v2m0 16v2M2 12h2m16 0h2M5.6 5.6l1.4 1.4m10 10l1.4 1.4M18.4 5.6l-1.4 1.4M5.6 18.4l1.4-1.4" />
-                                    <circle cx="12" cy="12" r="7" stroke-dasharray="3 3" />
-                                </svg>
-                            </div>
-                            <h3 class="font-space text-xl font-bold text-white">Transmission</h3>
-                            <p class="font-inter text-sm text-on-surface-variant leading-relaxed">Our 4WD transmission
-                                delivers 700 Nm of torque, towing a 2-ton tractor in 15 seconds and accelerating 150
-                                feet in 4.5 seconds. Optimized gear ratios and advanced materials ensure superior
-                                traction, stability, and efficiency.</p>
-                        </div>
-                        <!-- Card 3: Vehicle Dynamics -->
-                        <div
-                            class="bg-surface-container border border-white/10 rounded-xl p-6 w-[320px] transition-all duration-300 hover:scale-115 hover:border-secondary hover:shadow-[0_0_15px_rgba(163,205,219,0.3)] shrink-0 flex flex-col gap-4">
-                            <div
-                                class="flex items-center justify-center w-14 h-14 bg-black/50 border border-white/10 rounded-lg">
-                                <svg class="w-8 h-8 text-[#ADD8E6]" fill="none" stroke="currentColor" stroke-width="1.5"
-                                    viewBox="0 0 24 24">
-                                    <circle cx="12" cy="12" r="6" />
-                                    <path d="M12 2v4m-6 6h4m8 0h2M12 18v4M9 9l6 6m0-6l-6 6" />
-                                </svg>
-                            </div>
-                            <h3 class="font-space text-xl font-bold text-white">Vehicle Dynamics</h3>
-                            <p class="font-inter text-sm text-on-surface-variant leading-relaxed">We design suspension,
-                                braking, and steering systems to optimize off-road handling, ensuring precise steering,
-                                driver comfort, and stability in demanding terrain. Our approach enhances responsiveness
-                                and durability for superior performance.</p>
-                        </div>
-                        <!-- Card 4: Electronics -->
-                        <div
-                            class="bg-surface-container border border-white/10 rounded-xl p-6 w-[320px] transition-all duration-300 hover:scale-115 hover:border-secondary hover:shadow-[0_0_15px_rgba(163,205,219,0.3)] shrink-0 flex flex-col gap-4">
-                            <div
-                                class="flex items-center justify-center w-14 h-14 bg-black/50 border border-white/10 rounded-lg">
-                                <svg class="w-8 h-8 text-[#ADD8E6]" fill="none" stroke="currentColor" stroke-width="1.5"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M13 10V3L4 14h7v7l9-11h-7z" />
-                                </svg>
-                            </div>
-                            <h3 class="font-space text-xl font-bold text-white">Electronics</h3>
-                            <p class="font-inter text-sm text-on-surface-variant leading-relaxed">This subsystem focuses
-                                on designing EV batteries, developing control systems, and refining powertrain
-                                components. It also involves building custom wiring harnesses that integrate various
-                                electronic modules, ensuring efficient energy management and vehicle performance.</p>
-                        </div>
-                        <!-- Card 5: Data Acquisition -->
-                        <div
-                            class="bg-surface-container border border-white/10 rounded-xl p-6 w-[320px] transition-all duration-300 hover:scale-115 hover:border-secondary hover:shadow-[0_0_15px_rgba(163,205,219,0.3)] shrink-0 flex flex-col gap-4">
-                            <div
-                                class="flex items-center justify-center w-14 h-14 bg-black/50 border border-white/10 rounded-lg">
-                                <svg class="w-8 h-8 text-[#ADD8E6]" fill="none" stroke="currentColor" stroke-width="1.5"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 002 2h2a2 2 0 002-2z" />
-                                </svg>
-                            </div>
-                            <h3 class="font-space text-xl font-bold text-white">Data Acquisition</h3>
-                            <p class="font-inter text-sm text-on-surface-variant leading-relaxed">This part involves
-                                collecting and analyzing real-time vehicle data to optimize efficiency, tuning, and
-                                overall performance. It supports decision-making by monitoring parameters like battery
-                                status, motor behavior, and environmental conditions, enabling precise diagnostics and
-                                system refinement.</p>
-                        </div>
-                        <!-- Card 6: Research & Development -->
-                        <div
-                            class="bg-surface-container border border-white/10 rounded-xl p-6 w-[320px] transition-all duration-300 hover:scale-115 hover:border-secondary hover:shadow-[0_0_15px_rgba(163,205,219,0.3)] shrink-0 flex flex-col gap-4">
-                            <div
-                                class="flex items-center justify-center w-14 h-14 bg-black/50 border border-white/10 rounded-lg">
-                                <svg class="w-8 h-8 text-[#ADD8E6]" fill="none" stroke="currentColor" stroke-width="1.5"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                                </svg>
-                            </div>
-                            <h3 class="font-space text-xl font-bold text-white">Research & Development</h3>
-                            <p class="font-inter text-sm text-on-surface-variant leading-relaxed">The research team
-                                focuses on filing patents and writing research papers. Working with other subsystems,
-                                they innovate new components and optimize existing components.</p>
-                        </div>
-
-                        <!-- DUPLICATE CARDS FOR SEAMLESS LOOP -->
-                        <div
-                            class="bg-surface-container border border-white/10 rounded-xl p-6 w-[320px] transition-all duration-300 hover:scale-115 hover:border-secondary hover:shadow-[0_0_15px_rgba(163,205,219,0.3)] shrink-0 flex flex-col gap-4">
-                            <div
-                                class="flex items-center justify-center w-14 h-14 bg-black/50 border border-white/10 rounded-lg">
-                                <svg class="w-8 h-8 text-[#ADD8E6]" fill="none" stroke="currentColor" stroke-width="1.5"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M4 4h16v16H4V4zm0 8h16M12 4v16M4 4l16 16M20 4L4 20" />
-                                </svg>
-                            </div>
-                            <h3 class="font-space text-xl font-bold text-white">Structures</h3>
-                            <p class="font-inter text-sm text-on-surface-variant leading-relaxed">The structures
-                                subsystem designs, analyzes, and fabricates the tubular chassis for durability, while
-                                also crafting basalt fiber and Kevlar bodywork to enhance strength and aesthetics.</p>
-                        </div>
-                        <div
-                            class="bg-surface-container border border-white/10 rounded-xl p-6 w-[320px] transition-all duration-300 hover:scale-115 hover:border-secondary hover:shadow-[0_0_15px_rgba(163,205,219,0.3)] shrink-0 flex flex-col gap-4">
-                            <div
-                                class="flex items-center justify-center w-14 h-14 bg-black/50 border border-white/10 rounded-lg">
-                                <svg class="w-8 h-8 text-[#ADD8E6]" fill="none" stroke="currentColor" stroke-width="1.5"
-                                    viewBox="0 0 24 24">
-                                    <circle cx="12" cy="12" r="3" />
-                                    <path
-                                        d="M12 2v2m0 16v2M2 12h2m16 0h2M5.6 5.6l1.4 1.4m10 10l1.4 1.4M18.4 5.6l-1.4 1.4M5.6 18.4l1.4-1.4" />
-                                    <circle cx="12" cy="12" r="7" stroke-dasharray="3 3" />
-                                </svg>
-                            </div>
-                            <h3 class="font-space text-xl font-bold text-white">Transmission</h3>
-                            <p class="font-inter text-sm text-on-surface-variant leading-relaxed">Our 4WD transmission
-                                delivers 700 Nm of torque, towing a 2-ton tractor in 15 seconds and accelerating 150
-                                feet in 4.5 seconds. Optimized gear ratios and advanced materials ensure superior
-                                traction, stability, and efficiency.</p>
-                        </div>
-                        <div
-                            class="bg-surface-container border border-white/10 rounded-xl p-6 w-[320px] transition-all duration-300 hover:scale-115 hover:border-secondary hover:shadow-[0_0_15px_rgba(163,205,219,0.3)] shrink-0 flex flex-col gap-4">
-                            <div
-                                class="flex items-center justify-center w-14 h-14 bg-black/50 border border-white/10 rounded-lg">
-                                <svg class="w-8 h-8 text-[#ADD8E6]" fill="none" stroke="currentColor" stroke-width="1.5"
-                                    viewBox="0 0 24 24">
-                                    <circle cx="12" cy="12" r="6" />
-                                    <path d="M12 2v4m-6 6h4m8 0h2M12 18v4M9 9l6 6m0-6l-6 6" />
-                                </svg>
-                            </div>
-                            <h3 class="font-space text-xl font-bold text-white">Vehicle Dynamics</h3>
-                            <p class="font-inter text-sm text-on-surface-variant leading-relaxed">We design suspension,
-                                braking, and steering systems to optimize off-road handling, ensuring precise steering,
-                                driver comfort, and stability in demanding terrain. Our approach enhances responsiveness
-                                and durability for superior performance.</p>
-                        </div>
-                        <div
-                            class="bg-surface-container border border-white/10 rounded-xl p-6 w-[320px] transition-all duration-300 hover:scale-115 hover:border-secondary hover:shadow-[0_0_15px_rgba(163,205,219,0.3)] shrink-0 flex flex-col gap-4">
-                            <div
-                                class="flex items-center justify-center w-14 h-14 bg-black/50 border border-white/10 rounded-lg">
-                                <svg class="w-8 h-8 text-[#ADD8E6]" fill="none" stroke="currentColor" stroke-width="1.5"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M13 10V3L4 14h7v7l9-11h-7z" />
-                                </svg>
-                            </div>
-                            <h3 class="font-space text-xl font-bold text-white">Electronics</h3>
-                            <p class="font-inter text-sm text-on-surface-variant leading-relaxed">This subsystem focuses
-                                on designing EV batteries, developing control systems, and refining powertrain
-                                components. It also involves building custom wiring harnesses that integrate various
-                                electronic modules, ensuring efficient energy management and vehicle performance.</p>
-                        </div>
-                        <div
-                            class="bg-surface-container border border-white/10 rounded-xl p-6 w-[320px] transition-all duration-300 hover:scale-115 hover:border-secondary hover:shadow-[0_0_15px_rgba(163,205,219,0.3)] shrink-0 flex flex-col gap-4">
-                            <div
-                                class="flex items-center justify-center w-14 h-14 bg-black/50 border border-white/10 rounded-lg">
-                                <svg class="w-8 h-8 text-[#ADD8E6]" fill="none" stroke="currentColor" stroke-width="1.5"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 002 2h2a2 2 0 002-2z" />
-                                </svg>
-                            </div>
-                            <h3 class="font-space text-xl font-bold text-white">Data Acquisition</h3>
-                            <p class="font-inter text-sm text-on-surface-variant leading-relaxed">This part involves
-                                collecting and analyzing real-time vehicle data to optimize efficiency, tuning, and
-                                overall performance. It supports decision-making by monitoring parameters like battery
-                                status, motor behavior, and environmental conditions, enabling precise diagnostics and
-                                system refinement.</p>
-                        </div>
-                        <div
-                            class="bg-surface-container border border-white/10 rounded-xl p-6 w-[320px] transition-all duration-300 hover:scale-115 hover:border-secondary hover:shadow-[0_0_15px_rgba(163,205,219,0.3)] shrink-0 flex flex-col gap-4">
-                            <div
-                                class="flex items-center justify-center w-14 h-14 bg-black/50 border border-white/10 rounded-lg">
-                                <svg class="w-8 h-8 text-[#ADD8E6]" fill="none" stroke="currentColor" stroke-width="1.5"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                                </svg>
-                            </div>
-                            <h3 class="font-space text-xl font-bold text-white">Research & Development</h3>
-                            <p class="font-inter text-sm text-on-surface-variant leading-relaxed">The research team
-                                focuses on filing patents and writing research papers. Working with other subsystems,
-                                they innovate new components and optimize existing components.</p>
-                        </div>
-                        <div
-                            class="bg-surface-container border border-white/10 rounded-xl p-6 w-[320px] transition-all duration-300 hover:scale-115 hover:border-secondary hover:shadow-[0_0_15px_rgba(163,205,219,0.3)] shrink-0 flex flex-col gap-4">
-                            <div
-                                class="flex items-center justify-center w-14 h-14 bg-black/50 border border-white/10 rounded-lg">
-                                <svg class="w-8 h-8 text-[#ADD8E6]" fill="none" stroke="currentColor" stroke-width="1.5"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M3 10h10M3 14h18M3 6h7m8 0h3M12 10h5m-2 4h4" />
-                                </svg>
-                            </div>
-                            <h3 class="font-space text-xl font-bold text-white">Aerodynamics</h3>
-                            <p class="font-inter text-sm text-on-surface-variant leading-relaxed">The aerodynamics
-                                subsystem focuses on analyzing fluid dynamics to achieve optimal drag reduction and
-                                downforce. By designing custom aerodynamic body panels and ducts, the subsystem enhances
-                                energy efficiency and stability during high-speed off-road maneuvers.</p>
-                        </div>
-                    </div>
+            <a href="subsystem.html#transmission" class="bg-surface-container border border-white/10 rounded-xl p-6 w-[320px] transition-all duration-300 hover:scale-105 hover:border-secondary hover:shadow-[0_0_15px_rgba(163,205,219,0.3)] shrink-0 flex flex-col gap-4 decoration-none block cursor-pointer">
+                <div class="flex items-center justify-center w-14 h-14 bg-black/50 border border-white/10 rounded-lg">
+                    <svg class="w-8 h-8 text-[#ADD8E6]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="3" />
+                        <path d="M12 2v2m0 16v2M2 12h2m16 0h2M5.6 5.6l1.4 1.4m10 10l1.4 1.4M18.4 5.6l-1.4 1.4M5.6 18.4l1.4-1.4" />
+                        <circle cx="12" cy="12" r="7" stroke-dasharray="3 3" />
+                    </svg>
                 </div>
-            </section>
+                <h3 class="font-space text-xl font-bold text-white whitespace-normal">Transmission</h3>
+                <p class="font-inter text-sm text-on-surface-variant leading-relaxed whitespace-normal">Our 4WD transmission delivers 700 Nm of torque, towing a 2-ton tractor in 15 seconds and accelerating 150 feet in 4.5 seconds. Optimized gear ratios and advanced materials ensure superior traction, stability, and efficiency.</p>
+            </a>
+
+            <a href="subsystem.html#vehicle-dynamics" class="bg-surface-container border border-white/10 rounded-xl p-6 w-[320px] transition-all duration-300 hover:scale-105 hover:border-secondary hover:shadow-[0_0_15px_rgba(163,205,219,0.3)] shrink-0 flex flex-col gap-4 decoration-none block cursor-pointer">
+                <div class="flex items-center justify-center w-14 h-14 bg-black/50 border border-white/10 rounded-lg">
+                    <svg class="w-8 h-8 text-[#ADD8E6]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="6" />
+                        <path d="M12 2v4m-6 6h4m8 0h2M12 18v4M9 9l6 6m0-6l-6 6" />
+                    </svg>
+                </div>
+                <h3 class="font-space text-xl font-bold text-white whitespace-normal">Vehicle Dynamics</h3>
+                <p class="font-inter text-sm text-on-surface-variant leading-relaxed whitespace-normal">We design suspension, braking, and steering systems to optimize off-road handling, ensuring precise steering, driver comfort, and stability in demanding terrain.</p>
+            </a>
+
+            <a href="subsystem.html#electronics" class="bg-surface-container border border-white/10 rounded-xl p-6 w-[320px] transition-all duration-300 hover:scale-105 hover:border-secondary hover:shadow-[0_0_15px_rgba(163,205,219,0.3)] shrink-0 flex flex-col gap-4 decoration-none block cursor-pointer">
+                <div class="flex items-center justify-center w-14 h-14 bg-black/50 border border-white/10 rounded-lg">
+                    <svg class="w-8 h-8 text-[#ADD8E6]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                </div>
+                <h3 class="font-space text-xl font-bold text-white whitespace-normal">Electronics</h3>
+                <p class="font-inter text-sm text-on-surface-variant leading-relaxed whitespace-normal">This subsystem focuses on designing EV batteries, developing control systems, and refining powertrain components. It also involves building custom wiring harnesses.</p>
+            </a>
+
+            <a href="subsystem.html#daq" class="bg-surface-container border border-white/10 rounded-xl p-6 w-[320px] transition-all duration-300 hover:scale-105 hover:border-secondary hover:shadow-[0_0_15px_rgba(163,205,219,0.3)] shrink-0 flex flex-col gap-4 decoration-none block cursor-pointer">
+                <div class="flex items-center justify-center w-14 h-14 bg-black/50 border border-white/10 rounded-lg">
+                    <svg class="w-8 h-8 text-[#ADD8E6]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 002 2h2a2 2 0 002-2z" />
+                    </svg>
+                </div>
+                <h3 class="font-space text-xl font-bold text-white whitespace-normal">Data Acquisition</h3>
+                <p class="font-inter text-sm text-on-surface-variant leading-relaxed whitespace-normal">This part involves collecting and analyzing real-time vehicle data to optimize efficiency, tuning, and overall performance through targeted parameters tracking.</p>
+            </a>
+
+            <a href="subsystem.html#rd" class="bg-surface-container border border-white/10 rounded-xl p-6 w-[320px] transition-all duration-300 hover:scale-105 hover:border-secondary hover:shadow-[0_0_15px_rgba(163,205,219,0.3)] shrink-0 flex flex-col gap-4 decoration-none block cursor-pointer">
+                <div class="flex items-center justify-center w-14 h-14 bg-black/50 border border-white/10 rounded-lg">
+                    <svg class="w-8 h-8 text-[#ADD8E6]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                    </svg>
+                </div>
+                <h3 class="font-space text-xl font-bold text-white whitespace-normal">Research & Development</h3>
+                <p class="font-inter text-sm text-on-surface-variant leading-relaxed whitespace-normal">The research team focuses on filing patents and writing research papers. Working alongside other disciplines, they actively innovate or refine core custom systems.</p>
+            </a>
+
+
+            <a href="subsystem.html#structures" class="bg-surface-container border border-white/10 rounded-xl p-6 w-[320px] transition-all duration-300 hover:scale-105 hover:border-secondary hover:shadow-[0_0_15px_rgba(163,205,219,0.3)] shrink-0 flex flex-col gap-4 decoration-none block cursor-pointer">
+                <div class="flex items-center justify-center w-14 h-14 bg-black/50 border border-white/10 rounded-lg">
+                    <svg class="w-8 h-8 text-[#ADD8E6]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 4h16v16H4V4zm0 8h16M12 4v16M4 4l16 16M20 4L4 20" />
+                    </svg>
+                </div>
+                <h3 class="font-space text-xl font-bold text-white whitespace-normal">Structures</h3>
+                <p class="font-inter text-sm text-on-surface-variant leading-relaxed whitespace-normal">The structures subsystem designs, analyzes, and fabricates the tubular chassis for durability, while also crafting basalt fiber and Kevlar bodywork to enhance strength and aesthetics.</p>
+            </a>
+
+            <a href="subsystem.html#transmission" class="bg-surface-container border border-white/10 rounded-xl p-6 w-[320px] transition-all duration-300 hover:scale-105 hover:border-secondary hover:shadow-[0_0_15px_rgba(163,205,219,0.3)] shrink-0 flex flex-col gap-4 decoration-none block cursor-pointer">
+                <div class="flex items-center justify-center w-14 h-14 bg-black/50 border border-white/10 rounded-lg">
+                    <svg class="w-8 h-8 text-[#ADD8E6]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="3" />
+                        <path d="M12 2v2m0 16v2M2 12h2m16 0h2M5.6 5.6l1.4 1.4m10 10l1.4 1.4M18.4 5.6l-1.4 1.4M5.6 18.4l1.4-1.4" />
+                        <circle cx="12" cy="12" r="7" stroke-dasharray="3 3" />
+                    </svg>
+                </div>
+                <h3 class="font-space text-xl font-bold text-white whitespace-normal">Transmission</h3>
+                <p class="font-inter text-sm text-on-surface-variant leading-relaxed whitespace-normal">Our 4WD transmission delivers 700 Nm of torque, towing a 2-ton tractor in 15 seconds and accelerating 150 feet in 4.5 seconds. Optimized gear ratios and advanced materials ensure superior traction, stability, and efficiency.</p>
+            </a>
+
+            <a href="subsystem.html#vehicle-dynamics" class="bg-surface-container border border-white/10 rounded-xl p-6 w-[320px] transition-all duration-300 hover:scale-105 hover:border-secondary hover:shadow-[0_0_15px_rgba(163,205,219,0.3)] shrink-0 flex flex-col gap-4 decoration-none block cursor-pointer">
+                <div class="flex items-center justify-center w-14 h-14 bg-black/50 border border-white/10 rounded-lg">
+                    <svg class="w-8 h-8 text-[#ADD8E6]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="6" />
+                        <path d="M12 2v4m-6 6h4m8 0h2M12 18v4M9 9l6 6m0-6l-6 6" />
+                    </svg>
+                </div>
+                <h3 class="font-space text-xl font-bold text-white whitespace-normal">Vehicle Dynamics</h3>
+                <p class="font-inter text-sm text-on-surface-variant leading-relaxed whitespace-normal">We design suspension, braking, and steering systems to optimize off-road handling, ensuring precise steering, driver comfort, and stability in demanding terrain.</p>
+            </a>
+
+            <a href="subsystem.html#electronics" class="bg-surface-container border border-white/10 rounded-xl p-6 w-[320px] transition-all duration-300 hover:scale-105 hover:border-secondary hover:shadow-[0_0_15px_rgba(163,205,219,0.3)] shrink-0 flex flex-col gap-4 decoration-none block cursor-pointer">
+                <div class="flex items-center justify-center w-14 h-14 bg-black/50 border border-white/10 rounded-lg">
+                    <svg class="w-8 h-8 text-[#ADD8E6]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                </div>
+                <h3 class="font-space text-xl font-bold text-white whitespace-normal">Electronics</h3>
+                <p class="font-inter text-sm text-on-surface-variant leading-relaxed whitespace-normal">This subsystem focuses on designing EV batteries, developing control systems, and refining powertrain components. It also involves building custom wiring harnesses.</p>
+            </a>
+
+            <a href="subsystem.html#daq" class="bg-surface-container border border-white/10 rounded-xl p-6 w-[320px] transition-all duration-300 hover:scale-105 hover:border-secondary hover:shadow-[0_0_15px_rgba(163,205,219,0.3)] shrink-0 flex flex-col gap-4 decoration-none block cursor-pointer">
+                <div class="flex items-center justify-center w-14 h-14 bg-black/50 border border-white/10 rounded-lg">
+                    <svg class="w-8 h-8 text-[#ADD8E6]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 002 2h2a2 2 0 002-2z" />
+                    </svg>
+                </div>
+                <h3 class="font-space text-xl font-bold text-white whitespace-normal">Data Acquisition</h3>
+                <p class="font-inter text-sm text-on-surface-variant leading-relaxed whitespace-normal">This part involves collecting and analyzing real-time vehicle data to optimize efficiency, tuning, and overall performance through targeted parameters tracking.</p>
+            </a>
+
+            <a href="subsystem.html#rd" class="bg-surface-container border border-white/10 rounded-xl p-6 w-[320px] transition-all duration-300 hover:scale-105 hover:border-secondary hover:shadow-[0_0_15px_rgba(163,205,219,0.3)] shrink-0 flex flex-col gap-4 decoration-none block cursor-pointer">
+                <div class="flex items-center justify-center w-14 h-14 bg-black/50 border border-white/10 rounded-lg">
+                    <svg class="w-8 h-8 text-[#ADD8E6]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                    </svg>
+                </div>
+                <h3 class="font-space text-xl font-bold text-white whitespace-normal">Research & Development</h3>
+                <p class="font-inter text-sm text-on-surface-variant leading-relaxed whitespace-normal">The research team focuses on filing patents and writing research papers. Working alongside other disciplines, they actively innovate or refine core custom systems.</p>
+            </a>
+        </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const track = document.getElementById("subsystem-track");
+        const container = document.getElementById("carousel-container");
+        
+        let currentX = 0;
+        let baseSpeed = 1; // Default automated scrolling speed pixels per frame
+        let isHovered = false;
+
+        function animateCarousel() {
+            if (!isHovered) {
+                currentX -= baseSpeed;
+                
+                // Reset tracker calculation safely to keep seamless looping infinite
+                // Dividends by 2 because exact track is split into half original cards, half duplicates
+                const halfWidth = track.scrollWidth / 2;
+                if (Math.abs(currentX) >= halfWidth) {
+                    currentX = 0;
+                }
+                track.style.transform = `translateX(${currentX}px)`;
+            }
+            requestAnimationFrame(animateCarousel);
+        }
+
+        // Toggle state to let user control interaction loops
+        container.addEventListener("mouseenter", () => { isHovered = true; });
+        container.addEventListener("mouseleave", () => { isHovered = false; });
+
+        // Wheel listener event for adjusting user controlled manual scroll speeds
+        container.addEventListener("wheel", (e) => {
+            e.preventDefault(); // Stop standard page body viewport scrolling down
+            
+            // Increment/Decrement relative tracking based on wheel movement delta
+            currentX -= e.deltaY * 0.8; 
+            
+            const halfWidth = track.scrollWidth / 2;
+            if (currentX > 0) {
+                currentX = -halfWidth;
+            } else if (Math.abs(currentX) >= halfWidth) {
+                currentX = 0;
+            }
+            
+            track.style.transform = `translateX(${currentX}px)`;
+        }, { passive: false });
+
+        // Spin it up!
+        requestAnimationFrame(animateCarousel);
+    });
+</script>
 
             <!-- 4. Sponsors Section (A5) -->
             <section id="sponsors" class="pt-24 border-t border-white/10 overflow-hidden text-center">
