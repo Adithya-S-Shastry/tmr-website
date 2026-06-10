@@ -7,9 +7,9 @@
     <title>Subsystems | Team Manipal Racing Electric</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link
-        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700;900&family=Inter:wght@400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght=300;400;600;700;900&family=Inter:wght=400;500;600&display=swap"
         rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1"
         rel="stylesheet" />
     <script id="tailwind-config">
         tailwind.config = {
@@ -43,7 +43,6 @@
                 transform: translateY(20px);
                 opacity: 0;
             }
-
             to {
                 transform: translateY(0);
                 opacity: 1;
@@ -67,235 +66,209 @@
 <body class="bg-black text-on-background antialiased min-h-screen flex flex-col font-inter">
 
     <!-- Persistent Navigation Bar -->
-  <nav class="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-md border-b border-white/10 px-6 py-4">
-    <div class="max-w-7xl mx-auto flex items-center justify-between">
-        <a href="index.html" class="h-10 flex items-center logo-btn">
-            <img src="baja_racing_engineering/logo.png" alt="Team Manipal Racing Logo" class="h-full object-contain" />
-        </a>
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-md border-b border-white/10 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="index.html" class="h-10 flex items-center logo-btn">
+                <img src="baja_racing_engineering/logo.png" alt="Team Manipal Racing Logo" class="h-full object-contain" />
+            </a>
 
-        <div class="hidden md:flex items-center space-x-6">
-            <a href="index.html" class="font-space uppercase tracking-widest text-xs font-semibold text-white hover:text-sky-400 transition-colors">HOME</a>
-            <a href="index.html#about" class="font-space uppercase tracking-widest text-xs font-semibold text-white/60 hover:text-sky-400 transition-colors">ABOUT</a>
-            <a href="subsystem.html" class="font-space uppercase tracking-widest text-xs font-semibold text-white/60 hover:text-sky-400 transition-colors">SUBSYSTEMS</a>
-            <a href="achievement.html" class="font-space uppercase tracking-widest text-xs font-semibold text-white/60 hover:text-sky-400 transition-colors">ACHIEVEMENTS</a>
-            <a href="index.html#sponsors" class="font-space uppercase tracking-widest text-xs font-semibold text-white/60 hover:text-sky-400 transition-colors">SPONSORS</a>
-            <a href="journey.html" class="font-space uppercase tracking-widest text-xs font-semibold text-white/60 hover:text-sky-400 transition-colors">JOURNEY</a>
-            <a href="index.html#contact" class="font-space uppercase tracking-widest text-xs font-semibold text-white/60 hover:text-sky-400 transition-colors">CONTACT US</a>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="index.html" class="font-space uppercase tracking-widest text-xs font-semibold text-white hover:text-sky-400 transition-colors">HOME</a>
+                <a href="index.html#about" class="font-space uppercase tracking-widest text-xs font-semibold text-white/60 hover:text-sky-400 transition-colors">ABOUT</a>
+                <a href="subsystem.html" class="font-space uppercase tracking-widest text-xs font-semibold text-white/60 hover:text-sky-400 transition-colors">SUBSYSTEMS</a>
+                <a href="achievement.html" class="font-space uppercase tracking-widest text-xs font-semibold text-white/60 hover:text-sky-400 transition-colors">ACHIEVEMENTS</a>
+                <a href="index.html#sponsors" class="font-space uppercase tracking-widest text-xs font-semibold text-white/60 hover:text-sky-400 transition-colors">SPONSORS</a>
+                <a href="journey.html" class="font-space uppercase tracking-widest text-xs font-semibold text-white/60 hover:text-sky-400 transition-colors">JOURNEY</a>
+                <a href="index.html#contact" class="font-space uppercase tracking-widest text-xs font-semibold text-white/60 hover:text-sky-400 transition-colors">CONTACT US</a>
+            </div>
+
+            <div class="hidden md:block">
+                <a href="https://www.canva.com/design/DAHEU_wGm54/LWLv2JvuzkA-9bbtbdJvzg/edit" target="_blank"
+                    class="px-5 py-2 border border-sky-400 text-sky-400 hover:bg-sky-400/10 font-space font-bold rounded uppercase tracking-widest text-xs transition-all">Sponsor Us</a>
+            </div>
+
+            <button class="md:hidden text-white hover:text-sky-400 transition-colors" id="menu-toggle">
+                <span class="material-symbols-outlined text-3xl">menu</span>
+            </button>
         </div>
 
-        <div class="hidden md:block">
+        <div class="hidden flex-col space-y-4 pt-4 pb-2 border-t border-white/10 mt-3" id="mobile-menu">
+            <a href="index.html" class="block font-space uppercase tracking-widest text-sm font-semibold text-white hover:text-sky-400 transition-colors mobile-nav-link">HOME</a>
+            <a href="index.html#about" class="block font-space uppercase tracking-widest text-sm font-semibold text-white/60 hover:text-sky-400 transition-colors mobile-nav-link">ABOUT</a>
+            <a href="subsystem.html" class="block font-space uppercase tracking-widest text-sm font-semibold text-white/60 hover:text-sky-400 transition-colors mobile-nav-link">SUBSYSTEMS</a>
+            <a href="achievement.html" class="block font-space uppercase tracking-widest text-sm font-semibold text-white/60 hover:text-sky-400 transition-colors mobile-nav-link">ACHIEVEMENTS</a>
+            <a href="index.html#sponsors" class="block font-space uppercase tracking-widest text-sm font-semibold text-white/60 hover:text-sky-400 transition-colors mobile-nav-link">SPONSORS</a>
+            <a href="journey.html" class="block font-space uppercase tracking-widest text-sm font-semibold text-white/60 hover:text-sky-400 transition-colors mobile-nav-link">JOURNEY</a>
+            <a href="index.html#contact" class="block font-space uppercase tracking-widest text-sm font-semibold text-white/60 hover:text-sky-400 transition-colors mobile-nav-link">CONTACT US</a>
             <a href="https://www.canva.com/design/DAHEU_wGm54/LWLv2JvuzkA-9bbtbdJvzg/edit" target="_blank"
-                class="px-5 py-2 border border-sky-400 text-sky-400 hover:bg-sky-400/10 font-space font-bold rounded uppercase tracking-widest text-xs transition-all">Sponsor Us</a>
+                class="block text-center py-2 bg-sky-400/10 border border-sky-400 text-sky-400 font-space font-bold rounded uppercase tracking-widest text-xs">Sponsor Us</a>
         </div>
-
-        <button class="md:hidden text-white hover:text-sky-400 transition-colors" id="menu-toggle">
-            <span class="material-symbols-outlined text-3xl">menu</span>
-        </button>
-    </div>
-
-    <div class="hidden flex-col space-y-4 pt-4 pb-2 border-t border-white/10 mt-3" id="mobile-menu">
-        <a href="index.html" class="block font-space uppercase tracking-widest text-sm font-semibold text-white hover:text-sky-400 transition-colors mobile-nav-link">HOME</a>
-        <a href="index.html#about" class="block font-space uppercase tracking-widest text-sm font-semibold text-white/60 hover:text-sky-400 transition-colors mobile-nav-link">ABOUT</a>
-        <a href="subsystem.html" class="block font-space uppercase tracking-widest text-sm font-semibold text-white/60 hover:text-sky-400 transition-colors mobile-nav-link">SUBSYSTEMS</a>
-        <a href="achievement.html" class="block font-space uppercase tracking-widest text-sm font-semibold text-white/60 hover:text-sky-400 transition-colors mobile-nav-link">ACHIEVEMENTS</a>
-        <a href="index.html#sponsors" class="block font-space uppercase tracking-widest text-sm font-semibold text-white/60 hover:text-sky-400 transition-colors mobile-nav-link">SPONSORS</a>
-        <a href="journey.html" class="block font-space uppercase tracking-widest text-sm font-semibold text-white/60 hover:text-sky-400 transition-colors mobile-nav-link">JOURNEY</a>
-        <a href="index.html#contact" class="block font-space uppercase tracking-widest text-sm font-semibold text-white/60 hover:text-sky-400 transition-colors mobile-nav-link">CONTACT US</a>
-        <a href="https://www.canva.com/design/DAHEU_wGm54/LWLv2JvuzkA-9bbtbdJvzg/edit" target="_blank"
-            class="block text-center py-2 bg-sky-400/10 border border-sky-400 text-sky-400 font-space font-bold rounded uppercase tracking-widest text-xs">Sponsor Us</a>
-    </div>
-</nav>
+    </nav>
 
     <!-- MAIN CONTENT -->
-   <main class="flex-grow pt-16">
+    <main class="flex-grow pt-16">
 
-    <section
-        class="relative min-h-[460px] flex items-center justify-center overflow-hidden border-b border-white/10 bg-[#0a0c0d]">
-        <div class="absolute inset-0 z-0">
-            <img alt="Baja Chassis Frame Background"
-                class="w-full h-full object-cover object-[center_65%] opacity-45 select-none pointer-events-none filter contrast-[1.10] brightness-[0.95]"
-                src="velocity_performance/Sub_baja.jpeg" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-black/80"></div>
-            <div class="absolute inset-0 bg-black/30 mix-blend-multiply"></div>
-        </div>
+        <section class="relative min-h-[460px] flex items-center justify-center overflow-hidden border-b border-white/10 bg-[#0a0c0d]">
+            <div class="absolute inset-0 z-0">
+                <img alt="Baja Chassis Frame Background"
+                    class="w-full h-full object-cover object-[center_65%] opacity-45 select-none pointer-events-none filter contrast-[1.10] brightness-[0.95]"
+                    src="velocity_performance/Sub_baja.jpeg" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-black/80"></div>
+                <div class="absolute inset-0 bg-black/30 mix-blend-multiply"></div>
+            </div>
 
-        <div class="relative z-10 text-center px-6 max-w-3xl mx-auto flex flex-col items-center gap-4 mt-12">
-            <span
-                class="font-space text-xs font-semibold tracking-[0.25em] uppercase text-sky-400 border border-sky-400/40 bg-sky-950/50 backdrop-blur-sm px-3 py-1 rounded">
-                Technical Specifications
-            </span>
-            <h1
-                class="font-space text-4xl md:text-6xl font-black text-white uppercase tracking-wider drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
-                OUR SUBSYSTEMS
-            </h1>
-            <div class="w-20 h-1 bg-sky-400 rounded-full shadow-[0_0_8px_rgba(56,189,248,0.6)]"></div>
-            <p
-                class="font-inter text-sm md:text-base text-white/80 max-w-xl leading-relaxed drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]">
-                Precision-engineered components driving off-road excellence through rigorous computational analysis
-                and mechanical innovation.
-            </p>
-        </div>
-    </section>
-
-    <div class="max-w-7xl mx-auto px-6 md:px-12">
-        <section class="py-16">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-                <div id="structures"
-                    class="scroll-mt-24 bg-surface-container border border-white/10 rounded-xl p-8 flex flex-col gap-5 group hover:border-sky-400 hover:shadow-[0_0_20px_rgba(163,205,219,0.12)] transition-all duration-300 animate-fade-up">
-                    <div
-                        class="flex items-center justify-center w-14 h-14 bg-black/50 border border-white/10 rounded-lg shrink-0">
-                        <svg class="w-8 h-8 text-sky-400" fill="none" stroke="currentColor" stroke-width="1.5"
-                            viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
-                        </svg>
-                    </div>
-                    <div>
-                        <h3
-                            class="font-space text-xl font-bold text-white mb-3 uppercase tracking-tight group-hover:text-sky-400 transition-colors">
-                            Structures</h3>
-                        <p class="font-inter text-sm text-white/65 leading-relaxed">The structures subsystem
-                            designs, analyzes, and fabricates the tubular chassis for durability, while also
-                            crafting basalt fiber and Kevlar bodywork to enhance strength and aesthetics.</p>
-                    </div>
-                </div>
-
-                <div id="transmission"
-                    class="scroll-mt-24 bg-surface-container border border-white/10 rounded-xl p-8 flex flex-col gap-5 group hover:border-sky-400 hover:shadow-[0_0_20px_rgba(163,205,219,0.12)] transition-all duration-300 animate-fade-up">
-                    <div
-                        class="flex items-center justify-center w-14 h-14 bg-black/50 border border-white/10 rounded-lg shrink-0">
-                        <svg class="w-8 h-8 text-sky-400" fill="none" stroke="currentColor" stroke-width="1.5"
-                            viewBox="0 0 24 24">
-                            <circle cx="12" cy="12" r="3" />
-                            <path
-                                d="M12 2v2m0 16v2M2 12h2m16 0h2M5.6 5.6l1.4 1.4m10 10l1.4 1.4M18.4 5.6l-1.4 1.4M5.6 18.4l1.4-1.4" />
-                            <circle cx="12" cy="12" r="7" stroke-dasharray="3 3" />
-                        </svg>
-                    </div>
-                    <div>
-                        <h3
-                            class="font-space text-xl font-bold text-white mb-3 uppercase tracking-tight group-hover:text-sky-400 transition-colors">
-                            Transmission</h3>
-                        <p class="font-inter text-sm text-white/65 leading-relaxed">Our 4WD transmission delivers
-                            700 Nm of torque, towing a 2-ton tractor in 15 seconds and accelerating 150 feet in 4.5
-                            seconds. Optimized gear ratios and advanced materials ensure superior traction,
-                            stability, and efficiency.</p>
-                    </div>
-                </div>
-
-                <div id="vehicle-dynamics"
-                    class="scroll-mt-24 bg-surface-container border border-white/10 rounded-xl p-8 flex flex-col gap-5 group hover:border-sky-400 hover:shadow-[0_0_20px_rgba(163,205,219,0.12)] transition-all duration-300 animate-fade-up">
-                    <div
-                        class="flex items-center justify-center w-14 h-14 bg-black/50 border border-white/10 rounded-lg shrink-0">
-                        <svg class="w-8 h-8 text-sky-400" fill="none" stroke="currentColor" stroke-width="1.5"
-                            viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
-                        </svg>
-                    </div>
-                    <div>
-                        <h3
-                            class="font-space text-xl font-bold text-white mb-3 uppercase tracking-tight group-hover:text-sky-400 transition-colors">
-                            Vehicle Dynamics</h3>
-                        <p class="font-inter text-sm text-white/65 leading-relaxed">We design suspension, braking,
-                            and steering systems to optimize off-road handling, ensuring precise steering, driver
-                            comfort, and stability in demanding terrain. Our approach enhances responsiveness and
-                            durability for superior performance.</p>
-                    </div>
-                </div>
-
-                <div id="electronics"
-                    class="scroll-mt-24 bg-surface-container border border-white/10 rounded-xl p-8 flex flex-col gap-5 group hover:border-sky-400 hover:shadow-[0_0_20px_rgba(163,205,219,0.12)] transition-all duration-300 animate-fade-up-2">
-                    <div
-                        class="flex items-center justify-center w-14 h-14 bg-black/50 border border-white/10 rounded-lg shrink-0">
-                        <svg class="w-8 h-8 text-sky-400" fill="none" stroke="currentColor" stroke-width="1.5"
-                            viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                        </svg>
-                    </div>
-                    <div>
-                        <h3
-                            class="font-space text-xl font-bold text-white mb-3 uppercase tracking-tight group-hover:text-sky-400 transition-colors">
-                            Electronics</h3>
-                        <p class="font-inter text-sm text-white/65 leading-relaxed">This subsystem focuses on
-                            designing EV batteries, developing control systems, and refining powertrain components.
-                            It also involves building custom wiring harnesses that integrate various electronic
-                            modules, ensuring efficient energy management and vehicle performance.</p>
-                    </div>
-                </div>
-
-                <div id="data-acquisition"
-                    class="scroll-mt-24 bg-surface-container border border-white/10 rounded-xl p-8 flex flex-col gap-5 group hover:border-sky-400 hover:shadow-[0_0_20px_rgba(163,205,219,0.12)] transition-all duration-300 animate-fade-up-2">
-                    <div
-                        class="flex items-center justify-center w-14 h-14 bg-black/50 border border-white/10 rounded-lg shrink-0">
-                        <svg class="w-8 h-8 text-sky-400" fill="none" stroke="currentColor" stroke-width="1.5"
-                            viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                        </svg>
-                    </div>
-                    <div>
-                        <h3
-                            class="font-space text-xl font-bold text-white mb-3 uppercase tracking-tight group-hover:text-sky-400 transition-colors">
-                            Data Acquisition</h3>
-                        <p class="font-inter text-sm text-white/65 leading-relaxed">This part involves collecting
-                            and analyzing real-time vehicle data to optimize efficiency, tuning, and overall
-                            performance. It supports decision-making by monitoring parameters like battery status,
-                            motor behavior, and environmental conditions, enabling precise diagnostics and system
-                            refinement.</p>
-                    </div>
-                </div>
-
-                <div id="management"
-                    class="scroll-mt-24 bg-surface-container border border-white/10 rounded-xl p-8 flex flex-col gap-5 group hover:border-sky-400 hover:shadow-[0_0_20px_rgba(163,205,219,0.12)] transition-all duration-300 animate-fade-up-2">
-                    <div
-                        class="flex items-center justify-center w-14 h-14 bg-black/50 border border-white/10 rounded-lg shrink-0">
-                        <svg class="w-8 h-8 text-sky-400" fill="none" stroke="currentColor" stroke-width="1.5"
-                            viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                        </svg>
-                    </div>
-                    <div>
-                        <h3
-                            class="font-space text-xl font-bold text-white mb-3 uppercase tracking-tight group-hover:text-sky-400 transition-colors">
-                            Management</h3>
-                        <p class="font-inter text-sm text-white/65 leading-relaxed">The Management team handles
-                            Finance, Logistics, Media & PR, Sponsorships, and Sourcing. Finance and Logistics
-                            manage transactions, Media & PR oversee branding, while Sponsorships and Sourcing
-                            secure funding and essential resources.</p>
-                    </div>
-                </div>
-
-                <div id="research-and-development"
-                    class="scroll-mt-24 bg-surface-container border border-white/10 rounded-xl p-8 flex flex-col gap-5 group hover:border-sky-400 hover:shadow-[0_0_20px_rgba(163,205,219,0.12)] transition-all duration-300 animate-fade-up-3 md:col-span-2 lg:col-span-1 lg:col-start-2">
-                    <div
-                        class="flex items-center justify-center w-14 h-14 bg-black/50 border border-white/10 rounded-lg shrink-0">
-                        <svg class="w-8 h-8 text-sky-400" fill="none" stroke="currentColor" stroke-width="1.5"
-                            viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                        </svg>
-                    </div>
-                    <div>
-                        <h3
-                            class="font-space text-xl font-bold text-white mb-3 uppercase tracking-tight group-hover:text-sky-400 transition-colors">
-                            Research & Development</h3>
-                        <p class="font-inter text-sm text-white/65 leading-relaxed">The research team focuses on
-                            filing patents and writing research papers. Working with other subsystems, they innovate
-                            new components and optimize existing components.</p>
-                    </div>
-                </div>
-
+            <div class="relative z-10 text-center px-6 max-w-3xl mx-auto flex flex-col items-center gap-4 mt-12">
+                <span class="font-space text-xs font-semibold tracking-[0.25em] uppercase text-sky-400 border border-sky-400/40 bg-sky-950/50 backdrop-blur-sm px-3 py-1 rounded">
+                    Technical Specifications
+                </span>
+                <h1 class="font-space text-4xl md:text-6xl font-black text-white uppercase tracking-wider drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
+                    OUR SUBSYSTEMS
+                </h1>
+                <div class="w-20 h-1 bg-sky-400 rounded-full shadow-[0_0_8px_rgba(56,189,248,0.6)]"></div>
+                <p class="font-inter text-sm md:text-base text-white/80 max-w-xl leading-relaxed drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]">
+                    Precision-engineered components driving off-road excellence through rigorous computational analysis and mechanical innovation.
+                </p>
             </div>
         </section>
-    </div>
-</main>
-    <!-- Low-Profile Footer Matching image_f1d2e8.png -->
+
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <section class="py-16">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                    <!-- Structures Subsystem -->
+                    <div id="structures" class="scroll-mt-24 relative overflow-hidden h-[340px] bg-surface-container border border-white/10 rounded-xl group hover:border-sky-400 hover:shadow-[0_0_30px_rgba(56,189,248,0.15)] transition-all duration-500 ease-out animate-fade-up">
+                        <!-- Background Subsystem Photo -->
+                        <div class="absolute inset-0 w-full h-full scale-100 group-hover:scale-105 transition-transform duration-700 ease-out z-0">
+                            <img src="velocity_performance/struct.jpeg" alt="Structures Layout" class="w-full h-full object-cover filter brightness-[0.4] group-hover:brightness-[0.85] transition-all duration-500" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent group-hover:from-black/20 group-hover:to-transparent transition-all duration-500"></div>
+                        </div>
+                        <!-- Content Overlay -->
+                        <div class="absolute inset-0 p-8 flex flex-col justify-end z-10 transition-all duration-500 ease-out transform group-hover:translate-y-8 group-hover:opacity-0">
+                            <h3 class="font-space text-2xl font-bold text-white mb-3 uppercase tracking-tight">
+                                Structures
+                            </h3>
+                            <p class="font-inter text-sm text-white/70 leading-relaxed">
+                                The structures subsystem designs, analyzes, and fabricates the tubular chassis for durability, while also crafting basalt fiber and Kevlar bodywork to enhance strength and aesthetics.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Transmission Subsystem -->
+                    <div id="transmission" class="scroll-mt-24 relative overflow-hidden h-[340px] bg-surface-container border border-white/10 rounded-xl group hover:border-sky-400 hover:shadow-[0_0_30px_rgba(56,189,248,0.15)] transition-all duration-500 ease-out animate-fade-up">
+                        <!-- Background Subsystem Photo -->
+                        <div class="absolute inset-0 w-full h-full scale-100 group-hover:scale-105 transition-transform duration-700 ease-out z-0">
+                            <img src="velocity_performance/tranny.jpeg" alt="Transmission Layout" class="w-full h-full object-cover filter brightness-[0.4] group-hover:brightness-[0.85] transition-all duration-500" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent group-hover:from-black/20 group-hover:to-transparent transition-all duration-500"></div>
+                        </div>
+                        <!-- Content Overlay -->
+                        <div class="absolute inset-0 p-8 flex flex-col justify-end z-10 transition-all duration-500 ease-out transform group-hover:translate-y-8 group-hover:opacity-0">
+                            <h3 class="font-space text-2xl font-bold text-white mb-3 uppercase tracking-tight">
+                                Transmission
+                            </h3>
+                            <p class="font-inter text-sm text-white/70 leading-relaxed">
+                                Our 4WD transmission delivers 700 Nm of torque, towing a 2-ton tractor in 15 seconds and accelerating 150 feet in 4.5 seconds. Optimized gear ratios and advanced materials ensure superior traction, stability, and efficiency.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Vehicle Dynamics Subsystem -->
+                    <div id="vehicle-dynamics" class="scroll-mt-24 relative overflow-hidden h-[340px] bg-surface-container border border-white/10 rounded-xl group hover:border-sky-400 hover:shadow-[0_0_30px_rgba(56,189,248,0.15)] transition-all duration-500 ease-out animate-fade-up">
+                        <!-- Background Subsystem Photo -->
+                        <div class="absolute inset-0 w-full h-full scale-100 group-hover:scale-105 transition-transform duration-700 ease-out z-0">
+                            <img src="velocity_performance/vd.jpeg" alt="Vehicle Dynamics Layout" class="w-full h-full object-cover filter brightness-[0.4] group-hover:brightness-[0.85] transition-all duration-500" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent group-hover:from-black/20 group-hover:to-transparent transition-all duration-500"></div>
+                        </div>
+                        <!-- Content Overlay -->
+                        <div class="absolute inset-0 p-8 flex flex-col justify-end z-10 transition-all duration-500 ease-out transform group-hover:translate-y-8 group-hover:opacity-0">
+                            <h3 class="font-space text-2xl font-bold text-white mb-3 uppercase tracking-tight">
+                                Vehicle Dynamics
+                            </h3>
+                            <p class="font-inter text-sm text-white/70 leading-relaxed">
+                                We design suspension, braking, and steering systems to optimize off-road handling, ensuring precise steering, driver comfort, and stability in demanding terrain. Our approach enhances responsiveness and durability for superior performance.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Electronics Subsystem -->
+                    <div id="electronics" class="scroll-mt-24 relative overflow-hidden h-[340px] bg-surface-container border border-white/10 rounded-xl group hover:border-sky-400 hover:shadow-[0_0_30px_rgba(56,189,248,0.15)] transition-all duration-500 ease-out animate-fade-up-2">
+                        <!-- Background Subsystem Photo -->
+                        <div class="absolute inset-0 w-full h-full scale-100 group-hover:scale-105 transition-transform duration-700 ease-out z-0">
+                            <img src="velocity_performance/elec.jpeg" alt="Electronics Layout" class="w-full h-full object-cover filter brightness-[0.4] group-hover:brightness-[0.85] transition-all duration-500" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent group-hover:from-black/20 group-hover:to-transparent transition-all duration-500"></div>
+                        </div>
+                        <!-- Content Overlay -->
+                        <div class="absolute inset-0 p-8 flex flex-col justify-end z-10 transition-all duration-500 ease-out transform group-hover:translate-y-8 group-hover:opacity-0">
+                            <h3 class="font-space text-2xl font-bold text-white mb-3 uppercase tracking-tight">
+                                Electronics
+                            </h3>
+                            <p class="font-inter text-sm text-white/70 leading-relaxed">
+                                This subsystem focuses on designing EV batteries, developing control systems, and refining powertrain components. It also involves building custom wiring harnesses that integrate various electronic modules, ensuring efficient energy management and vehicle performance.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Data Acquisition Subsystem -->
+                    <div id="data-acquisition" class="scroll-mt-24 relative overflow-hidden h-[340px] bg-surface-container border border-white/10 rounded-xl group hover:border-sky-400 hover:shadow-[0_0_30px_rgba(56,189,248,0.15)] transition-all duration-500 ease-out animate-fade-up-2">
+                        <!-- Background Subsystem Photo -->
+                        <div class="absolute inset-0 w-full h-full scale-100 group-hover:scale-105 transition-transform duration-700 ease-out z-0">
+                            <img src="velocity_performance/daq.jpeg" alt="Data Acquisition Layout" class="w-full h-full object-cover filter brightness-[0.4] group-hover:brightness-[0.85] transition-all duration-500" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent group-hover:from-black/20 group-hover:to-transparent transition-all duration-500"></div>
+                        </div>
+                        <!-- Content Overlay -->
+                        <div class="absolute inset-0 p-8 flex flex-col justify-end z-10 transition-all duration-500 ease-out transform group-hover:translate-y-8 group-hover:opacity-0">
+                            <h3 class="font-space text-2xl font-bold text-white mb-3 uppercase tracking-tight">
+                                Data Acquisition
+                            </h3>
+                            <p class="font-inter text-sm text-white/70 leading-relaxed">
+                                This part involves collecting and analyzing real-time vehicle data to optimize efficiency, tuning, and overall performance. It supports decision-making by monitoring parameters like battery status, motor behavior, and environmental conditions, enabling precise diagnostics and system refinement.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Management Subsystem -->
+                    <div id="management" class="scroll-mt-24 relative overflow-hidden h-[340px] bg-surface-container border border-white/10 rounded-xl group hover:border-sky-400 hover:shadow-[0_0_30px_rgba(56,189,248,0.15)] transition-all duration-500 ease-out animate-fade-up-2">
+                        <!-- Background Subsystem Photo -->
+                        <div class="absolute inset-0 w-full h-full scale-100 group-hover:scale-105 transition-transform duration-700 ease-out z-0">
+                            <img src="velocity_performance/manage.jpeg" alt="Management Layout" class="w-full h-full object-cover filter brightness-[0.4] group-hover:brightness-[0.85] transition-all duration-500" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent group-hover:from-black/20 group-hover:to-transparent transition-all duration-500"></div>
+                        </div>
+                        <!-- Content Overlay -->
+                        <div class="absolute inset-0 p-8 flex flex-col justify-end z-10 transition-all duration-500 ease-out transform group-hover:translate-y-8 group-hover:opacity-0">
+                            <h3 class="font-space text-2xl font-bold text-white mb-3 uppercase tracking-tight">
+                                Management
+                            </h3>
+                            <p class="font-inter text-sm text-white/70 leading-relaxed">
+                                The Management team handles Finance, Logistics, Media & PR, Sponsorships, and Sourcing. Finance and Logistics manage transactions, Media & PR oversee branding, while Sponsorships and Sourcing secure funding and essential resources.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Research & Development Subsystem -->
+                    <div id="research-and-development" class="scroll-mt-24 relative overflow-hidden h-[340px] bg-surface-container border border-white/10 rounded-xl group hover:border-sky-400 hover:shadow-[0_0_30px_rgba(56,189,248,0.15)] transition-all duration-500 ease-out animate-fade-up-3 md:col-span-2 lg:col-span-1 lg:col-start-2">
+                        <!-- Background Subsystem Photo -->
+                        <div class="absolute inset-0 w-full h-full scale-100 group-hover:scale-105 transition-transform duration-700 ease-out z-0">
+                            <img src="velocity_performance/rnd.jpeg" alt="Research and Development Layout" class="w-full h-full object-cover filter brightness-[0.4] group-hover:brightness-[0.85] transition-all duration-500" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent group-hover:from-black/20 group-hover:to-transparent transition-all duration-500"></div>
+                        </div>
+                        <!-- Content Overlay -->
+                        <div class="absolute inset-0 p-8 flex flex-col justify-end z-10 transition-all duration-500 ease-out transform group-hover:translate-y-8 group-hover:opacity-0">
+                            <h3 class="font-space text-2xl font-bold text-white mb-3 uppercase tracking-tight">
+                                Research & Development
+                            </h3>
+                            <p class="font-inter text-sm text-white/70 leading-relaxed">
+                                The research team focuses on filing patents and writing research papers. Working with other subsystems, they innovate new components and optimize existing components.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Low-Profile Footer -->
     <footer class="w-full bg-[#0a0a0a] border-t border-white/5 py-8 px-8 md:px-16 mt-auto">
         <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-
             <!-- Left Side: Logo & Team Name -->
             <div class="flex items-center gap-3">
                 <img src="velocity_performance/logo.png" alt="TMR-E Logo" class="h-8 object-contain" />
@@ -303,14 +276,13 @@
                     Team Manipal Racing
                 </span>
             </div>
-
             <!-- Right Side: Copyright -->
             <div class="font-space text-xs tracking-widest text-white/40 uppercase text-center sm:text-right">
                 &copy; 2026 Team Manipal Racing. All Rights Reserved.
             </div>
-
         </div>
     </footer>
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const menuToggle = document.getElementById('menu-toggle');
