@@ -72,71 +72,106 @@
         .shine-sweep:hover::before {
             transform: translateX(140%);
         }
+
+        .milestone-year {
+            transition: color 300ms ease, opacity 300ms ease, transform 300ms ease;
+        }
+
+        .group:hover .milestone-year {
+            color: rgba(163, 205, 219, 0.95) !important;
+            opacity: 1 !important;
+        }
     </style>
 </head>
 
 <body class="bg-background text-on-background antialiased min-h-screen flex flex-col font-inter overflow-x-hidden">
 
     <!-- Persistent Navigation Bar -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-black/72 backdrop-blur-xl border-b border-white/10 px-6 py-3.5">
-        <div class="max-w-7xl mx-auto flex items-center justify-between">
-            <a href="index.html" class="h-10 flex items-center logo-btn shrink-0">
-                <img src="baja_racing_engineering/logo.png" alt="Team Manipal Racing Logo"
-                    class="h-full object-contain" />
+<nav class="fixed top-0 left-0 right-0 z-50 bg-black/72 backdrop-blur-xl border-b border-white/10 px-6 py-3.5">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+        <a href="index.html" class="h-10 flex items-center logo-btn shrink-0">
+            <img src="baja_racing_engineering/logo.png" alt="Team Manipal Racing Logo"
+                class="h-full object-contain" />
+        </a>
+
+        <div class="hidden md:flex items-center space-x-6">
+            <a href="index.html"
+                class="font-space uppercase tracking-widest text-xs font-medium text-white/60 hover:text-sky-400 transition-colors">
+                HOME
             </a>
-
-            <div class="hidden md:flex items-center space-x-6">
-                <a href="index.html"
-                    class="font-space uppercase tracking-widest text-xs font-semibold text-white hover:text-sky-400 transition-colors">HOME</a>
-                <a href="index.html#about"
-                    class="font-space uppercase tracking-widest text-xs font-semibold text-white/60 hover:text-sky-400 transition-colors">ABOUT</a>
-                <a href="subsystem.html"
-                    class="font-space uppercase tracking-widest text-xs font-semibold text-white/60 hover:text-sky-400 transition-colors">SUBSYSTEMS</a>
-                <a href="achievement.html"
-                    class="font-space uppercase tracking-widest text-xs font-semibold text-white hover:text-sky-400 transition-colors">ACHIEVEMENTS</a>
-                <a href="index.html#sponsors"
-                    class="font-space uppercase tracking-widest text-xs font-semibold text-white/60 hover:text-sky-400 transition-colors">SPONSORS</a>
-                <a href="journey.html"
-                    class="font-space uppercase tracking-widest text-xs font-semibold text-white/60 hover:text-sky-400 transition-colors">JOURNEY</a>
-                <a href="index.html#contact"
-                    class="font-space uppercase tracking-widest text-xs font-semibold text-white/60 hover:text-sky-400 transition-colors">CONTACT
-                    US</a>
-            </div>
-
-            <div class="hidden md:block">
-                <a href="https://www.canva.com/design/DAHEU_wGm54/LWLv2JvuzkA-9bbtbdJvzg/edit" target="_blank"
-                    class="px-5 py-2 border border-sky-400 text-sky-400 hover:bg-sky-400/10 font-space font-bold rounded uppercase tracking-widest text-xs transition-all">
-                    Sponsor Us
-                </a>
-            </div>
-
-            <button class="md:hidden text-white hover:text-sky-400 transition-colors" id="menu-toggle">
-                <span class="material-symbols-outlined text-3xl">menu</span>
-            </button>
+            <a href="index.html#about"
+                class="font-space uppercase tracking-widest text-xs font-medium text-white/60 hover:text-sky-400 transition-colors">
+                ABOUT
+            </a>
+            <a href="subsystem.html"
+                class="font-space uppercase tracking-widest text-xs font-medium text-white/60 hover:text-sky-400 transition-colors">
+                SUBSYSTEMS
+            </a>
+            <a href="achievement.html"
+                class="font-space uppercase tracking-widest text-xs font-semibold text-sky-400 underline underline-offset-8 decoration-2 decoration-sky-400 transition-colors">
+                ACHIEVEMENTS
+            </a>
+            <a href="index.html#sponsors"
+                class="font-space uppercase tracking-widest text-xs font-medium text-white/60 hover:text-sky-400 transition-colors">
+                SPONSORS
+            </a>
+            <a href="journey.html"
+                class="font-space uppercase tracking-widest text-xs font-medium text-white/60 hover:text-sky-400 transition-colors">
+                JOURNEY
+            </a>
+            <a href="index.html#contact"
+                class="font-space uppercase tracking-widest text-xs font-medium text-white/60 hover:text-sky-400 transition-colors">
+                CONTACT US
+            </a>
         </div>
 
-        <div class="hidden flex-col space-y-4 pt-4 pb-2 border-t border-white/10 mt-3" id="mobile-menu">
-            <a href="index.html"
-                class="block font-space uppercase tracking-widest text-sm font-semibold text-white hover:text-sky-400 transition-colors mobile-nav-link">HOME</a>
-            <a href="index.html#about"
-                class="block font-space uppercase tracking-widest text-sm font-semibold text-white/60 hover:text-sky-400 transition-colors mobile-nav-link">ABOUT</a>
-            <a href="subsystem.html"
-                class="block font-space uppercase tracking-widest text-sm font-semibold text-white/60 hover:text-sky-400 transition-colors mobile-nav-link">SUBSYSTEMS</a>
-            <a href="achievement.html"
-                class="block font-space uppercase tracking-widest text-sm font-semibold text-white hover:text-sky-400 transition-colors mobile-nav-link">ACHIEVEMENTS</a>
-            <a href="index.html#sponsors"
-                class="block font-space uppercase tracking-widest text-sm font-semibold text-white/60 hover:text-sky-400 transition-colors mobile-nav-link">SPONSORS</a>
-            <a href="journey.html"
-                class="block font-space uppercase tracking-widest text-sm font-semibold text-white/60 hover:text-sky-400 transition-colors mobile-nav-link">JOURNEY</a>
-            <a href="index.html#contact"
-                class="block font-space uppercase tracking-widest text-sm font-semibold text-white/60 hover:text-sky-400 transition-colors mobile-nav-link">CONTACT
-                US</a>
+        <div class="hidden md:block">
             <a href="https://www.canva.com/design/DAHEU_wGm54/LWLv2JvuzkA-9bbtbdJvzg/edit" target="_blank"
-                class="block text-center py-2 bg-sky-400/10 border border-sky-400 text-sky-400 font-space font-bold rounded uppercase tracking-widest text-xs">
+                class="px-5 py-2 border border-sky-400 text-sky-400 hover:bg-sky-400/10 font-space font-bold rounded uppercase tracking-widest text-xs transition-all">
                 Sponsor Us
             </a>
         </div>
-    </nav>
+
+        <button class="md:hidden text-white hover:text-sky-400 transition-colors" id="menu-toggle">
+            <span class="material-symbols-outlined text-3xl">menu</span>
+        </button>
+    </div>
+
+    <div class="hidden flex-col space-y-4 pt-4 pb-2 border-t border-white/10 mt-3" id="mobile-menu">
+        <a href="index.html"
+            class="block font-space uppercase tracking-widest text-sm font-medium text-white/60 hover:text-sky-400 transition-colors mobile-nav-link">
+            HOME
+        </a>
+        <a href="index.html#about"
+            class="block font-space uppercase tracking-widest text-sm font-medium text-white/60 hover:text-sky-400 transition-colors mobile-nav-link">
+            ABOUT
+        </a>
+        <a href="subsystem.html"
+            class="block font-space uppercase tracking-widest text-sm font-medium text-white/60 hover:text-sky-400 transition-colors mobile-nav-link">
+            SUBSYSTEMS
+        </a>
+        <a href="achievement.html"
+            class="block font-space uppercase tracking-widest text-sm font-semibold text-sky-400 underline underline-offset-4 decoration-2 decoration-sky-400 transition-colors mobile-nav-link">
+            ACHIEVEMENTS
+        </a>
+        <a href="index.html#sponsors"
+            class="block font-space uppercase tracking-widest text-sm font-medium text-white/60 hover:text-sky-400 transition-colors mobile-nav-link">
+            SPONSORS
+        </a>
+        <a href="journey.html"
+            class="block font-space uppercase tracking-widest text-sm font-medium text-white/60 hover:text-sky-400 transition-colors mobile-nav-link">
+            JOURNEY
+        </a>
+        <a href="index.html#contact"
+            class="block font-space uppercase tracking-widest text-sm font-medium text-white/60 hover:text-sky-400 transition-colors mobile-nav-link">
+            CONTACT US
+        </a>
+        <a href="https://www.canva.com/design/DAHEU_wGm54/LWLv2JvuzkA-9bbtbdJvzg/edit" target="_blank"
+            class="block text-center py-2 bg-sky-400/10 border border-sky-400 text-sky-400 font-space font-bold rounded uppercase tracking-widest text-xs">
+            Sponsor Us
+        </a>
+    </div>
+</nav>
 
     <main class="flex-grow">
 
@@ -209,7 +244,6 @@
             </div>
 
             <div class="relative z-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-                <!-- Card 1 -->
                 <article
                     class="group shine-sweep relative overflow-hidden rounded-3xl border border-white/10 bg-[#111111]/95 p-6 shadow-[0_18px_50px_rgba(0,0,0,0.28)] transition-all duration-300 hover:-translate-y-1 hover:border-secondary/45 hover:shadow-[0_24px_70px_rgba(0,0,0,0.38)] cursor-pointer">
                     <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-secondary/20 via-secondary to-secondary/20"></div>
@@ -233,7 +267,6 @@
                     <div class="mt-6 h-px w-full bg-white/6"></div>
                 </article>
 
-                <!-- Card 2 -->
                 <article
                     class="group shine-sweep relative overflow-hidden rounded-3xl border border-white/10 bg-[#111111]/95 p-6 shadow-[0_18px_50px_rgba(0,0,0,0.28)] transition-all duration-300 hover:-translate-y-1 hover:border-secondary/45 hover:shadow-[0_24px_70px_rgba(0,0,0,0.38)] cursor-pointer">
                     <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-secondary/20 via-secondary to-secondary/20"></div>
@@ -257,7 +290,6 @@
                     <div class="mt-6 h-px w-full bg-white/6"></div>
                 </article>
 
-                <!-- Card 3 -->
                 <article
                     class="group shine-sweep relative overflow-hidden rounded-3xl border border-white/10 bg-[#111111]/95 p-6 shadow-[0_18px_50px_rgba(0,0,0,0.28)] transition-all duration-300 hover:-translate-y-1 hover:border-secondary/45 hover:shadow-[0_24px_70px_rgba(0,0,0,0.38)] cursor-pointer">
                     <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-secondary/20 via-secondary to-secondary/20"></div>
@@ -281,7 +313,6 @@
                     <div class="mt-6 h-px w-full bg-white/6"></div>
                 </article>
 
-                <!-- Card 4 -->
                 <article
                     class="group shine-sweep relative overflow-hidden rounded-3xl border border-white/10 bg-[#111111]/95 p-6 shadow-[0_18px_50px_rgba(0,0,0,0.28)] transition-all duration-300 hover:-translate-y-1 hover:border-secondary/45 hover:shadow-[0_24px_70px_rgba(0,0,0,0.38)] cursor-pointer">
                     <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-secondary/20 via-secondary to-secondary/20"></div>
@@ -305,7 +336,6 @@
                     <div class="mt-6 h-px w-full bg-white/6"></div>
                 </article>
 
-                <!-- Card 5 -->
                 <article
                     class="group shine-sweep relative overflow-hidden rounded-3xl border border-white/10 bg-[#111111]/95 p-6 shadow-[0_18px_50px_rgba(0,0,0,0.28)] transition-all duration-300 hover:-translate-y-1 hover:border-secondary/45 hover:shadow-[0_24px_70px_rgba(0,0,0,0.38)] cursor-pointer">
                     <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-secondary/20 via-secondary to-secondary/20"></div>
@@ -329,7 +359,6 @@
                     <div class="mt-6 h-px w-full bg-white/6"></div>
                 </article>
 
-                <!-- Card 6 -->
                 <article
                     class="group shine-sweep relative overflow-hidden rounded-3xl border border-white/10 bg-[#111111]/95 p-6 shadow-[0_18px_50px_rgba(0,0,0,0.28)] transition-all duration-300 hover:-translate-y-1 hover:border-secondary/45 hover:shadow-[0_24px_70px_rgba(0,0,0,0.38)] cursor-pointer">
                     <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-secondary/20 via-secondary to-secondary/20"></div>
@@ -384,7 +413,6 @@
                     </div>
 
                     <div class="space-y-14 md:space-y-16">
-                        <!-- Milestone 1 -->
                         <div class="relative flex flex-col md:flex-row items-start md:items-center w-full group">
                             <div
                                 class="absolute left-[-5px] md:left-1/2 md:-ml-[5px] w-[10px] h-[10px] rounded-full bg-background border-2 border-secondary z-10 group-hover:bg-secondary transition-colors shadow-[0_0_12px_rgba(163,205,219,0.85)]">
@@ -392,7 +420,7 @@
 
                             <div class="md:w-1/2 pl-8 md:pl-0 md:pr-12 md:text-right mb-4 md:mb-0">
                                 <span
-                                    class="font-space text-5xl md:text-6xl font-black text-white/15 group-hover:text-white/24 transition-colors block mb-2">2026</span>
+                                    class="milestone-year font-space text-5xl md:text-6xl font-black text-white/15 group-hover:text-secondary block mb-2">2026</span>
                                 <h4 class="font-space text-2xl md:text-3xl font-bold text-primary">e-BAJA 2026
                                     Campaign</h4>
                             </div>
@@ -408,7 +436,6 @@
                             </div>
                         </div>
 
-                        <!-- Milestone 2 -->
                         <div class="relative flex flex-col md:flex-row-reverse items-start md:items-center w-full group">
                             <div
                                 class="absolute left-[-5px] md:left-1/2 md:-ml-[5px] w-[10px] h-[10px] rounded-full bg-background border-2 border-secondary z-10 group-hover:bg-secondary transition-colors shadow-[0_0_12px_rgba(163,205,219,0.85)]">
@@ -416,7 +443,7 @@
 
                             <div class="md:w-1/2 pl-8 md:pl-12 mb-4 md:mb-0">
                                 <span
-                                    class="font-space text-5xl md:text-6xl font-black text-white/15 group-hover:text-white/24 transition-colors block mb-2">2025</span>
+                                    class="milestone-year font-space text-5xl md:text-6xl font-black text-white/15 group-hover:text-secondary block mb-2">2025</span>
                                 <h4 class="font-space text-2xl md:text-3xl font-bold text-primary">e-BAJA 2025
                                     Championship</h4>
                             </div>
@@ -432,7 +459,6 @@
                             </div>
                         </div>
 
-                        <!-- Milestone 3 -->
                         <div class="relative flex flex-col md:flex-row items-start md:items-center w-full group">
                             <div
                                 class="absolute left-[-5px] md:left-1/2 md:-ml-[5px] w-[10px] h-[10px] rounded-full bg-background border-2 border-secondary z-10 group-hover:bg-secondary transition-colors shadow-[0_0_12px_rgba(163,205,219,0.85)]">
@@ -440,7 +466,7 @@
 
                             <div class="md:w-1/2 pl-8 md:pl-0 md:pr-12 md:text-right mb-4 md:mb-0">
                                 <span
-                                    class="font-space text-5xl md:text-6xl font-black text-white/15 group-hover:text-white/24 transition-colors block mb-2">2024</span>
+                                    class="milestone-year font-space text-5xl md:text-6xl font-black text-white/15 group-hover:text-secondary block mb-2">2024</span>
                                 <h4 class="font-space text-2xl md:text-3xl font-bold text-primary">BAJA 2024
                                     Performance</h4>
                             </div>
@@ -456,7 +482,6 @@
                             </div>
                         </div>
 
-                        <!-- Milestone 4 -->
                         <div class="relative flex flex-col md:flex-row-reverse items-start md:items-center w-full group">
                             <div
                                 class="absolute left-[-5px] md:left-1/2 md:-ml-[5px] w-[10px] h-[10px] rounded-full bg-background border-2 border-secondary z-10 group-hover:bg-secondary transition-colors shadow-[0_0_12px_rgba(163,205,219,0.85)]">
@@ -464,7 +489,7 @@
 
                             <div class="md:w-1/2 pl-8 md:pl-12 mb-4 md:mb-0">
                                 <span
-                                    class="font-space text-5xl md:text-6xl font-black text-white/15 group-hover:text-white/24 transition-colors block mb-2">2023</span>
+                                    class="milestone-year font-space text-5xl md:text-6xl font-black text-white/15 group-hover:text-secondary block mb-2">2023</span>
                                 <h4 class="font-space text-2xl md:text-3xl font-bold text-primary">BAJA 2023
                                     Challenge</h4>
                             </div>
@@ -480,7 +505,6 @@
                             </div>
                         </div>
 
-                        <!-- Milestone 5 -->
                         <div class="relative flex flex-col md:flex-row items-start md:items-center w-full group">
                             <div
                                 class="absolute left-[-5px] md:left-1/2 md:-ml-[5px] w-[10px] h-[10px] rounded-full bg-background border-2 border-secondary z-10 group-hover:bg-secondary transition-colors shadow-[0_0_12px_rgba(163,205,219,0.85)]">
@@ -488,7 +512,7 @@
 
                             <div class="md:w-1/2 pl-8 md:pl-0 md:pr-12 md:text-right mb-4 md:mb-0">
                                 <span
-                                    class="font-space text-5xl md:text-6xl font-black text-white/15 group-hover:text-white/24 transition-colors block mb-2">2022</span>
+                                    class="milestone-year font-space text-5xl md:text-6xl font-black text-white/15 group-hover:text-secondary block mb-2">2022</span>
                                 <h4 class="font-space text-2xl md:text-3xl font-bold text-primary">BAJA 2022
                                     Breakthrough</h4>
                             </div>
@@ -504,7 +528,6 @@
                             </div>
                         </div>
 
-                        <!-- Milestone 6 -->
                         <div class="relative flex flex-col md:flex-row-reverse items-start md:items-center w-full group">
                             <div
                                 class="absolute left-[-5px] md:left-1/2 md:-ml-[5px] w-[10px] h-[10px] rounded-full bg-background border-2 border-secondary z-10 group-hover:bg-secondary transition-colors shadow-[0_0_12px_rgba(163,205,219,0.85)]">
@@ -512,7 +535,7 @@
 
                             <div class="md:w-1/2 pl-8 md:pl-12 mb-4 md:mb-0">
                                 <span
-                                    class="font-space text-5xl md:text-6xl font-black text-white/15 group-hover:text-white/24 transition-colors block mb-2">2021</span>
+                                    class="milestone-year font-space text-5xl md:text-6xl font-black text-white/15 group-hover:text-secondary block mb-2">2021</span>
                                 <h4 class="font-space text-2xl md:text-3xl font-bold text-primary">BAJA 2021
                                     Campaign</h4>
                             </div>
