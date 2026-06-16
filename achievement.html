@@ -46,8 +46,8 @@
 
         body {
             background:
-                radial-gradient(circle at top, rgba(163, 205, 219, 0.07), transparent 42%),
-                linear-gradient(to bottom, #0c0d0e, #121414 20%, #111313 100%);
+                radial-gradient(circle at top, rgba(163, 205, 219, 0.06), transparent 40%),
+                linear-gradient(to bottom, #0b0c0d 0%, #121414 18%, #111313 100%);
         }
 
         .noise-overlay {
@@ -55,7 +55,7 @@
                 linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
             background-size: 80px 80px;
-            mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.08));
+            mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.05));
             pointer-events: none;
         }
 
@@ -64,7 +64,7 @@
             position: absolute;
             inset: 0;
             transform: translateX(-140%);
-            background: linear-gradient(110deg, transparent 30%, rgba(163, 205, 219, 0.12) 50%, transparent 70%);
+            background: linear-gradient(110deg, transparent 30%, rgba(163, 205, 219, 0.10) 50%, transparent 70%);
             transition: transform 900ms ease;
             pointer-events: none;
         }
@@ -78,9 +78,9 @@
 <body class="bg-background text-on-background antialiased min-h-screen flex flex-col font-inter overflow-x-hidden">
 
     <!-- Persistent Navigation Bar -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-black/88 backdrop-blur-md border-b border-white/10 px-6 py-4">
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-black/72 backdrop-blur-xl border-b border-white/10 px-6 py-3.5">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
-            <a href="index.html" class="h-10 flex items-center logo-btn">
+            <a href="index.html" class="h-10 flex items-center logo-btn shrink-0">
                 <img src="baja_racing_engineering/logo.png" alt="Team Manipal Racing Logo"
                     class="h-full object-contain" />
             </a>
@@ -105,8 +105,9 @@
 
             <div class="hidden md:block">
                 <a href="https://www.canva.com/design/DAHEU_wGm54/LWLv2JvuzkA-9bbtbdJvzg/edit" target="_blank"
-                    class="px-5 py-2 border border-sky-400 text-sky-400 hover:bg-sky-400/10 font-space font-bold rounded uppercase tracking-widest text-xs transition-all">Sponsor
-                    Us</a>
+                    class="px-5 py-2 border border-sky-400 text-sky-400 hover:bg-sky-400/10 font-space font-bold rounded uppercase tracking-widest text-xs transition-all">
+                    Sponsor Us
+                </a>
             </div>
 
             <button class="md:hidden text-white hover:text-sky-400 transition-colors" id="menu-toggle">
@@ -131,16 +132,17 @@
                 class="block font-space uppercase tracking-widest text-sm font-semibold text-white/60 hover:text-sky-400 transition-colors mobile-nav-link">CONTACT
                 US</a>
             <a href="https://www.canva.com/design/DAHEU_wGm54/LWLv2JvuzkA-9bbtbdJvzg/edit" target="_blank"
-                class="block text-center py-2 bg-sky-400/10 border border-sky-400 text-sky-400 font-space font-bold rounded uppercase tracking-widest text-xs">Sponsor
-                Us</a>
+                class="block text-center py-2 bg-sky-400/10 border border-sky-400 text-sky-400 font-space font-bold rounded uppercase tracking-widest text-xs">
+                Sponsor Us
+            </a>
         </div>
     </nav>
 
-    <main class="flex-grow pt-16">
+    <main class="flex-grow">
 
         <!-- Hero Section -->
         <section
-            class="relative min-h-[460px] flex items-center justify-center overflow-hidden border-b border-white/10 bg-[#0a0c0d]">
+            class="relative min-h-[470px] md:min-h-[520px] flex items-center justify-center overflow-hidden border-b border-white/10 bg-[#0a0c0d] pt-24 md:pt-28">
             <div class="absolute inset-0 z-0">
                 <img alt="Baja Chassis Frame Background"
                     class="w-full h-full object-cover object-[center_65%] opacity-45 select-none pointer-events-none filter contrast-[1.10] brightness-[0.95]"
@@ -151,7 +153,7 @@
 
             <div class="absolute inset-0 noise-overlay z-[1]"></div>
 
-            <div class="relative z-10 text-center px-6 max-w-3xl mx-auto flex flex-col items-center gap-4 mt-12">
+            <div class="relative z-10 text-center px-6 max-w-3xl mx-auto flex flex-col items-center gap-4">
                 <span
                     class="font-space text-xs font-semibold tracking-[0.25em] uppercase text-sky-400 border border-sky-400/40 bg-sky-950/50 backdrop-blur-sm px-3 py-1 rounded">
                     Technical Specifications
@@ -177,19 +179,19 @@
             <div class="absolute inset-0 noise-overlay opacity-70 pointer-events-none"></div>
 
             <div class="relative z-10 mb-12 overflow-hidden rounded-3xl border border-white/10 bg-[#0d0e0f] shadow-[0_24px_80px_rgba(0,0,0,0.42)]">
-                <div class="relative min-h-[300px] md:min-h-[360px]">
+                <div class="relative min-h-[280px] md:min-h-[360px]">
                     <img src="achievements_electric_baja_racing/e-baja.png" alt="e-Baja"
-                        class="absolute inset-0 w-full h-full object-cover object-center opacity-55 md:opacity-60 scale-[1.03] md:scale-[1.01]">
-                    <div class="absolute inset-0 bg-gradient-to-r from-black via-black/55 to-black/20"></div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20"></div>
+                        class="absolute inset-0 w-full h-full object-cover object-center opacity-52 md:opacity-58 scale-[1.03]">
+                    <div class="absolute inset-0 bg-gradient-to-r from-black via-black/52 to-black/18"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/82 via-transparent to-black/18"></div>
 
-                    <div class="absolute left-0 right-0 bottom-0 h-px bg-gradient-to-r from-transparent via-secondary/60 to-transparent"></div>
+                    <div class="absolute left-0 right-0 bottom-0 h-px bg-gradient-to-r from-transparent via-secondary/40 to-transparent"></div>
 
                     <div
-                        class="relative z-10 flex flex-col justify-end min-h-[300px] md:min-h-[360px] px-6 md:px-10 py-8 md:py-10">
+                        class="relative z-10 flex flex-col justify-end min-h-[280px] md:min-h-[360px] px-6 md:px-10 py-8 md:py-10">
                         <div class="max-w-3xl">
                             <p
-                                class="font-space text-[11px] md:text-xs font-semibold tracking-[0.35em] uppercase text-secondary mb-4">
+                                class="font-space text-[11px] md:text-xs font-semibold tracking-[0.35em] uppercase text-secondary/90 mb-4">
                                 Verified telemetry & event results
                             </p>
                             <h3
@@ -197,8 +199,9 @@
                                 Competition Log
                             </h3>
                             <div class="mt-5 flex items-center gap-3">
-                                <div class="h-px w-14 bg-secondary/70"></div>
-                                <div class="h-2 w-2 rounded-full bg-secondary shadow-[0_0_18px_rgba(163,205,219,0.9)]"></div>
+                                <div class="h-px w-14 bg-secondary/55"></div>
+                                <div class="h-2 w-2 rounded-full bg-secondary/70 shadow-[0_0_12px_rgba(163,205,219,0.45)]">
+                                </div>
                                 <div class="h-px flex-1 max-w-[180px] bg-white/10"></div>
                             </div>
                         </div>
@@ -356,14 +359,13 @@
         <!-- Historic Milestones -->
         <section class="relative w-full max-w-7xl mx-auto px-8 md:px-16 py-16 border-t border-white/8 overflow-hidden">
             <div class="absolute inset-0 pointer-events-none">
-                <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(163,205,219,0.10),transparent_56%)]">
-                </div>
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.04),transparent_55%)]"></div>
                 <div class="absolute inset-0 opacity-[0.04] noise-overlay"></div>
                 <div
-                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full bg-secondary/6 blur-[180px]">
+                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full bg-secondary/3 blur-[180px]">
                 </div>
                 <div
-                    class="absolute top-28 left-0 right-0 h-px bg-gradient-to-r from-transparent via-secondary/25 to-transparent">
+                    class="absolute top-28 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent">
                 </div>
             </div>
 
@@ -374,10 +376,8 @@
                 </h3>
 
                 <div class="relative max-w-5xl mx-auto">
-                    <div
-                        class="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-white/10 transform md:-translate-x-1/2">
-                        <div
-                            class="absolute top-0 w-full h-full bg-gradient-to-b from-secondary/80 via-secondary/35 to-transparent shadow-[0_0_12px_rgba(163,205,219,0.55)]">
+                    <div class="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-white/10 transform md:-translate-x-1/2">
+                        <div class="absolute top-0 w-full h-full bg-gradient-to-b from-white/10 via-secondary/15 to-transparent">
                         </div>
                     </div>
 
@@ -385,19 +385,19 @@
                         <!-- Milestone 1 -->
                         <div class="relative flex flex-col md:flex-row items-start md:items-center w-full group">
                             <div
-                                class="absolute left-[-5px] md:left-1/2 md:-ml-[5px] w-[10px] h-[10px] rounded-full bg-background border-2 border-secondary z-10 group-hover:bg-secondary transition-colors shadow-[0_0_12px_rgba(163,205,219,0.85)]">
+                                class="absolute left-[-5px] md:left-1/2 md:-ml-[5px] w-[10px] h-[10px] rounded-full bg-background border border-secondary/60 z-10 group-hover:bg-secondary/80 transition-colors shadow-[0_0_10px_rgba(163,205,219,0.25)]">
                             </div>
 
                             <div class="md:w-1/2 pl-8 md:pl-0 md:pr-12 md:text-right mb-4 md:mb-0">
                                 <span
-                                    class="font-space text-5xl md:text-6xl font-black text-secondary/30 group-hover:text-secondary transition-colors block mb-2">2026</span>
+                                    class="font-space text-5xl md:text-6xl font-black text-white/15 group-hover:text-white/24 transition-colors block mb-2">2026</span>
                                 <h4 class="font-space text-2xl md:text-3xl font-bold text-primary">e-BAJA 2026
                                     Campaign</h4>
                             </div>
 
                             <div class="md:w-1/2 pl-8 md:pl-12">
                                 <div
-                                    class="shine-sweep relative overflow-hidden rounded-2xl border border-white/10 bg-[#111111]/95 p-5 md:p-6 shadow-[0_16px_40px_rgba(0,0,0,0.22)] group-hover:border-secondary/40 transition-colors">
+                                    class="shine-sweep relative overflow-hidden rounded-2xl border border-white/10 bg-[#111111]/95 p-5 md:p-6 shadow-[0_16px_40px_rgba(0,0,0,0.22)] group-hover:border-white/20 transition-colors">
                                     <p class="font-inter text-sm md:text-base text-on-surface-variant leading-relaxed">
                                         Secured 3rd in Engineering Design, 4th in Acceleration, and 4th in the CAE
                                         Event while competing aggressively among 100+ elite teams.
@@ -409,19 +409,19 @@
                         <!-- Milestone 2 -->
                         <div class="relative flex flex-col md:flex-row-reverse items-start md:items-center w-full group">
                             <div
-                                class="absolute left-[-5px] md:left-1/2 md:-ml-[5px] w-[10px] h-[10px] rounded-full bg-background border-2 border-secondary z-10 group-hover:bg-secondary transition-colors shadow-[0_0_12px_rgba(163,205,219,0.85)]">
+                                class="absolute left-[-5px] md:left-1/2 md:-ml-[5px] w-[10px] h-[10px] rounded-full bg-background border border-secondary/60 z-10 group-hover:bg-secondary/80 transition-colors shadow-[0_0_10px_rgba(163,205,219,0.25)]">
                             </div>
 
                             <div class="md:w-1/2 pl-8 md:pl-12 mb-4 md:mb-0">
                                 <span
-                                    class="font-space text-5xl md:text-6xl font-black text-secondary/30 group-hover:text-secondary transition-colors block mb-2">2025</span>
+                                    class="font-space text-5xl md:text-6xl font-black text-white/15 group-hover:text-white/24 transition-colors block mb-2">2025</span>
                                 <h4 class="font-space text-2xl md:text-3xl font-bold text-primary">e-BAJA 2025
                                     Championship</h4>
                             </div>
 
                             <div class="md:w-1/2 pl-8 md:pl-0 md:pr-12">
                                 <div
-                                    class="shine-sweep relative overflow-hidden rounded-2xl border border-white/10 bg-[#111111]/95 p-5 md:p-6 shadow-[0_16px_40px_rgba(0,0,0,0.22)] group-hover:border-secondary/40 transition-colors md:text-right">
+                                    class="shine-sweep relative overflow-hidden rounded-2xl border border-white/10 bg-[#111111]/95 p-5 md:p-6 shadow-[0_16px_40px_rgba(0,0,0,0.22)] group-hover:border-white/20 transition-colors md:text-right">
                                     <p class="font-inter text-sm md:text-base text-on-surface-variant leading-relaxed">
                                         Dominated the field with 1st place finishes in both Engineering Design and Sled
                                         Pull, alongside 2nd in Maneuverability to secure 9th Overall.
@@ -433,19 +433,19 @@
                         <!-- Milestone 3 -->
                         <div class="relative flex flex-col md:flex-row items-start md:items-center w-full group">
                             <div
-                                class="absolute left-[-5px] md:left-1/2 md:-ml-[5px] w-[10px] h-[10px] rounded-full bg-background border-2 border-secondary z-10 group-hover:bg-secondary transition-colors shadow-[0_0_12px_rgba(163,205,219,0.85)]">
+                                class="absolute left-[-5px] md:left-1/2 md:-ml-[5px] w-[10px] h-[10px] rounded-full bg-background border border-secondary/60 z-10 group-hover:bg-secondary/80 transition-colors shadow-[0_0_10px_rgba(163,205,219,0.25)]">
                             </div>
 
                             <div class="md:w-1/2 pl-8 md:pl-0 md:pr-12 md:text-right mb-4 md:mb-0">
                                 <span
-                                    class="font-space text-5xl md:text-6xl font-black text-secondary/30 group-hover:text-secondary transition-colors block mb-2">2024</span>
+                                    class="font-space text-5xl md:text-6xl font-black text-white/15 group-hover:text-white/24 transition-colors block mb-2">2024</span>
                                 <h4 class="font-space text-2xl md:text-3xl font-bold text-primary">BAJA 2024
                                     Performance</h4>
                             </div>
 
                             <div class="md:w-1/2 pl-8 md:pl-12">
                                 <div
-                                    class="shine-sweep relative overflow-hidden rounded-2xl border border-white/10 bg-[#111111]/95 p-5 md:p-6 shadow-[0_16px_40px_rgba(0,0,0,0.22)] group-hover:border-secondary/40 transition-colors">
+                                    class="shine-sweep relative overflow-hidden rounded-2xl border border-white/10 bg-[#111111]/95 p-5 md:p-6 shadow-[0_16px_40px_rgba(0,0,0,0.22)] group-hover:border-white/20 transition-colors">
                                     <p class="font-inter text-sm md:text-base text-on-surface-variant leading-relaxed">
                                         Demonstrated superior raw power and balance, capturing 1st place in the Sled
                                         Pull event and ranking 2nd in Overall Dynamics.
@@ -457,19 +457,19 @@
                         <!-- Milestone 4 -->
                         <div class="relative flex flex-col md:flex-row-reverse items-start md:items-center w-full group">
                             <div
-                                class="absolute left-[-5px] md:left-1/2 md:-ml-[5px] w-[10px] h-[10px] rounded-full bg-background border-2 border-secondary z-10 group-hover:bg-secondary transition-colors shadow-[0_0_12px_rgba(163,205,219,0.85)]">
+                                class="absolute left-[-5px] md:left-1/2 md:-ml-[5px] w-[10px] h-[10px] rounded-full bg-background border border-secondary/60 z-10 group-hover:bg-secondary/80 transition-colors shadow-[0_0_10px_rgba(163,205,219,0.25)]">
                             </div>
 
                             <div class="md:w-1/2 pl-8 md:pl-12 mb-4 md:mb-0">
                                 <span
-                                    class="font-space text-5xl md:text-6xl font-black text-secondary/30 group-hover:text-secondary transition-colors block mb-2">2023</span>
+                                    class="font-space text-5xl md:text-6xl font-black text-white/15 group-hover:text-white/24 transition-colors block mb-2">2023</span>
                                 <h4 class="font-space text-2xl md:text-3xl font-bold text-primary">BAJA 2023
                                     Challenge</h4>
                             </div>
 
                             <div class="md:w-1/2 pl-8 md:pl-0 md:pr-12">
                                 <div
-                                    class="shine-sweep relative overflow-hidden rounded-2xl border border-white/10 bg-[#111111]/95 p-5 md:p-6 shadow-[0_16px_40px_rgba(0,0,0,0.22)] group-hover:border-secondary/40 transition-colors md:text-right">
+                                    class="shine-sweep relative overflow-hidden rounded-2xl border border-white/10 bg-[#111111]/95 p-5 md:p-6 shadow-[0_16px_40px_rgba(0,0,0,0.22)] group-hover:border-white/20 transition-colors md:text-right">
                                     <p class="font-inter text-sm md:text-base text-on-surface-variant leading-relaxed">
                                         Proved technical excellence on the national stage by fighting through to rank
                                         4th in the Design Event and 4th in Suspension & Traction.
@@ -481,19 +481,19 @@
                         <!-- Milestone 5 -->
                         <div class="relative flex flex-col md:flex-row items-start md:items-center w-full group">
                             <div
-                                class="absolute left-[-5px] md:left-1/2 md:-ml-[5px] w-[10px] h-[10px] rounded-full bg-background border-2 border-secondary z-10 group-hover:bg-secondary transition-colors shadow-[0_0_12px_rgba(163,205,219,0.85)]">
+                                class="absolute left-[-5px] md:left-1/2 md:-ml-[5px] w-[10px] h-[10px] rounded-full bg-background border border-secondary/60 z-10 group-hover:bg-secondary/80 transition-colors shadow-[0_0_10px_rgba(163,205,219,0.25)]">
                             </div>
 
                             <div class="md:w-1/2 pl-8 md:pl-0 md:pr-12 md:text-right mb-4 md:mb-0">
                                 <span
-                                    class="font-space text-5xl md:text-6xl font-black text-secondary/30 group-hover:text-secondary transition-colors block mb-2">2022</span>
+                                    class="font-space text-5xl md:text-6xl font-black text-white/15 group-hover:text-white/24 transition-colors block mb-2">2022</span>
                                 <h4 class="font-space text-2xl md:text-3xl font-bold text-primary">BAJA 2022
                                     Breakthrough</h4>
                             </div>
 
                             <div class="md:w-1/2 pl-8 md:pl-12">
                                 <div
-                                    class="shine-sweep relative overflow-hidden rounded-2xl border border-white/10 bg-[#111111]/95 p-5 md:p-6 shadow-[0_16px_40px_rgba(0,0,0,0.22)] group-hover:border-secondary/40 transition-colors">
+                                    class="shine-sweep relative overflow-hidden rounded-2xl border border-white/10 bg-[#111111]/95 p-5 md:p-6 shadow-[0_16px_40px_rgba(0,0,0,0.22)] group-hover:border-white/20 transition-colors">
                                     <p class="font-inter text-sm md:text-base text-on-surface-variant leading-relaxed">
                                         Achieved massive engineering milestones, taking 2nd in the Innovation Event, 2nd
                                         in Validation, and claiming a podium finish with 3rd in the Endurance Race.
@@ -505,19 +505,19 @@
                         <!-- Milestone 6 -->
                         <div class="relative flex flex-col md:flex-row-reverse items-start md:items-center w-full group">
                             <div
-                                class="absolute left-[-5px] md:left-1/2 md:-ml-[5px] w-[10px] h-[10px] rounded-full bg-background border-2 border-secondary z-10 group-hover:bg-secondary transition-colors shadow-[0_0_12px_rgba(163,205,219,0.85)]">
+                                class="absolute left-[-5px] md:left-1/2 md:-ml-[5px] w-[10px] h-[10px] rounded-full bg-background border border-secondary/60 z-10 group-hover:bg-secondary/80 transition-colors shadow-[0_0_10px_rgba(163,205,219,0.25)]">
                             </div>
 
                             <div class="md:w-1/2 pl-8 md:pl-12 mb-4 md:mb-0">
                                 <span
-                                    class="font-space text-5xl md:text-6xl font-black text-secondary/30 group-hover:text-secondary transition-colors block mb-2">2021</span>
+                                    class="font-space text-5xl md:text-6xl font-black text-white/15 group-hover:text-white/24 transition-colors block mb-2">2021</span>
                                 <h4 class="font-space text-2xl md:text-3xl font-bold text-primary">BAJA 2021
                                     Campaign</h4>
                             </div>
 
                             <div class="md:w-1/2 pl-8 md:pl-0 md:pr-12">
                                 <div
-                                    class="shine-sweep relative overflow-hidden rounded-2xl border border-white/10 bg-[#111111]/95 p-5 md:p-6 shadow-[0_16px_40px_rgba(0,0,0,0.22)] group-hover:border-secondary/40 transition-colors md:text-right">
+                                    class="shine-sweep relative overflow-hidden rounded-2xl border border-white/10 bg-[#111111]/95 p-5 md:p-6 shadow-[0_16px_40px_rgba(0,0,0,0.22)] group-hover:border-white/20 transition-colors md:text-right">
                                     <p class="font-inter text-sm md:text-base text-on-surface-variant leading-relaxed">
                                         Laid down a high-performance foundation by asserting dominance to rank 4th in
                                         Hill Climbing and 5th in the Cost Event.
