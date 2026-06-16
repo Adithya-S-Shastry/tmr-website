@@ -223,49 +223,60 @@
     <main class="flex-grow">
 
         <!-- Hero Section -->
-       <section
-    class="relative min-h-[470px] md:min-h-[520px] flex items-center justify-center overflow-hidden border-b border-white/10 bg-[#0a0c0d] pt-24 md:pt-28">
+      <section
+    class="relative min-h-[380px] md:min-h-[440px] flex items-center overflow-hidden border-b border-white/10 bg-[#0a0c0d] pt-24">
 
     <!-- Background -->
     <div class="absolute inset-0 z-0">
         <img
-            src="achievements_electric_baja_racing/Ach_baja.jpeg"
+            src="achievements_electric_baja_racing/Ach_baja.png"
             alt="Team Manipal Racing Electric"
-            class="w-full h-full object-cover object-center opacity-50 select-none pointer-events-none filter contrast-[1.08] brightness-[0.85]" />
+            class="w-full h-full object-cover object-center opacity-65 select-none pointer-events-none">
 
-        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/25 to-black/80"></div>
-        <div class="absolute inset-0 bg-black/25 mix-blend-multiply"></div>
-    </div>
+        <div class="absolute inset-0 bg-black/45"></div>
 
-    <!-- Noise Texture -->
-    <div class="absolute inset-0 noise-overlay z-[1]"></div>
-
-    <!-- Content -->
-    <div class="relative z-10 text-center px-6 max-w-4xl mx-auto flex flex-col items-center">
-
-        <h1
-            class="font-space text-5xl md:text-7xl font-black uppercase tracking-tight text-sky-400 drop-shadow-[0_0_18px_rgba(56,189,248,0.35)]">
-            Engineered to Win
-        </h1>
-
-        <div class="mt-5 flex items-center gap-3">
-            <div class="h-px w-16 bg-sky-400/50"></div>
-            <div
-                class="h-2 w-2 rounded-full bg-sky-400 shadow-[0_0_15px_rgba(56,189,248,0.9)]">
-            </div>
-            <div class="h-px w-16 bg-sky-400/50"></div>
+        <div
+            class="absolute inset-0 bg-gradient-to-r from-black/75 via-black/35 to-transparent">
         </div>
 
-        <p
-            class="mt-6 max-w-2xl font-inter text-base md:text-lg text-white/80 leading-relaxed">
-            Relentless pursuit of innovation, tested and proven in e-BAJA competitions.
-        </p>
-
+        <div
+            class="absolute inset-0 bg-gradient-to-t from-[#121414] via-transparent to-black/40">
+        </div>
     </div>
 
-    <!-- Bottom Fade -->
+    <!-- Content -->
+    <div class="relative z-10 w-full max-w-7xl mx-auto px-8 md:px-16">
+        <div class="max-w-3xl">
+
+            <span
+                class="font-space text-xs md:text-sm tracking-[0.35em] uppercase text-sky-400 font-semibold">
+                ACHIEVEMENTS
+            </span>
+
+            <h1
+                class="mt-4 font-space text-5xl md:text-7xl font-black uppercase leading-none tracking-tight text-white">
+                Engineered
+                <span class="text-sky-400">to Win</span>
+            </h1>
+
+            <div class="mt-6 flex items-center gap-3">
+                <div class="w-14 h-px bg-sky-400"></div>
+                <div
+                    class="w-2 h-2 rounded-full bg-sky-400 shadow-[0_0_14px_rgba(56,189,248,0.9)]">
+                </div>
+            </div>
+
+            <p
+                class="mt-6 text-base md:text-lg text-white/75 leading-relaxed max-w-xl">
+                Relentless pursuit of innovation, tested and proven in e-BAJA competitions.
+            </p>
+
+        </div>
+    </div>
+
+    <!-- subtle separator -->
     <div
-        class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#121414] to-transparent">
+        class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-sky-400/30 to-transparent">
     </div>
 
 </section>
