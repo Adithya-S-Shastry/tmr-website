@@ -337,66 +337,52 @@
         </div>
     </div>
 
-    <style>
-        .subsystem-scroll-track {
-            animation: loopSubsystems 40s linear infinite;
-        }
-        .group\/track:hover .subsystem-scroll-track {
-            animation-play-state: paused !important;
-        }
-        @keyframes loopSubsystems {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(calc(-344px * 6)); }
-        }
-    </style>
+  <style>
+    /* Remove animation: loopSubsystems here */
+    .subsystem-scroll-track {
+        display: flex;
+        will-change: transform;
+    }
+    .group\/track:hover .subsystem-scroll-track {
+        /* Optional: pause if you want, though JS handles this via isHovered */
+    }
+</style>
 </section>
 <script>
     document.addEventListener("DOMContentLoaded", () => {
         const track = document.getElementById("subsystem-track");
         const container = document.getElementById("carousel-container");
         
-        let currentX = 0;
-        let baseSpeed = 1; // Default automated scrolling speed pixels per frame
-        let isHovered = false;
+        // 1. Clone items to create infinite loop effect
+        const items = Array.from(track.children);
+        items.forEach(item => {
+            const clone = item.cloneNode(true);
+            track.appendChild(clone);
+        });
 
-        function animateCarousel() {
+        let currentX = 0;
+        let isHovered = false;
+        const speed = 1; // Adjust speed here
+
+        function animate() {
             if (!isHovered) {
-                currentX -= baseSpeed;
+                currentX -= speed;
                 
-                // Reset tracker calculation safely to keep seamless looping infinite
-                // Dividends by 2 because exact track is split into half original cards, half duplicates
-                const halfWidth = track.scrollWidth / 2;
-                if (Math.abs(currentX) >= halfWidth) {
+                // Reset to 0 when the first set of items is fully off-screen
+                // track.scrollWidth / 2 is the width of the original set
+                if (Math.abs(currentX) >= (track.scrollWidth / 2)) {
                     currentX = 0;
                 }
                 track.style.transform = `translateX(${currentX}px)`;
             }
-            requestAnimationFrame(animateCarousel);
+            requestAnimationFrame(animate);
         }
 
-        // Toggle state to let user control interaction loops
-        container.addEventListener("mouseenter", () => { isHovered = true; });
-        container.addEventListener("mouseleave", () => { isHovered = false; });
+        container.addEventListener("mouseenter", () => isHovered = true);
+        container.addEventListener("mouseleave", () => isHovered = false);
 
-        // Wheel listener event for adjusting user controlled manual scroll speeds
-        container.addEventListener("wheel", (e) => {
-            e.preventDefault(); // Stop standard page body viewport scrolling down
-            
-            // Increment/Decrement relative tracking based on wheel movement delta
-            currentX -= e.deltaY * 0.8; 
-            
-            const halfWidth = track.scrollWidth / 2;
-            if (currentX > 0) {
-                currentX = -halfWidth;
-            } else if (Math.abs(currentX) >= halfWidth) {
-                currentX = 0;
-            }
-            
-            track.style.transform = `translateX(${currentX}px)`;
-        }, { passive: false });
-
-        // Spin it up!
-        requestAnimationFrame(animateCarousel);
+        // Keep your wheel/touch logic here...
+        requestAnimationFrame(animate);
     });
 </script>
             <section class="relative min-h-screen lg:min-h-[700px] flex items-center overflow-hidden bg-[#0a0c0d] border-t border-white/5 py-16 lg:py-0">
