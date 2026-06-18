@@ -117,16 +117,14 @@
             </a>
         </div>
 
-        <button class="md:hidden text-white hover:text-sky-400 transition-colors p-2 z-50 block" 
-                id="menu-toggle" 
-                onclick="toggleMobileMenu(event)">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <button class="md:hidden text-white hover:text-sky-400 transition-colors p-2 z-50 block cursor-pointer" id="menu-toggle-btn">
+            <svg class="w-8 h-8 pointer-events-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
             </svg>
         </button>
     </div>
 
-    <div class="hidden fixed top-[69px] left-0 right-0 bottom-0 bg-black/95 backdrop-blur-2xl border-t border-white/10 flex-col space-y-6 px-8 pt-8 pb-6 z-40 overflow-y-auto" id="mobile-menu">
+    <div style="display: none;" class="fixed top-[69px] left-0 right-0 bottom-0 bg-black/95 backdrop-blur-2xl border-t border-white/10 flex-col space-y-6 px-8 pt-8 pb-6 z-40 overflow-y-auto" id="mobile-menu">
         <a href="index.html" class="mobile-nav-link block font-space uppercase tracking-widest text-base font-medium text-white/60 hover:text-sky-400 transition-colors">HOME</a>
         <a href="index.html#about" class="mobile-nav-link block font-space uppercase tracking-widest text-base font-medium text-white/60 hover:text-sky-400 transition-colors">ABOUT</a>
         <a href="subsystem.html" class="mobile-nav-link block font-space uppercase tracking-widest text-base font-medium text-white/60 hover:text-sky-400 transition-colors">SUBSYSTEMS</a>
@@ -136,7 +134,7 @@
         <a href="index.html#contact" class="mobile-nav-link block font-space uppercase tracking-widest text-base font-medium text-white/60 hover:text-sky-400 transition-colors">CONTACT US</a>
         <div class="pt-4">
             <a href="https://www.canva.com/design/DAHEU_wGm54/LWLv2JvuzkA-9bbtbdJvzg/edit" target="_blank"
-                class="block text-center py-3 bg-sky-400/10 border border-sky-400 text-sky-400 font-space font-bold rounded uppercase tracking-widest text-xs tracking-widest">
+                class="block text-center py-3 bg-sky-400/10 border border-sky-400 text-sky-400 font-space font-bold rounded uppercase tracking-widest text-xs">
                 Sponsor Us
             </a>
         </div>
@@ -144,39 +142,36 @@
 </nav>
 
 <script>
-    // Global function scope so inline HTML elements can read it immediately 
-    function toggleMobileMenu(event) {
-        if (event) event.stopPropagation();
-        const mobileMenu = document.getElementById('mobile-menu');
-        if (!mobileMenu) return;
-
-        if (mobileMenu.style.display === 'flex' || mobileMenu.classList.contains('flex')) {
-            mobileMenu.style.setProperty('display', 'none', 'important');
-            mobileMenu.classList.remove('flex');
-            mobileMenu.classList.add('hidden');
-        } else {
-            mobileMenu.style.setProperty('display', 'flex', 'important');
-            mobileMenu.classList.remove('hidden');
-            mobileMenu.classList.add('flex');
-        }
-    }
-
     document.addEventListener('DOMContentLoaded', () => {
+        const toggleBtn = document.getElementById('menu-toggle-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         
-        // Close menu cleanly on hitting any anchor links
+        // 1. Bulletproof Toggle Logic using explicit display manipulation
+        if (toggleBtn && mobileMenu) {
+            // Using 'click' works for both mouse and touch devices
+            toggleBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // Check computed style to see if it's currently hidden
+                if (mobileMenu.style.display === 'none' || window.getComputedStyle(mobileMenu).display === 'none') {
+                    mobileMenu.style.display = 'flex';
+                } else {
+                    mobileMenu.style.display = 'none';
+                }
+            });
+        }
+
+        // 2. Close menu cleanly on hitting any anchor links
         const mobileLinks = document.querySelectorAll('.mobile-nav-link');
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
                 if (mobileMenu) {
-                    mobileMenu.style.setProperty('display', 'none', 'important');
-                    mobileMenu.classList.remove('flex');
-                    mobileMenu.classList.add('hidden');
+                    mobileMenu.style.display = 'none';
                 }
             });
         });
 
-        // Highlight Active Page Logic
+        // 3. Highlight Active Page Logic
         const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
         const currentPath = window.location.pathname.split('/').pop() || 'index.html';
         const currentHash = window.location.hash || '';
@@ -203,7 +198,6 @@
         });
     });
 </script>
-
 
     <!-- MAIN CONTENT CANVAS -->
     <main class="flex-grow w-full">
