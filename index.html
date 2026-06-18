@@ -94,8 +94,8 @@
 <body class="bg-black text-on-background antialiased min-h-screen flex flex-col font-inter">
 
   <!-- Persistent Navigation Bar -->
-<nav class="fixed top-0 left-0 right-0 z-50 bg-black/72 backdrop-blur-xl border-b border-white/10 px-6 py-3.5">
-    <div class="max-w-7xl mx-auto flex items-center justify-between">
+<nav class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-xl border-b border-white/10 px-6 py-3.5">
+    <div class="max-w-7xl mx-auto flex items-center justify-between relative">
         <a href="index.html" class="h-10 flex items-center logo-btn shrink-0">
             <img src="baja_racing_engineering/logo.png" alt="Team Manipal Racing Logo" class="h-full object-contain" />
         </a>
@@ -117,58 +117,63 @@
             </a>
         </div>
 
-        <button class="md:hidden text-white hover:text-sky-400 transition-colors flex items-center justify-center" id="menu-toggle" aria-label="Toggle Menu">
-            <span class="material-symbols-outlined text-3xl">menu</span>
+        <button class="md:hidden text-white hover:text-sky-400 transition-colors p-2 z-50 block" 
+                id="menu-toggle" 
+                onclick="toggleMobileMenu(event)">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
         </button>
     </div>
 
-    <div class="hidden absolute top-full left-0 right-0 bg-black/95 backdrop-blur-2xl border-b border-white/10 flex-col space-y-4 px-6 pt-4 pb-6 shadow-xl" id="mobile-menu">
-        <a href="index.html" class="mobile-nav-link block font-space uppercase tracking-widest text-sm font-medium text-white/60 hover:text-sky-400 transition-colors">HOME</a>
-        <a href="index.html#about" class="mobile-nav-link block font-space uppercase tracking-widest text-sm font-medium text-white/60 hover:text-sky-400 transition-colors">ABOUT</a>
-        <a href="subsystem.html" class="mobile-nav-link block font-space uppercase tracking-widest text-sm font-medium text-white/60 hover:text-sky-400 transition-colors">SUBSYSTEMS</a>
-        <a href="achievement.html" class="mobile-nav-link block font-space uppercase tracking-widest text-sm font-medium text-white/60 hover:text-sky-400 transition-colors">ACHIEVEMENTS</a>
-        <a href="index.html#sponsors" class="mobile-nav-link block font-space uppercase tracking-widest text-sm font-medium text-white/60 hover:text-sky-400 transition-colors">SPONSORS</a>
-        <a href="journey.html" class="mobile-nav-link block font-space uppercase tracking-widest text-sm font-medium text-white/60 hover:text-sky-400 transition-colors">JOURNEY</a>
-        <a href="index.html#contact" class="mobile-nav-link block font-space uppercase tracking-widest text-sm font-medium text-white/60 hover:text-sky-400 transition-colors">CONTACT US</a>
-        <a href="https://www.canva.com/design/DAHEU_wGm54/LWLv2JvuzkA-9bbtbdJvzg/edit" target="_blank"
-            class="block text-center py-2.5 bg-sky-400/10 border border-sky-400 text-sky-400 font-space font-bold rounded uppercase tracking-widest text-xs">
-            Sponsor Us
-        </a>
+    <div class="hidden fixed top-[69px] left-0 right-0 bottom-0 bg-black/95 backdrop-blur-2xl border-t border-white/10 flex-col space-y-6 px-8 pt-8 pb-6 z-40 overflow-y-auto" id="mobile-menu">
+        <a href="index.html" class="mobile-nav-link block font-space uppercase tracking-widest text-base font-medium text-white/60 hover:text-sky-400 transition-colors">HOME</a>
+        <a href="index.html#about" class="mobile-nav-link block font-space uppercase tracking-widest text-base font-medium text-white/60 hover:text-sky-400 transition-colors">ABOUT</a>
+        <a href="subsystem.html" class="mobile-nav-link block font-space uppercase tracking-widest text-base font-medium text-white/60 hover:text-sky-400 transition-colors">SUBSYSTEMS</a>
+        <a href="achievement.html" class="mobile-nav-link block font-space uppercase tracking-widest text-base font-medium text-white/60 hover:text-sky-400 transition-colors">ACHIEVEMENTS</a>
+        <a href="index.html#sponsors" class="mobile-nav-link block font-space uppercase tracking-widest text-base font-medium text-white/60 hover:text-sky-400 transition-colors">SPONSORS</a>
+        <a href="journey.html" class="mobile-nav-link block font-space uppercase tracking-widest text-base font-medium text-white/60 hover:text-sky-400 transition-colors">JOURNEY</a>
+        <a href="index.html#contact" class="mobile-nav-link block font-space uppercase tracking-widest text-base font-medium text-white/60 hover:text-sky-400 transition-colors">CONTACT US</a>
+        <div class="pt-4">
+            <a href="https://www.canva.com/design/DAHEU_wGm54/LWLv2JvuzkA-9bbtbdJvzg/edit" target="_blank"
+                class="block text-center py-3 bg-sky-400/10 border border-sky-400 text-sky-400 font-space font-bold rounded uppercase tracking-widest text-xs tracking-widest">
+                Sponsor Us
+            </a>
+        </div>
     </div>
 </nav>
 
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const menuToggle = document.getElementById('menu-toggle');
+    // Global function scope so inline HTML elements can read it immediately 
+    function toggleMobileMenu(event) {
+        if (event) event.stopPropagation();
         const mobileMenu = document.getElementById('mobile-menu');
+        if (!mobileMenu) return;
 
-        if (menuToggle && mobileMenu) {
-            menuToggle.addEventListener('click', (e) => {
-                e.stopPropagation();
-                if (mobileMenu.classList.contains('hidden')) {
-                    mobileMenu.classList.remove('hidden');
-                    mobileMenu.classList.add('flex');
-                } else {
+        if (mobileMenu.style.display === 'flex' || mobileMenu.classList.contains('flex')) {
+            mobileMenu.style.setProperty('display', 'none', 'important');
+            mobileMenu.classList.remove('flex');
+            mobileMenu.classList.add('hidden');
+        } else {
+            mobileMenu.style.setProperty('display', 'flex', 'important');
+            mobileMenu.classList.remove('hidden');
+            mobileMenu.classList.add('flex');
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        // Close menu cleanly on hitting any anchor links
+        const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (mobileMenu) {
+                    mobileMenu.style.setProperty('display', 'none', 'important');
                     mobileMenu.classList.remove('flex');
                     mobileMenu.classList.add('hidden');
                 }
             });
-        }
-
-        const mobileLinks = mobileMenu?.querySelectorAll('.mobile-nav-link');
-        mobileLinks?.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.remove('flex');
-                mobileMenu.classList.add('hidden');
-            });
-        });
-
-        // Close menu if user clicks anywhere outside of it
-        document.addEventListener('click', (e) => {
-            if (mobileMenu && !mobileMenu.classList.contains('hidden') && !mobileMenu.contains(e.target) && e.target !== menuToggle) {
-                mobileMenu.classList.remove('flex');
-                mobileMenu.classList.add('hidden');
-            }
         });
 
         // Highlight Active Page Logic
@@ -176,33 +181,30 @@
         const currentPath = window.location.pathname.split('/').pop() || 'index.html';
         const currentHash = window.location.hash || '';
 
-        const normalizeHref = (href) => {
-            try {
-                const url = new URL(href, window.location.href);
-                const path = url.pathname.split('/').pop() || 'index.html';
-                return { path, hash: url.hash || '' };
-            } catch (e) {
-                return { path: href, hash: '' };
-            }
-        };
-
         navLinks.forEach(link => {
             const href = link.getAttribute('href');
             if (!href) return;
+            
+            let path = href;
+            let hash = '';
+            if (href.includes('#')) {
+                const parts = href.split('#');
+                path = parts[0] || 'index.html';
+                hash = '#' + parts[1];
+            }
+            if (path === '') path = 'index.html';
 
-            const { path, hash } = normalizeHref(href);
             const isActive = path === currentPath && (hash ? hash === currentHash : true);
 
             if (isActive) {
                 link.classList.remove('text-white/60', 'font-medium');
                 link.classList.add('text-sky-400', 'font-semibold', 'underline', 'underline-offset-8', 'decoration-2', 'decoration-sky-400');
-            } else {
-                link.classList.remove('text-sky-400', 'font-semibold', 'underline', 'underline-offset-8', 'decoration-2', 'decoration-sky-400');
-                link.classList.add('text-white/60', 'font-medium');
             }
         });
     });
 </script>
+
+
     <!-- MAIN CONTENT CANVAS -->
     <main class="flex-grow w-full">
         <!-- 1. Hero Section (A1) -->
